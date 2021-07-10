@@ -23,6 +23,12 @@ code {
   width: 100%;
 }
 
+.social_icons {
+  height: 40px;
+  margin: 5px;
+}
+
+/* Vertical and Horizontal Centering */
 .centerFlex {
   display: flex;
   align-items: center;
