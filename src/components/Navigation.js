@@ -1,6 +1,6 @@
 import React from "react";
 // import { BrowserRouter as Link } from "react-router-dom";
-import { Navbar, Nav } from "react-bootstrap";
+import { Button, Form, FormControl, Navbar, Nav } from "react-bootstrap";
 // import NavDropdown from "react-bootstrap/NavDropdown";
 
 const Navigation = () => {
@@ -12,25 +12,24 @@ const Navigation = () => {
     <div>
       <Navbar expand="sm" bg="dark" variant="dark" className="my-auto py-1">
         <Navbar.Brand href="/">
-          <h3>Brand Here</h3>
+          <img
+            src="./assets/images/original/TTT_logo_hiRes.png"
+            width="75"
+            height="75"
+            alt="Toy Tips Trusted Logo"
+            onClick={handleClick}
+          />
+        </Navbar.Brand>
+        <Navbar.Brand href="/">
+          <h1>Toy Tips</h1>
         </Navbar.Brand>
         <container className="mr-auto textSize">
-          <Navbar.Text>Company Name Here</Navbar.Text>
+          <Navbar.Text>The Independent Voice on Toys</Navbar.Text>
         </container>
-        <Nav variant="pills" className="navLinkSize">
-          <Nav.Link href="/" className="my-auto">
-            Link Here
-          </Nav.Link>
-          <Nav.Link>
-            <img
-              src="./assets/images/icons/linkedInIcon.png"
-              width="45"
-              height="35"
-              alt="LinkedIn Icon"
-              onClick={handleClick}
-            />
-          </Nav.Link>
-        </Nav>
+        <Form inline>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Button variant="outline-light">Search</Button>
+        </Form>
       </Navbar>
     </div>
   );
