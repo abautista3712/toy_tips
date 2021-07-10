@@ -12,12 +12,19 @@ code {
     monospace;
 }
 
+/* Styling for Sticky Footer in Footer Component */
 .footer {
   margin-top: 1rem;
   padding: 1rem;
-  background-color: rgb(235, 195, 64);
+  background-color: rgb(255, 255, 255);
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+.centerFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
