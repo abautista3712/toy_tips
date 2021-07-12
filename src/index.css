@@ -15,7 +15,7 @@ code {
 /* Styling for Sticky Footer in Footer Component */
 .footer {
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   background-color: rgb(255, 255, 255);
   position: fixed;
   bottom: 0;
