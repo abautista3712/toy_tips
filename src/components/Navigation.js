@@ -1,7 +1,5 @@
 import React from "react";
-// import { BrowserRouter as Link } from "react-router-dom";
 import { Button, Form, FormControl, Navbar } from "react-bootstrap";
-// import NavDropdown from "react-bootstrap/NavDropdown";
 
 const Navigation = () => {
   const handleClick = () => {
@@ -10,12 +8,7 @@ const Navigation = () => {
 
   return (
     <div>
-      <Navbar
-        expand="sm"
-        // bg="dark"
-        variant="dark"
-        className="my-auto py-1 bgColor_nav"
-      >
+      <Navbar expand="sm" variant="dark" className="my-auto py-1 bgColor_nav">
         <Navbar.Brand href="/">
           <img
             src="./assets/images/original/TTT_logo_hiRes.png"
