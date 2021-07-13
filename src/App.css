@@ -8,14 +8,17 @@ body {
   background-color: burlywood;
 }
 
-/* Custom Color for TTT Playware banner  */
+/* Custom Styling for TTT Playware banner  */
 .bgColor_playware {
   background-color: rgb(0, 0, 0, 0.85);
   color: rgb(255, 255, 255, 0.85);
 }
-
 .alignText_playware {
   text-align: right;
+}
+.click_playware:hover {
+  cursor: pointer;
+  opacity: 0.9;
 }
 
 /* ---Footer Component--- */
@@ -33,10 +36,15 @@ body {
   align-items: center;
 }
 
-/* Social Icons */
+/* Social Icons Sizing*/
 .social_icons {
   height: 35px;
   margin: 5px;
+}
+/* Social Icons Click Styling */
+.click_socials:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }
 
 /* ---General Use--- */
@@ -45,9 +53,4 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
-
-.click:hover {
-  cursor: pointer;
-  opacity: 0.6;
 }

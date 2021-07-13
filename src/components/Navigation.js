@@ -36,7 +36,7 @@ const Navigation = () => {
         </Form>
       </Navbar>
       <div
-        className="py-1 px-2 bgColor_playware alignText_playware click"
+        className="py-1 px-2 bgColor_playware alignText_playware click_playware"
         onClick={handleClick_TTT_playware}
       >
         Check out our "I'm a Toy Tester®" Playwear! Exclusive to Amazon
