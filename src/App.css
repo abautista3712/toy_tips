@@ -2,12 +2,24 @@ body {
   background-color: blanchedalmond;
 }
 
-/* Background Color in Navigation Component */
+/* ---Navigation Component--- */
+/* Custom Background Color for Nav Bar*/
 .bgColor_nav {
   background-color: burlywood;
 }
 
-/* Sticky Footer in Footer Component */
+/* Custom Color for TTT Playware banner  */
+.bgColor_playware {
+  background-color: rgb(0, 0, 0, 0.85);
+  color: rgb(255, 255, 255, 0.85);
+}
+
+.alignText_playware {
+  text-align: right;
+}
+
+/* ---Footer Component--- */
+/* Sticky Footer*/
 .footer {
   /* Main styling */
   background-color: rgb(255, 255, 255);
@@ -21,11 +33,13 @@ body {
   align-items: center;
 }
 
+/* Social Icons */
 .social_icons {
   height: 35px;
   margin: 5px;
 }
 
+/* ---General Use--- */
 /* Vertical and Horizontal Centering */
 .centerFlex {
   display: flex;
