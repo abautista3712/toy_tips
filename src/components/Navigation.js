@@ -10,7 +10,12 @@ const Navigation = () => {
 
   return (
     <div>
-      <Navbar expand="sm" bg="dark" variant="dark" className="my-auto py-1">
+      <Navbar
+        expand="sm"
+        // bg="dark"
+        variant="dark"
+        className="my-auto py-1 bgColor_nav"
+      >
         <Navbar.Brand href="/">
           <img
             src="./assets/images/original/TTT_logo_hiRes.png"

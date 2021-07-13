@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.bgColor_nav {
+  background-color: burlywood;
+}
+
 /* Sticky Footer in Footer Component */
 .footer {
   /* Main styling */
