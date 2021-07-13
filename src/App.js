@@ -8,8 +8,9 @@ function App() {
   return (
     <Router>
       <Navigation />
-      <div>Body</div>
+      {/* Component below will change per page */}
       <Landing />
+      {/* --- */}
       <Footer />
     </Router>
   );

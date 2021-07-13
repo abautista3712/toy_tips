@@ -8,7 +8,7 @@ const Landing = (props) => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=373940"
+          src="./assets/images/original/stock_toys1.jpeg"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -19,10 +19,9 @@ const Landing = (props) => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
+          src="./assets/images/original/stock_toys2.jpeg"
           alt="Second slide"
         />
-
         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -31,10 +30,9 @@ const Landing = (props) => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
+          src="./assets/images/original/stock_toys3.png"
           alt="Third slide"
         />
-
         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>
