@@ -12,6 +12,7 @@ code {
     monospace;
 }
 
+/* Background Color in Navigation Component */
 .bgColor_nav {
   background-color: burlywood;
 }
