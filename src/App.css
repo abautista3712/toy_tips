@@ -2,6 +2,37 @@ body {
   background-color: blanchedalmond;
 }
 
+/* Background Color in Navigation Component */
+.bgColor_nav {
+  background-color: burlywood;
+}
+
+/* Sticky Footer in Footer Component */
+.footer {
+  /* Main styling */
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 0.5rem;
+
+  /* Flex centering */
+  display: flex;
+  align-items: center;
+}
+
+.social_icons {
+  height: 40px;
+  margin: 5px;
+}
+
+/* Vertical and Horizontal Centering */
+.centerFlex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 /* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

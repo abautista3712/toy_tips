@@ -11,36 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-/* Background Color in Navigation Component */
-.bgColor_nav {
-  background-color: burlywood;
-}
-
-/* Sticky Footer in Footer Component */
-.footer {
-  /* Main styling */
-  margin-top: 1rem;
-  padding: 0.5rem;
-  background-color: rgb(255, 255, 255);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-
-  /* Flex centering */
-  display: flex;
-  align-items: center;
-}
-
-.social_icons {
-  height: 40px;
-  margin: 5px;
-}
-
-/* Vertical and Horizontal Centering */
-.centerFlex {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
