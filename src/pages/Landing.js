@@ -11,8 +11,8 @@ const Landing = (props) => {
           alt="First slide"
         />
         <Carousel.Caption className="carosel_customSlide1">
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h1>Thousand of Vintage Toy Reviews</h1>
+          <p>Browse our entire collection of toys from your childhood!</p>
         </Carousel.Caption>
       </Carousel.Item>
       {/* <Carousel.Item>
@@ -22,7 +22,7 @@ const Landing = (props) => {
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h3>Second slide label</h3>
+          h23>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -33,7 +33,7 @@ const Landing = (props) => {
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          h23>Third slide label</h3>
           <p>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>

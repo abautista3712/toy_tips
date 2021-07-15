@@ -49,9 +49,9 @@ body {
 
 /* ---Carosel Component in Landing Page--- */
 .carosel_customSlide1 {
-  top: 20px;
+  top: 40%;
   bottom: auto;
-  background-color: rgb(0, 0, 0, 0.5);
+  background-color: rgb(0, 0, 0, 0.7);
 }
 
 /* ---General Use--- */
