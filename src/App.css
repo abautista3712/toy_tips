@@ -47,6 +47,13 @@ body {
   opacity: 0.6;
 }
 
+/* ---Carosel Component in Landing Page--- */
+.carosel_customSlide1 {
+  top: 20px;
+  bottom: auto;
+  background-color: rgb(0, 0, 0, 0.5);
+}
+
 /* ---General Use--- */
 /* Vertical and Horizontal Centering */
 .centerFlex {

@@ -10,12 +10,12 @@ const Landing = (props) => {
           src="./assets/images/original/stock_toys1.jpeg"
           alt="First slide"
         />
-        <Carousel.Caption>
+        <Carousel.Caption className="carosel_customSlide1">
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      {/* <Carousel.Item>
         <img
           className="d-block w-100"
           src="./assets/images/original/stock_toys2.jpeg"
@@ -32,13 +32,13 @@ const Landing = (props) => {
           src="./assets/images/original/stock_toys3.png"
           alt="Third slide"
         />
-        {/* <Carousel.Caption>
+        <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
-        </Carousel.Caption> */}
-      </Carousel.Item>
+        </Carousel.Caption>
+      </Carousel.Item> */}
     </Carousel>
   );
 };
