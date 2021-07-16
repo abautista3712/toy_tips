@@ -49,9 +49,21 @@ body {
 
 /* ---Carosel Component in Landing Page--- */
 .caption_Slide1 {
+  /* Positioning and Background Color */
   top: 40%;
   bottom: auto;
   background-color: rgb(0, 0, 0, 0.7);
+}
+
+.caption_Slide2 {
+  /* Positioning and Background Color */
+  top: 40%;
+  bottom: auto;
+  background-color: rgb(0, 0, 0, 0.7);
+
+  /* Text Alignment */
+  text-align: "right";
+  padding-right: "5%";
 }
 
 /* ---General Use--- */

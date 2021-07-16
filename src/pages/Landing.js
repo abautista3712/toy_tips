@@ -21,11 +21,10 @@ const Landing = (props) => {
           src="./assets/images/original/stock_toys2.jpeg"
           alt="Second slide"
         />
-        <Carousel.Caption className="caption_Slide1">
-          <h1>30 Years of Independent Research on Smart Consumer Choices</h1>
-          <p style={{ textAlign: "right", paddingRight: "5%" }}>
-            Learn more about Toy Tips
-          </p>
+        <Carousel.Caption className="caption_Slide2">
+          <h1>30 Years of Independent Research on </h1>
+          <h1>Smart Consumer Choices</h1>
+          <p>Learn more about Toy Tips</p>
         </Carousel.Caption>
       </Carousel.Item>
       {/* <Carousel.Item>
