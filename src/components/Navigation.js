@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, FormControl, Navbar } from "react-bootstrap";
+import { Button, Form, FormControl, Navbar, Nav } from "react-bootstrap";
 
 const Navigation = () => {
   const handleClick_home = () => {
@@ -30,6 +30,11 @@ const Navigation = () => {
         <container className="mr-auto textSize">
           <Navbar.Text>The Independent Voice on Toys</Navbar.Text>
         </container>
+        <Nav variant="pills" className="navLinkSize">
+          <Nav.Link href="/about" className="my-auto">
+            About
+          </Nav.Link>
+        </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="outline-light">Search</Button>

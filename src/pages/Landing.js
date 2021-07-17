@@ -11,7 +11,7 @@ const Landing = (props) => {
           alt="First slide"
         />
         <Carousel.Caption className="caption_Slide1">
-          <h1>Thousand of Vintage Toy Reviews</h1>
+          <h1>Thousands of Vintage Toy Reviews</h1>
           <p>Browse our entire collection of toys from your childhood!</p>
         </Carousel.Caption>
       </Carousel.Item>
