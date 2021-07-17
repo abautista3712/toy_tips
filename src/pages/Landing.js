@@ -4,7 +4,7 @@ import { Carousel } from "react-bootstrap";
 const Landing = (props) => {
   return (
     <Carousel fade>
-      {/* <Carousel.Item>
+      <Carousel.Item>
         <img
           className="d-block w-100"
           src="./assets/images/original/stock_toys1.jpeg"
@@ -14,7 +14,7 @@ const Landing = (props) => {
           <h1>Thousand of Vintage Toy Reviews</h1>
           <p>Browse our entire collection of toys from your childhood!</p>
         </Carousel.Caption>
-      </Carousel.Item> */}
+      </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"

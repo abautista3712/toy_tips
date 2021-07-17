@@ -62,8 +62,8 @@ body {
   background-color: rgb(0, 0, 0, 0.7);
 
   /* Text Alignment */
-  text-align: "right";
-  padding-right: "5%";
+  text-align: right;
+  padding-right: 5%;
 }
 
 /* ---General Use--- */
