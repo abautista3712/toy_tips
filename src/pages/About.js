@@ -1,9 +1,10 @@
 import React from "react";
+import CardLeft from "../components/CardLeft";
 
 const About = (props) => {
   return (
     <div>
-      <div>About Toy Tips</div>
+      <CardLeft />
       <div>About Our Research</div>
       <div>About Toy Tips Testers</div>
       <div>What do with tested toys?</div>
