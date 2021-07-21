@@ -66,6 +66,12 @@ body {
   padding-right: 5%;
 }
 
+/* ---Card Styling in About Component--- */
+.card_Row {
+  border-radius: 10px;
+  background: white;
+}
+
 /* ---General Use--- */
 /* Vertical and Horizontal Centering */
 .centerFlex {

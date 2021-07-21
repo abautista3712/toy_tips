@@ -10,13 +10,7 @@ const About = (props) => {
 
       {/* About Toy Tips */}
       <Container>
-        <Row
-          style={{
-            borderRadius: "10px",
-            background: "white",
-          }}
-          className="m-2 p-2"
-        >
+        <Row className="m-2 p-2 card_Row">
           <Col
             xs={6}
             sm={4}
