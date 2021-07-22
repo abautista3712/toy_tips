@@ -32,11 +32,46 @@ const About = (props) => {
               publish awards that are used for marketing purposes. Toy
               manufacturer or toy trade employees make no decision in our toy
               testing process.
+              <br />
+              <br />
+              The involvement of thousands of children as official 'Toy Tips®
+              Testers' throughout the year provide real in-market data. Our
+              research survey methods are independent of manufacturer conflict
+              of interest and personal opinion.
             </p>
           </Col>
         </Row>
+        {/* ---About Our Research--- */}
+        <Row className="m-2 p-2 card_Row">
+          <Col>
+            <h2>Can you tell me a little more about the research process?</h2>
+            <p>
+              Celebrating 3 decades of research, our product reviews assist
+              consumers in making appropriate purchases. Our advisory team is
+              comprised of medical doctors, psychologists, teachers,
+              occupational therapists and research analysts who facilitate our
+              testing based on qualitative and quantitative research. We focus
+              on the intellectual, social, physical, and individual character
+              and personality development of the child.
+            </p>
+          </Col>
+        </Row>
+        {/* ---About Tested Toys--- */}
+        {/* <Row className="m-2 p-2 card_Row">
+          <Col>
+            <h2>What do you do with toys that have?</h2>
+            <p>
+              Celebrating 3 decades of research, our product reviews assist
+              consumers in making appropriate purchases. Our advisory team is
+              comprised of medical doctors, psychologists, teachers,
+              occupational therapists and research analysts who facilitate our
+              testing based on qualitative and quantitative research. We focus
+              on the intellectual, social, physical, and individual character
+              and personality development of the child.
+            </p>
+          </Col>
+        </Row> */}
       </Container>
-      <div>About Our Research</div>
       <div>About Toy Tips Testers</div>
       <div>What do with tested toys?</div>
       <div>About Marianne</div>
