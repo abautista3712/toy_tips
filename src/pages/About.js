@@ -1,25 +1,18 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-import CardLeft from "../components/CardLeft";
-
 const About = (props) => {
   return (
     <div>
-      {/* <CardLeft /> */}
-
       {/* About Toy Tips */}
       <Container>
         <Row className="m-2 p-2 card_Row">
-          <Col
-            xs={6}
-            sm={4}
-            md={4}
-            lg={4}
-            xl={4}
-            style={{ background: "grey" }}
-          >
-            Picture of 'TTT' Mark of Excellence Here
+          <Col xs={6} sm={4} md={4} lg={4} xl={4} className="centerFlex">
+            <img
+              src="./assets/images/original/TTT_logo_hiRes.png"
+              width="100%"
+              alt="Toy Tips Trusted Mark of Excellence"
+            />
           </Col>
           <Col xs={6} sm={8} md={8} lg={8} xl={8}>
             <h2>What is Toy Tips?</h2>
@@ -44,7 +37,7 @@ const About = (props) => {
         {/* ---About Our Research--- */}
         <Row className="m-2 p-2 card_Row">
           <Col>
-            <h2>Can you tell me a little more about the research process?</h2>
+            <h2>Can you tell me more about the research process?</h2>
             <p>
               Celebrating 3 decades of research, our product reviews assist
               consumers in making appropriate purchases. Our advisory team is
@@ -59,7 +52,9 @@ const About = (props) => {
         {/* ---About Tested Toys--- */}
         <Row className="m-2 p-2 card_Row">
           <Col>
-            <h2>What do you do with toys that have been tested?</h2>
+            <h2 style={{ textAlign: "right" }}>
+              What do you do with toys that have been tested?
+            </h2>
             <p>
               It is our strict policy that after toys are 'Toy Tips®' tested,
               they are donated to children through a variety of programs we have
