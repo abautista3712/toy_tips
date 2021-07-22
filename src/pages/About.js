@@ -57,23 +57,19 @@ const About = (props) => {
           </Col>
         </Row>
         {/* ---About Tested Toys--- */}
-        {/* <Row className="m-2 p-2 card_Row">
+        <Row className="m-2 p-2 card_Row">
           <Col>
-            <h2>What do you do with toys that have?</h2>
+            <h2>What do you do with toys that have been tested?</h2>
             <p>
-              Celebrating 3 decades of research, our product reviews assist
-              consumers in making appropriate purchases. Our advisory team is
-              comprised of medical doctors, psychologists, teachers,
-              occupational therapists and research analysts who facilitate our
-              testing based on qualitative and quantitative research. We focus
-              on the intellectual, social, physical, and individual character
-              and personality development of the child.
+              It is our strict policy that after toys are 'Toy Tips®' tested,
+              they are donated to children through a variety of programs we have
+              set in place with not-for-profit groups nationwide. To date, we
+              service 32 groups. It is our way to assist those who need the toys
+              more than us and make their playtime a little brighter.
             </p>
           </Col>
-        </Row> */}
+        </Row>
       </Container>
-      <div>About Toy Tips Testers</div>
-      <div>What do with tested toys?</div>
       <div>About Marianne</div>
     </div>
   );
