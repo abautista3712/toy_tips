@@ -69,8 +69,37 @@ const About = (props) => {
             </p>
           </Col>
         </Row>
+        {/* ---About Our Founder--- */}
+        <Row className="m-2 p-2 card_Row">
+          <Col xs={6} sm={8} md={8} lg={8} xl={8}>
+            <h2>Our Founder</h2>
+            <p>
+              Marianne M. Szymanski created Toy Tips and has been an active
+              media personality for close to three decades!
+              <br />
+              <br />
+              Appearing on Oprah, CNN, FOX and hundreds of television stations,
+              she was a cast member on Good Morning America for eight years.
+              Currently she is a regular guest on FOX News in Chicago offering
+              viewers Toy Tips research results on the latest toys.
+              <br />
+              <br />
+              Co-Author of Toy Tips: A Parent’s Essential Guide to Smart Toy
+              Choices (Wiley/Jossey Bass), Marianne also teaches three
+              entrepreneurship courses at the University of Southern California
+              and is a writer of entrepreneurial case studies for Harvard
+              Business Publishing.
+            </p>
+          </Col>
+          <Col xs={6} sm={4} md={4} lg={4} xl={4} className="centerFlex">
+            <img
+              src="./assets/images/original/profilePic_Marianne.jpg"
+              width="100%"
+              alt="Marianne Profile Pic"
+            />
+          </Col>
+        </Row>
       </Container>
-      <div>About Marianne</div>
     </div>
   );
 };
