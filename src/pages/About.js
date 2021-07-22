@@ -19,13 +19,21 @@ const About = (props) => {
             xl={4}
             style={{ background: "grey" }}
           >
-            Picture Here
+            Picture of 'TTT' Mark of Excellence Here
           </Col>
           <Col xs={6} sm={8} md={8} lg={8} xl={8}>
-            <h2>Question Goes Here</h2>
-            <p>Answer Goes Here</p>
+            <h2>What is Toy Tips?</h2>
+            <p>
+              Toy Tips is the testing group for the 'TTT' mark of excellence. A
+              'TTT' rating means that a toy exceeds our standards to deliver a
+              fun play experience that also stimulates developmental learning
+              skills. Our information is independent and conducted in an ethical
+              and academic research manner. We do NOT accept toy entry fees or
+              publish awards that are used for marketing purposes. Toy
+              manufacturer or toy trade employees make no decision in our toy
+              testing process.
+            </p>
           </Col>
-          {/* </Col> */}
         </Row>
       </Container>
       <div>About Our Research</div>
