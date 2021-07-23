@@ -73,6 +73,12 @@ body {
 }
 
 /* ---General Use--- */
+/* Vertical Centering Only */
+.flexCenter {
+  display: flex;
+  align-items: center;
+}
+
 /* Vertical and Horizontal Centering */
 .flexCenter_center {
   display: flex;
@@ -80,6 +86,7 @@ body {
   justify-content: center;
 }
 
+/* Vertical Center + Flex-End Justification */
 .flexCenter_flexEnd {
   display: flex;
   align-items: center;

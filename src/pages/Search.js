@@ -15,7 +15,7 @@ const Search = (props) => {
             md={4}
             lg={4}
             xl={4}
-            className="flex_center"
+            className="flexCenter_center"
             style={{ background: "grey" }}
           >
             Toy Image Here
@@ -27,10 +27,13 @@ const Search = (props) => {
               style={{ background: "grey" }}
             /> */}
           </Col>
-          <Col xs={6} sm={8} md={8} lg={8} xl={8}>
-            <Row>
+          <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+            <Row className="flexCenter">
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-                <h2>Product Name</h2>
+                <Col className="p-0">
+                  <h2>Product Name</h2>
+                </Col>
+                <Col className="p-0">Company Name</Col>
               </Col>
               <Col
                 xs={3}
@@ -48,81 +51,20 @@ const Search = (props) => {
                 md={1}
                 lg={1}
                 xl={1}
-                className="centerFlex"
+                className="flexCenter_center"
                 style={{ background: "grey" }}
               >
-                {" "}
                 Grade
               </Col>
             </Row>
             <Row>
-              <Col>Company Name</Col>
-            </Row>
-            <Row>
-              <Col>
+              <Col xs={9} sm={9} md={9} lg={9} xl={9}>
                 <LoremIpsum p={1} />
               </Col>
+              <Col className="flexCenter_center" style={{ background: "grey" }}>
+                Toy Report Card
+              </Col>
             </Row>
-          </Col>
-        </Row>
-        {/* ---About Our Research--- */}
-        <Row className="m-2 p-2 card_Row">
-          <Col>
-            <h2>Can you tell me more about the research process?</h2>
-            <p>
-              Celebrating 3 decades of research, our product reviews assist
-              consumers in making appropriate purchases. Our advisory team is
-              comprised of medical doctors, psychologists, teachers,
-              occupational therapists and research analysts who facilitate our
-              testing based on qualitative and quantitative research. We focus
-              on the intellectual, social, physical, and individual character
-              and personality development of the child.
-            </p>
-          </Col>
-        </Row>
-        {/* ---About Tested Toys--- */}
-        <Row className="m-2 p-2 card_Row">
-          <Col>
-            <h2 style={{ textAlign: "right" }}>
-              What do you do with toys that have been tested?
-            </h2>
-            <p>
-              It is our strict policy that after toys are 'Toy Tips®' tested,
-              they are donated to children through a variety of programs we have
-              set in place with not-for-profit groups nationwide. To date, we
-              service 32 groups. It is our way to assist those who need the toys
-              more than us and make their playtime a little brighter.
-            </p>
-          </Col>
-        </Row>
-        {/* ---About Our Founder--- */}
-        <Row className="m-2 p-2 card_Row">
-          <Col xs={6} sm={8} md={8} lg={8} xl={8}>
-            <h2>Our Founder</h2>
-            <p>
-              Marianne M. Szymanski created Toy Tips and has been an active
-              media personality for close to three decades!
-              <br />
-              <br />
-              Appearing on Oprah, CNN, FOX and hundreds of television stations,
-              she was a cast member on Good Morning America for eight years.
-              Currently she is a regular guest on FOX News in Chicago offering
-              viewers Toy Tips research results on the latest toys.
-              <br />
-              <br />
-              Co-Author of Toy Tips: A Parent’s Essential Guide to Smart Toy
-              Choices (Wiley/Jossey Bass), Marianne also teaches three
-              entrepreneurship courses at the University of Southern California
-              and is a writer of entrepreneurial case studies for Harvard
-              Business Publishing.
-            </p>
-          </Col>
-          <Col xs={6} sm={4} md={4} lg={4} xl={4} className="centerFlex">
-            <img
-              src="./assets/images/original/profilePic_Marianne.jpg"
-              width="100%"
-              alt="Marianne Profile Pic"
-            />
           </Col>
         </Row>
       </Container>
