@@ -18,22 +18,26 @@ const Search = (props) => {
           </Col>
           <Col xs={6} sm={8} md={8} lg={8} xl={8}>
             <Row>
-              <Col>
+              <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <h2>Product Name</h2>
               </Col>
-              <p style={{ textAlign: "left" }}>Overall Rating: </p>
+              <Col xs={4} sm={4} md={4} lg={4} xl={4} className="centerFlex">
+                <p>Overall Rating: </p>
+              </Col>
             </Row>
             <Row>
               <Col>Company Name</Col>
             </Row>
-            <p>
-              Review goes here
-              <br />
-              The involvement of thousands of children as official 'Toy Tips®
-              Testers' throughout the year provide real in-market data. Our
-              research survey methods are independent of manufacturer conflict
-              of interest and personal opinion.
-            </p>
+            <Row>
+              <Col>
+                Review goes here
+                <br />
+                The involvement of thousands of children as official 'Toy Tips®
+                Testers' throughout the year provide real in-market data. Our
+                research survey methods are independent of manufacturer conflict
+                of interest and personal opinion.
+              </Col>
+            </Row>
           </Col>
         </Row>
         {/* ---About Our Research--- */}

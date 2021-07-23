@@ -77,5 +77,11 @@ body {
 .centerFlex {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.centerFlexEnd {
+  display: flex;
+  align-items: center;
   justify-content: flex-end;
 }
