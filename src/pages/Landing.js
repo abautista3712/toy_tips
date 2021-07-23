@@ -3,10 +3,10 @@ import { Carousel } from "react-bootstrap";
 
 const Landing = (props) => {
   const handleClick_About = () => {
-    window.open("/about");
+    window.location.replace("/about");
   };
   const handleClick_Search = () => {
-    window.open("/");
+    window.location.replace("/");
   };
   return (
     <Carousel fade>
