@@ -7,22 +7,43 @@ const Search = (props) => {
       {/* About Toy Tips */}
       <Container>
         <Row className="m-2 p-2 card_Row">
-          <Col xs={6} sm={4} md={4} lg={4} xl={4} className="centerFlex">
-            <img
+          <Col
+            xs={6}
+            sm={4}
+            md={4}
+            lg={4}
+            xl={4}
+            className="centerFlex"
+            style={{ background: "grey" }}
+          >
+            Toy Image Here
+            {/* <img
               src="/"
               width="100%"
               height="100%"
               alt="Toy Image"
               style={{ background: "grey" }}
-            />
+            /> */}
           </Col>
           <Col xs={6} sm={8} md={8} lg={8} xl={8}>
             <Row>
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <h2>Product Name</h2>
               </Col>
-              <Col xs={4} sm={4} md={4} lg={4} xl={4} className="centerFlex">
+              <Col xs={3} sm={3} md={3} lg={3} xl={3} className="centerFlexEnd">
                 <p>Overall Rating: </p>
+              </Col>
+              <Col
+                xs={1}
+                sm={1}
+                md={1}
+                lg={1}
+                xl={1}
+                className="centerFlex"
+                style={{ background: "grey" }}
+              >
+                {" "}
+                Grade
               </Col>
             </Row>
             <Row>
