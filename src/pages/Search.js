@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
+import { LoremIpsum } from "react-lorem-ipsum";
+
 const Search = (props) => {
   return (
     <div>
@@ -13,7 +15,7 @@ const Search = (props) => {
             md={4}
             lg={4}
             xl={4}
-            className="centerFlex"
+            className="flex_center"
             style={{ background: "grey" }}
           >
             Toy Image Here
@@ -30,8 +32,15 @@ const Search = (props) => {
               <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                 <h2>Product Name</h2>
               </Col>
-              <Col xs={3} sm={3} md={3} lg={3} xl={3} className="centerFlexEnd">
-                <p>Overall Rating: </p>
+              <Col
+                xs={3}
+                sm={3}
+                md={3}
+                lg={3}
+                xl={3}
+                className="flexCenter_flexEnd"
+              >
+                Overall Rating:
               </Col>
               <Col
                 xs={1}
@@ -51,12 +60,7 @@ const Search = (props) => {
             </Row>
             <Row>
               <Col>
-                Review goes here
-                <br />
-                The involvement of thousands of children as official 'Toy Tips®
-                Testers' throughout the year provide real in-market data. Our
-                research survey methods are independent of manufacturer conflict
-                of interest and personal opinion.
+                <LoremIpsum p={1} />
               </Col>
             </Row>
           </Col>

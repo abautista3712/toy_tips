@@ -7,7 +7,14 @@ const About = (props) => {
       {/* About Toy Tips */}
       <Container>
         <Row className="m-2 p-2 card_Row">
-          <Col xs={6} sm={4} md={4} lg={4} xl={4} className="centerFlexEnd">
+          <Col
+            xs={6}
+            sm={4}
+            md={4}
+            lg={4}
+            xl={4}
+            className="flexCenter_flexEnd"
+          >
             <img
               src="./assets/images/original/TTT_logo_hiRes.png"
               width="100%"
@@ -86,7 +93,14 @@ const About = (props) => {
               Business Publishing.
             </p>
           </Col>
-          <Col xs={6} sm={4} md={4} lg={4} xl={4} className="centerFlexEnd">
+          <Col
+            xs={6}
+            sm={4}
+            md={4}
+            lg={4}
+            xl={4}
+            className="flexCenter_flexEnd"
+          >
             <img
               src="./assets/images/original/profilePic_Marianne.jpg"
               width="100%"

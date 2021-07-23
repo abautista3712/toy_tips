@@ -74,13 +74,13 @@ body {
 
 /* ---General Use--- */
 /* Vertical and Horizontal Centering */
-.centerFlex {
+.flexCenter_center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.centerFlexEnd {
+.flexCenter_flexEnd {
   display: flex;
   align-items: center;
   justify-content: flex-end;
