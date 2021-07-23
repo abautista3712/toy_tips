@@ -2,8 +2,11 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 
 const Landing = (props) => {
+  const handleClick_About = () => {
+    window.open("/about");
+  };
   const handleClick_Search = () => {
-    window.open("");
+    window.open("/");
   };
   return (
     <Carousel fade>
@@ -12,6 +15,7 @@ const Landing = (props) => {
           className="d-block w-100"
           src="./assets/images/original/stock_toys1.jpeg"
           alt="First slide"
+          onClick={handleClick_Search}
         />
         <Carousel.Caption className="caption_Slide1">
           <h1>Thousands of Vintage Toy Reviews</h1>
@@ -23,6 +27,7 @@ const Landing = (props) => {
           className="d-block w-100"
           src="./assets/images/original/stock_toys2.jpeg"
           alt="Second slide"
+          onClick={handleClick_About}
         />
         <Carousel.Caption className="caption_Slide2">
           <h1>30 Years of Independent Research on </h1>
