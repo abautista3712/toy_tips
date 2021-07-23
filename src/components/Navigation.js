@@ -31,8 +31,18 @@ const Navigation = () => {
             About
           </Nav.Link>
         </Nav>
+        <Navbar.Text>|</Navbar.Text>
+        <Nav variant="pills" className="navLinkSize">
+          <Nav.Link href="/search" className="my-auto">
+            Browse Entire Collection
+          </Nav.Link>
+        </Nav>
         <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <FormControl
+            type="text"
+            placeholder="Search Toy Name"
+            className="mr-sm-2"
+          />
           <Button variant="outline-light">Search</Button>
         </Form>
       </Navbar>

@@ -9,23 +9,25 @@ const Search = (props) => {
         <Row className="m-2 p-2 card_Row">
           <Col xs={6} sm={4} md={4} lg={4} xl={4} className="centerFlex">
             <img
-              src="./assets/images/original/TTT_logo_hiRes.png"
+              src="/"
               width="100%"
-              alt="Toy Tips Trusted Mark of Excellence"
+              height="100%"
+              alt="Toy Image"
+              style={{ background: "grey" }}
             />
           </Col>
           <Col xs={6} sm={8} md={8} lg={8} xl={8}>
-            <h2>What is Toy Tips?</h2>
+            <Row>
+              <Col>
+                <h2>Product Name</h2>
+              </Col>
+              <p style={{ textAlign: "left" }}>Overall Rating</p>
+            </Row>
+            <Row>
+              <Col>Company Name</Col>
+            </Row>
             <p>
-              Toy Tips is the testing group for the 'TTT' mark of excellence. A
-              'TTT' rating means that a toy exceeds our standards to deliver a
-              fun play experience that also stimulates developmental learning
-              skills. Our information is independent and conducted in an ethical
-              and academic research manner. We do NOT accept toy entry fees or
-              publish awards that are used for marketing purposes. Toy
-              manufacturer or toy trade employees make no decision in our toy
-              testing process.
-              <br />
+              Review goes here
               <br />
               The involvement of thousands of children as official 'Toy Tips®
               Testers' throughout the year provide real in-market data. Our
