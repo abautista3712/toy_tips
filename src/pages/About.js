@@ -7,8 +7,8 @@ const About = (props) => {
       <Container>
         {/* ---FAQs--- */}
         <Row>
-          <Col>
-            <h1>FAQs</h1>
+          <Col className="mt-3">
+            <h1>Frequently Asked Questions</h1>
           </Col>
         </Row>
         {/* FAQ: About Toy Tips */}
@@ -95,7 +95,7 @@ const About = (props) => {
         </Row>
         {/* ---Rating System--- */}
         <Row>
-          <Col>
+          <Col className="mt-3">
             <h1>Our Rating System</h1>
           </Col>
         </Row>
@@ -213,11 +213,11 @@ const About = (props) => {
         </Row>
         {/* ---Meet the Team--- */}
         <Row>
-          <Col>
+          <Col className="mt-3">
             <h1>Meet the Team</h1>
           </Col>
         </Row>
-        {/* ---About Our Founder--- */}
+        {/* About Our Founder*/}
         <Row className="m-2 p-2 card_Row">
           <Col xs={6} sm={8} md={8} lg={8} xl={8}>
             <h2>Our Founder</h2>
