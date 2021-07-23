@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Landing from "./pages/Landing";
 import About from "./pages/About";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/search">
+          <Search />
         </Route>
       </Switch>
       {/* --- */}
