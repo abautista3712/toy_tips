@@ -6,7 +6,7 @@ const Landing = (props) => {
     window.location.replace("/about");
   };
   const handleClick_Search = () => {
-    window.location.replace("/");
+    window.location.replace("/search");
   };
   return (
     <Carousel fade>

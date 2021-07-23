@@ -21,7 +21,7 @@ const Search = (props) => {
               <Col>
                 <h2>Product Name</h2>
               </Col>
-              <p style={{ textAlign: "left" }}>Overall Rating</p>
+              <p style={{ textAlign: "left" }}>Overall Rating: </p>
             </Row>
             <Row>
               <Col>Company Name</Col>
