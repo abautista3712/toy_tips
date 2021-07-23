@@ -2,6 +2,9 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 
 const Landing = (props) => {
+  const handleClick_Search = () => {
+    window.open("");
+  };
   return (
     <Carousel fade>
       <Carousel.Item>
