@@ -128,6 +128,20 @@ const About = (props) => {
               bad, just below average for that particualr skill.
             </p>
           </Col>
+          <Col
+            xs={2}
+            sm={2}
+            md={2}
+            lg={2}
+            xl={2}
+            className="flexCenter_flexEnd"
+          >
+            <img
+              src="./assets/images/original/TT_reportCard.png"
+              width="100%"
+              alt="Toy Tips Trusted Mark of Excellence"
+            />
+          </Col>
         </Row>
         {/* Rating System: Cumulative Research Score*/}
         <Row className="m-2 p-2 card_Row">
