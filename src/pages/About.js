@@ -56,6 +56,22 @@ const About = (props) => {
             </p>
           </Col>
         </Row>
+        {/* ---About How to Submit Product for Review--- */}
+        {/* <Row className="m-2 p-2 card_Row">
+          <Col>
+            <h2 style={{ textAlign: "right" }}>
+              How do I submit a product for review?
+            </h2>
+            <p>
+              Manufacturers may fill out an application on toytips.com. All
+              information is required to process a request. Consumers can not
+              submit toys but may encourage manufacturers to if they are
+              interested in our review. If you would like us to consider a
+              product for testing and are interested in our review, please email
+              us at request@toytips.com.
+            </p>
+          </Col>
+        </Row> */}
         {/* ---About Tested Toys--- */}
         <Row className="m-2 p-2 card_Row">
           <Col>
