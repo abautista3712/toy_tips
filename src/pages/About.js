@@ -237,6 +237,11 @@ const About = (props) => {
               entrepreneurship courses at the University of Southern California
               and is a writer of entrepreneurial case studies for Harvard
               Business Publishing.
+              <br />
+              <br />
+              Questions? Comments?
+              <br />
+              marianne@toytips.com
             </p>
           </Col>
           <Col
