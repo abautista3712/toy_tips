@@ -8,6 +8,18 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
+app.use(...)
+
+const db = require("./app/models")
+// ---USE DURING DEVELOPMENT---
+db.sequelize.sync({force:true}).then(() => {
+    console.log("Drop and re-sync db.")
+})
+// ---
+
+// ---USE AFTER DEVELOPMENT---
+// db.sequelize.sync()
+// ---
 
 var corsOptions = {
   origin: "http://localhost:8081",
