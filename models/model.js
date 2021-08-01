@@ -1,1 +1,0 @@
-// For Sequelize data model
