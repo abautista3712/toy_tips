@@ -54,3 +54,13 @@ exports.createComment = (tutorialId, comment) => {
       console.log(">> Error while creating comment: ", err);
     });
 };
+
+exports.findTutorialById = (tutorialId) => {
+  return Tutorial.findByPk(tutorialId, { include: ["comments"] })
+    .then((tutorial) => {
+      return tutorial;
+    })
+    .catch((err) => {
+      console.log(">> Error while finding tutorial: ", err);
+    });
+};
