@@ -74,3 +74,11 @@ exports.findCommentById = (id) => {
       console.log(">> Error while finding comment: ", err);
     });
 };
+
+exports.findAll = () => {
+  return Tutorial.findAll({
+    include: ["comments"],
+  }).then((tutorials) => {
+    return tutorials;
+  });
+};
