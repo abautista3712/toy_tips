@@ -64,3 +64,13 @@ exports.findTutorialById = (tutorialId) => {
       console.log(">> Error while finding tutorial: ", err);
     });
 };
+
+exports.findCommentById = (id) => {
+  return Comment.findByPk(id, { include: ["tutorial"] })
+    .then((comment) => {
+      return comment;
+    })
+    .catch((err) => {
+      console.log(">> Error while finding comment: ", err);
+    });
+};
