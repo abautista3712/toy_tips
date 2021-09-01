@@ -23,16 +23,16 @@ const Navigation = () => {
         <Navbar.Brand href="/">
           <h1>Toy Tips</h1>
         </Navbar.Brand>
-        <container className="mr-auto">
+        <container className="d-none d-sm-block mr-auto">
           <Navbar.Text>The Independent Voice on Toys</Navbar.Text>
         </container>
-        <Nav variant="pills" className="navLinkSize">
+        <Nav variant="pills" className="d-none d-sm-block navLinkSize">
           <Nav.Link href="/about" className="my-auto">
             About
           </Nav.Link>
         </Nav>
-        <Navbar.Text>|</Navbar.Text>
-        <Nav variant="pills" className="navLinkSize">
+        <Navbar.Text className="d-none d-sm-block">|</Navbar.Text>
+        <Nav variant="pills" className="d-none d-sm-block navLinkSize">
           <Nav.Link href="/search" className="my-auto">
             Browse Entire Collection
           </Nav.Link>
