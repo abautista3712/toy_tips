@@ -43,7 +43,7 @@ const Navigation = () => {
             placeholder="Search Toy Name"
             className="mr-sm-2"
           />
-          <Button variant="outline-light">Search</Button>
+          {/* <Button variant="outline-light">Search</Button> */}
         </Form>
       </Navbar>
       <div
