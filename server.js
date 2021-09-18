@@ -3,52 +3,56 @@
 // Configure CORS
 // Initialzie & run Express REST APIs
 
-// const express = require("express");
-// const bodyParser = require("body-parser");
-// const cors = require("cors");
+const express = require("express");
+//const bodyParser = require("body-parser");
+const cors = require("cors");
 
-// const app = express();
-// app.use(...)
+const app = express();
 
-const db = require("./models");
-const controller = require("./controllers/tutorial.controller");
-
-const run = async () => {
-  const tut1 = await controller.createTutorial({
-    title: "Tut#1",
-    description: "Tut#1 Description",
-  });
+var corsOptions = {
+  origin: "http://localhost:8081",
 };
+
+app.use(cors(corsOptions));
+
+// parse requests of content-type - application/json
+app.use(express.json()); //updated version of body-parser
+
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true })); //updated version of body-parser
+
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to bezkoder application." });
+});
+
+require("./app/routes/review.routes")(app);
+
+// set port, listen for requests
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
+
+const db = require("./app/models");
+
 // ---USE DURING DEVELOPMENT---
 db.sequelize.sync({ force: true }).then(() => {
   console.log("Drop and re-sync db.");
-  run();
+  //run();
 });
-// ---
 
 // ---USE AFTER DEVELOPMENT---
 // db.sequelize.sync()
 // ---
 
-// var corsOptions = {
-//   origin: "http://localhost:8081",
-// };
+// abelard's code ----------------------
 
-// app.use(cors(corsOptions));
+const controller = require("./app/controllers/review.controller");
 
-// // Parse requests of content-type: application/json
-// app.use(bodyParser.json());
-
-// // Parse requests of content-type: application/x-www-form-urlencoded
-// app.use(bodyParser.urlencoded({ extended: true }));
-
-// // Simple Route
-// app.get("/", (req, res) => {
-//   res.json({ message: "Welcome!" });
-// });
-
-// // Set PORT, listen for requests
-// const PORT = process.env.PORT || 8080;
-// app.listen(PORT, () => {
-//   console.log(`Server is running on PORT ${PORT}.`);
-// });
+const run = async () => {
+  const rev1 = await controller.createReview({
+    toyName: "Superman Action Figure",
+    shortReview: "Pretty good, but I'm a Batman guy.",
+  });
+};
