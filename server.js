@@ -48,11 +48,11 @@ db.sequelize.sync({ force: true }).then(() => {
 
 // abelard's code ----------------------
 
-const controller = require("./app/controllers/review.controller");
+/*const controller = require("./app/controllers/review.controller");
 
 const run = async () => {
   const rev1 = await controller.createReview({
     toyName: "Superman Action Figure",
     shortReview: "Pretty good, but I'm a Batman guy.",
   });
-};
+};*/
