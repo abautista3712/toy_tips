@@ -46,8 +46,11 @@ const ToySearchCard = (props) => {
               <Col xs={9} sm={9} md={9} lg={9} xl={9}>
                 <LoremIpsum p={1} />
               </Col>
-              <Col className="flexCenter_center" style={{ background: "grey" }}>
-                Toy Report Card
+              <Col className="flexCenter_center">
+                <Image
+                  src="./assets/icons/scoring_icons/report_card.png"
+                  fluid
+                />
               </Col>
             </Row>
           </Col>
