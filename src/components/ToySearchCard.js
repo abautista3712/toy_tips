@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 
 import { LoremIpsum } from "react-lorem-ipsum";
 
@@ -9,16 +9,8 @@ const ToySearchCard = (props) => {
       <Container>
         {/* Toy Search Card */}
         <Row className="m-2 p-2 card_Row">
-          <Col
-            xs={6}
-            sm={4}
-            md={4}
-            lg={4}
-            xl={4}
-            className="flexCenter_center"
-            style={{ background: "grey" }}
-          >
-            Toy Image Here
+          <Col xs={6} sm={4} md={4} lg={4} xl={4} className="flexCenter_center">
+            <Image src="./assets/icons/default_icons/toys.png" fluid />
           </Col>
           <Col xs={8} sm={8} md={8} lg={8} xl={8}>
             <Row className="flexCenter">
