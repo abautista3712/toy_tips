@@ -1,8 +1,7 @@
--- Data to Keep
--- Affiliate Links 36
--- Categories 1313
--- Comments 1350
--- Manufacturers 12944
--- Question and Answers (QA) 15463
--- Reviews 15521
--- States 24304
+-- Data to Include --
+-- Product Name
+-- Company Name
+-- Review Description
+-- Overall Grade
+-- Toy Report Card
+-- Toy Image
