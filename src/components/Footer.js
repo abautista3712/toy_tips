@@ -20,25 +20,25 @@ const Footer = () => {
     <div className="footer">
       <div style={{ width: "100%" }}>
         <img
-          src="./assets/images/social_icons/Facebook/color/f_logo_RGB-Blue_1024.png"
+          src="./assets/icons/social_icons/Facebook/color/f_logo_RGB-Blue_1024.png"
           alt="Facebook Logo"
           className="social_icons click_socials"
           onClick={handleClick_Facebook}
         />
         <img
-          src="./assets/images/social_icons/Instagram/insta_logo_gradient.png"
+          src="./assets/icons/social_icons/Instagram/insta_logo_gradient.png"
           alt="Instagram Logo"
           className="social_icons click_socials"
           onClick={handleClick_Instagram}
         />
         <img
-          src="./assets/images/social_icons/Twitter/logo_fill/circle/twtr_logo_circle_blue.png"
+          src="./assets/icons/social_icons/Twitter/logo_fill/circle/twtr_logo_circle_blue.png"
           alt="Twitter Logo"
           className="social_icons click_socials"
           onClick={handleClick_Twitter}
         />
         <img
-          src="./assets/images/social_icons/YouTube/full_color/yt_icon_rgb.png"
+          src="./assets/icons/social_icons/YouTube/full_color/yt_icon_rgb.png"
           alt="YouTube Logo"
           className="social_icons click_socials"
           onClick={handleClick_YouTube}
