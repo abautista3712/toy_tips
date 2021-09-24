@@ -31,7 +31,14 @@ const ToySearchCard = (props) => {
               </Col>
             </Row>
           </Col>
-          <Col xs={3} sm={3} md={3} lg={3} xl={3} className="flexCenter_center">
+          <Col
+            xs={3}
+            sm={3}
+            md={3}
+            lg={3}
+            xl={3}
+            style={{ display: "flex", alignItems: "center" }}
+          >
             <Image src="./assets/icons/scoring_icons/report_card.png" />
             {/* TT's Cumulative Research Score */}
             <img
