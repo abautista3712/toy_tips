@@ -10,7 +10,11 @@ const ToySearchCard = (props) => {
         {/* Toy Search Card */}
         <Row className="m-2 p-2 card_Row">
           <Col xs={3} sm={3} md={3} lg={3} xl={3} className="flexCenter_center">
-            <Image src="./assets/icons/default_icons/toys.png" fluid />
+            <Image
+              src="./assets/icons/default_icons/toys.png"
+              thumbnail
+              // fluid
+            />
           </Col>
           <Col xs={6} sm={6} md={6} lg={6} xl={6}>
             <Row className="flexCenter">
@@ -28,7 +32,37 @@ const ToySearchCard = (props) => {
             </Row>
           </Col>
           <Col xs={3} sm={3} md={3} lg={3} xl={3} className="flexCenter_center">
-            <Image src="./assets/icons/scoring_icons/report_card.png" fluid />
+            <Image src="./assets/icons/scoring_icons/report_card.png" />
+            {/* TT's Cumulative Research Score */}
+            <img
+              src="./assets/icons/scoring_icons/5.png"
+              style={{ position: "relative", top: -39, right: 30, height: 28 }}
+            />
+            {/* Testers' Fun Grade */}
+            <img
+              src="./assets/icons/scoring_icons/5.png"
+              style={{ position: "relative", top: -13, right: 58, height: 28 }}
+            />
+            {/* Movement Skill Score */}
+            <img
+              src="./assets/icons/scoring_icons/5.png"
+              style={{ position: "relative", top: 33, right: 82, height: 20 }}
+            />
+            {/* Thinking Skill Score */}
+            <img
+              src="./assets/icons/scoring_icons/5.png"
+              style={{ position: "relative", top: 52, right: 102, height: 20 }}
+            />
+            {/* Personality Skill Score */}
+            <img
+              src="./assets/icons/scoring_icons/5.png"
+              style={{ position: "relative", top: 71, right: 122, height: 20 }}
+            />
+            {/* Social Interaction Skill Score */}
+            <img
+              src="./assets/icons/scoring_icons/5.png"
+              style={{ position: "relative", top: 90, right: 142, height: 20 }}
+            />
           </Col>
         </Row>
       </Container>
