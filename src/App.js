@@ -1,5 +1,5 @@
 import "./App.css";
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Landing from "./pages/Landing";
@@ -8,23 +8,16 @@ import Search from "./pages/Search";
 
 function App() {
   return (
-    <HashRouter>
+    <Router>
       <Navigation />
       {/* Component below will change per page */}
       <Switch>
-        <Route exact path="/">
-          <Landing />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/search">
-          <Search />
-        </Route>
+        <Route exact path="/" component={Landing} />
+        <Route path="/about" component={About} />
+        <Route path="/search" component={Search} />
       </Switch>
-      {/* --- */}
       <Footer />
-    </HashRouter>
+    </Router>
   );
 }
 

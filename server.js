@@ -4,14 +4,12 @@
 // Initialzie & run Express REST APIs
 
 const express = require("express");
-// const bodyParser = require("body-parser");
 const cors = require("cors");
-
-const path = __dirname + "/app/views/";
+const path = require("path");
 
 const app = express();
 
-app.use(express.static(path));
+app.use(express.static("app/views/"));
 
 var corsOptions = {
   origin: "http://localhost:8081",
@@ -37,9 +35,9 @@ db.sequelize.sync();
 // });
 
 // // simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Toy Tips application." });
-  res.sendFile(path + "index.html");
+app.get("/*", (req, res) => {
+  // console.log("Welcome to Toy Tips application.");
+  res.sendFile(path.join(__dirname, "app/views/index.html"));
 });
 
 require("./app/routes/review.routes")(app);
