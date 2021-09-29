@@ -48,6 +48,16 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
+// ---USE DURING DEVELOPMENT---
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
+//   //run();
+// });
+
+// ---USE AFTER DEVELOPMENT---
+db.sequelize.sync()
+// ---
+
 // abelard's code ----------------------
 
 /*const controller = require("./app/controllers/review.controller");
