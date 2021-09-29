@@ -4,10 +4,12 @@
 // Initialzie & run Express REST APIs
 
 const express = require("express");
-//const bodyParser = require("body-parser");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
+
+app.use(express.static("app/views/"));
 
 var corsOptions = {
   origin: "http://localhost:8081",
@@ -21,9 +23,21 @@ app.use(express.json()); //updated version of body-parser
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true })); //updated version of body-parser
 
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+const db = require("./app/models");
+
+// ---USE AFTER DEVELOPMENT---
+db.sequelize.sync();
+// ---
+// ---USE DURING DEVELOPMENT---
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
+//   //run();
+// });
+
+// // simple route
+app.get("/*", (req, res) => {
+  // console.log("Welcome to Toy Tips application.");
+  res.sendFile(path.join(__dirname, "app/views/index.html"));
 });
 
 require("./app/routes/review.routes")(app);
@@ -33,8 +47,6 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
-
-const db = require("./app/models");
 
 // ---USE DURING DEVELOPMENT---
 // db.sequelize.sync({ force: true }).then(() => {

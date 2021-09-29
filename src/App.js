@@ -12,17 +12,10 @@ function App() {
       <Navigation />
       {/* Component below will change per page */}
       <Switch>
-        <Route exact path="/">
-          <Landing />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/search">
-          <Search />
-        </Route>
+        <Route exact path="/" component={Landing} />
+        <Route path="/about" component={About} />
+        <Route path="/search" component={Search} />
       </Switch>
-      {/* --- */}
       <Footer />
     </Router>
   );
