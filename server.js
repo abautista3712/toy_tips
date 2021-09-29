@@ -37,13 +37,13 @@ app.listen(PORT, () => {
 const db = require("./app/models");
 
 // ---USE DURING DEVELOPMENT---
-db.sequelize.sync({ force: true }).then(() => {
-  console.log("Drop and re-sync db.");
-  //run();
-});
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
+//   //run();
+// });
 
 // ---USE AFTER DEVELOPMENT---
-// db.sequelize.sync()
+db.sequelize.sync()
 // ---
 
 // abelard's code ----------------------
