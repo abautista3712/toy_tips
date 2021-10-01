@@ -11,7 +11,7 @@ const ToySearchCard = (props) => {
         <Row className="m-2 p-2 card_Row">
           <Col xs={3} sm={3} md={3} lg={3} xl={3} className="flexCenter_center">
             <Image
-              src="./assets/icons/default_icons/toys.png"
+              src="./assets/images/original/TTT_logo_hiRes.png"
               thumbnail
               // fluid
             />
