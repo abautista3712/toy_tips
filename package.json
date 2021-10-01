@@ -6,10 +6,12 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.22.0",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.6.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
@@ -26,7 +28,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "seed": "node db/index.js"
   },
   "eslintConfig": {
     "extends": [
