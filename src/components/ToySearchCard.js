@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
+import Axios from "axios";
 
 import { LoremIpsum } from "react-lorem-ipsum";
 
 const ToySearchCard = (props) => {
+  const [toyName, setToyName] = useState([]);
+
+  useEffect(() => {
+    Axios.get("http://localhost:8080/api/get")
+      .then((response) => {
+        setToyName(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => console.error(`Error: ${error}`));
+  }, []);
   return (
     <div>
       <Container>
