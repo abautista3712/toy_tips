@@ -54,13 +54,13 @@ const db = mysql.createPool({
 });
 
 app.get("/api/get", (req, res) => {
-  const sqlSearch = "SELECT ToyName FROM reviews LIMIT 0, 5";
+  const sqlSearch =
+    "SELECT ToyName, AgeRange1, categories, company_name, Character_Development, Kids_Rating, Long_Review, Motor_Movement, product_website, reviewer_longreview, Social_Interaction, ToyTipsRating, Thinking_Skills FROM reviews LIMIT 0, 5";
 
   db.query(sqlSearch, (err, result) => {
+    // console.log(result);
     res.send(result);
   });
-
-  // res.send("hello World");
 });
 
 // // simple route
