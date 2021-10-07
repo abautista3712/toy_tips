@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
-
-import { LoremIpsum } from "react-lorem-ipsum";
 
 export default function ToySearchCard(props) {
   const displayToySearchCard = (props) => {
@@ -67,6 +65,9 @@ export default function ToySearchCard(props) {
                   {/* TT's Cumulative Research Score */}
                   <img
                     src={`./assets/icons/scoring_icons/${toyData.ToyTipsRating}.png`}
+                    onError={(e) => {
+                      e.target.src = `./assets/icons/scoring_icons/0.png`;
+                    }}
                     style={{
                       position: "relative",
                       top: -39,
@@ -77,6 +78,9 @@ export default function ToySearchCard(props) {
                   {/* Testers' Fun Grade */}
                   <img
                     src={`./assets/icons/scoring_icons/${toyData.Kids_Rating}.png`}
+                    onError={(e) => {
+                      e.target.src = `./assets/icons/scoring_icons/0.png`;
+                    }}
                     style={{
                       position: "relative",
                       top: -13,
@@ -87,6 +91,9 @@ export default function ToySearchCard(props) {
                   {/* Movement Skill Score */}
                   <img
                     src={`./assets/icons/scoring_icons/${toyData.Motor_Movement}.png`}
+                    onError={(e) => {
+                      e.target.src = `./assets/icons/scoring_icons/0.png`;
+                    }}
                     style={{
                       position: "relative",
                       top: 33,
@@ -97,6 +104,9 @@ export default function ToySearchCard(props) {
                   {/* Thinking Skill Score */}
                   <img
                     src={`./assets/icons/scoring_icons/${toyData.Thinking_Skills}.png`}
+                    onError={(e) => {
+                      e.target.src = `./assets/icons/scoring_icons/0.png`;
+                    }}
                     style={{
                       position: "relative",
                       top: 52,
@@ -107,6 +117,9 @@ export default function ToySearchCard(props) {
                   {/* Personality Skill Score */}
                   <img
                     src={`./assets/icons/scoring_icons/${toyData.Character_Development}.png`}
+                    onError={(e) => {
+                      e.target.src = `./assets/icons/scoring_icons/0.png`;
+                    }}
                     style={{
                       position: "relative",
                       top: 71,
@@ -117,6 +130,9 @@ export default function ToySearchCard(props) {
                   {/* Social Interaction Skill Score */}
                   <img
                     src={`./assets/icons/scoring_icons/${toyData.Social_Interaction}.png`}
+                    onError={(e) => {
+                      e.target.src = `./assets/icons/scoring_icons/0.png`;
+                    }}
                     style={{
                       position: "relative",
                       top: 90,
