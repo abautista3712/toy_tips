@@ -66,7 +66,7 @@ export default function ToySearchCard(props) {
                   <Image src="./assets/icons/scoring_icons/report_card.png" />
                   {/* TT's Cumulative Research Score */}
                   <img
-                    src="./assets/icons/scoring_icons/5.png"
+                    src={`./assets/icons/scoring_icons/${toyData.ToyTipsRating}.png`}
                     style={{
                       position: "relative",
                       top: -39,
@@ -76,7 +76,7 @@ export default function ToySearchCard(props) {
                   />
                   {/* Testers' Fun Grade */}
                   <img
-                    src="./assets/icons/scoring_icons/5.png"
+                    src={`./assets/icons/scoring_icons/${toyData.Kids_Rating}.png`}
                     style={{
                       position: "relative",
                       top: -13,
@@ -86,7 +86,7 @@ export default function ToySearchCard(props) {
                   />
                   {/* Movement Skill Score */}
                   <img
-                    src="./assets/icons/scoring_icons/5.png"
+                    src={`./assets/icons/scoring_icons/${toyData.Motor_Movement}.png`}
                     style={{
                       position: "relative",
                       top: 33,
@@ -96,7 +96,7 @@ export default function ToySearchCard(props) {
                   />
                   {/* Thinking Skill Score */}
                   <img
-                    src="./assets/icons/scoring_icons/5.png"
+                    src={`./assets/icons/scoring_icons/${toyData.Thinking_Skills}.png`}
                     style={{
                       position: "relative",
                       top: 52,
@@ -106,7 +106,7 @@ export default function ToySearchCard(props) {
                   />
                   {/* Personality Skill Score */}
                   <img
-                    src="./assets/icons/scoring_icons/5.png"
+                    src={`./assets/icons/scoring_icons/${toyData.Character_Development}.png`}
                     style={{
                       position: "relative",
                       top: 71,
@@ -116,7 +116,7 @@ export default function ToySearchCard(props) {
                   />
                   {/* Social Interaction Skill Score */}
                   <img
-                    src="./assets/icons/scoring_icons/5.png"
+                    src={`./assets/icons/scoring_icons/${toyData.Social_Interaction}.png`}
                     style={{
                       position: "relative",
                       top: 90,
