@@ -55,7 +55,7 @@ const db = mysql.createPool({
 
 app.get("/api/get", (req, res) => {
   const sqlSearch =
-    "SELECT ToyName, AgeRange1, categories, company_name, Character_Development, Kids_Rating, Long_Review, Motor_Movement, product_website, reviewer_longreview, Social_Interaction, ToyTipsRating, Thinking_Skills FROM reviews WHERE Long_Review IS NOT NULL AND Long_Review != '' LIMIT 0, 25";
+    "SELECT ToyName, AgeRange1, categories, company_name, Character_Development, Kids_Rating, Long_Review, Motor_Movement, product_website, reviewer_longreview, Social_Interaction, ToyTipsRating, Thinking_Skills FROM reviews WHERE Long_Review IS NOT NULL AND Long_Review != ''";
 
   db.query(sqlSearch, (err, result) => {
     // console.log(result);

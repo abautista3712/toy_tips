@@ -17,11 +17,7 @@ const Search = (props) => {
       .catch((error) => console.error(`Error: ${error}`));
   };
 
-  return (
-    <div>
-      <ToySearchCard toyData={toyData} />
-    </div>
-  );
+  return <div>{/* <ToySearchCard toyData={toyData} /> */}</div>;
 };
 
 export default Search;

@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import ToySearchCard from "./ToySearchCard";
 import { Button, Form, FormControl, Navbar, Nav } from "react-bootstrap";
+import Axios from "axios";
 
-const Navigation = () => {
+const Navigation = (props) => {
+  const [toyData, setToyData] = useState("");
+  const [search, setSearch] = useState([]);
+
+  useEffect(() => {
+    getToyData();
+  }, []);
+
+  const handleOnChange = (e) => {
+    console.log(search);
+    setSearch(e.target.value);
+  };
+
+  const getToyData = () => {
+    Axios.get("http://localhost:8080/api/get")
+      .then((response) => {
+        setToyData(response.data);
+      })
+      .catch((error) => console.error(`Error: ${error}`));
+  };
+
   const handleClick_TTT_playware = () => {
     window.open(
       "https://www.amazon.com/Im-Toy-Tester%C2%AE-Shirt-Shorts/dp/B000UFUXJI/ref=sr_1_2?keywords=im+a+toy+tester&qid=1557453165&s=gateway&sr=8-2",
@@ -41,6 +63,7 @@ const Navigation = () => {
           <FormControl
             type="text"
             placeholder="Search Toy Name"
+            onChange={handleOnChange}
             className="mr-sm-2"
           />
           {/* <Button variant="outline-light">Search</Button> */}
@@ -52,6 +75,8 @@ const Navigation = () => {
       >
         Check out our "I'm a Toy Tester®" Playwear! Exclusive to Amazon
       </div>
+
+      <ToySearchCard toyData={toyData} search={search} />
     </div>
   );
 };
