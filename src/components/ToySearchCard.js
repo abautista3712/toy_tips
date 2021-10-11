@@ -44,17 +44,17 @@ export default function ToySearchCard(props) {
                       <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                         <Col className="p-0">
                           <h2 onClick={handleClick_product_website}>
-                            {toyData.ToyName}
+                            {searchedItems.ToyName}
                           </h2>
                         </Col>
                         <Col className="p-0">
-                          <b>by {toyData.company_name}</b>
+                          <b>by {searchedItems.company_name}</b>
                         </Col>
                       </Col>
                     </Row>
                     <Row>
                       <Col>
-                        <p>{toyData.Long_Review}</p>
+                        <p>{searchedItems.Long_Review}</p>
                       </Col>
                     </Row>
                   </Col>
@@ -69,7 +69,7 @@ export default function ToySearchCard(props) {
                     <Image src="./assets/icons/scoring_icons/report_card.png" />
                     {/* TT's Cumulative Research Score */}
                     <img
-                      src={`./assets/icons/scoring_icons/${toyData.ToyTipsRating}.png`}
+                      src={`./assets/icons/scoring_icons/${searchedItems.ToyTipsRating}.png`}
                       onError={(e) => {
                         e.target.src = `./assets/icons/scoring_icons/0.png`;
                       }}
@@ -82,7 +82,7 @@ export default function ToySearchCard(props) {
                     />
                     {/* Testers' Fun Grade */}
                     <img
-                      src={`./assets/icons/scoring_icons/${toyData.Kids_Rating}.png`}
+                      src={`./assets/icons/scoring_icons/${searchedItems.Kids_Rating}.png`}
                       onError={(e) => {
                         e.target.src = `./assets/icons/scoring_icons/0.png`;
                       }}
@@ -95,7 +95,7 @@ export default function ToySearchCard(props) {
                     />
                     {/* Movement Skill Score */}
                     <img
-                      src={`./assets/icons/scoring_icons/${toyData.Motor_Movement}.png`}
+                      src={`./assets/icons/scoring_icons/${searchedItems.Motor_Movement}.png`}
                       onError={(e) => {
                         e.target.src = `./assets/icons/scoring_icons/0.png`;
                       }}
@@ -108,7 +108,7 @@ export default function ToySearchCard(props) {
                     />
                     {/* Thinking Skill Score */}
                     <img
-                      src={`./assets/icons/scoring_icons/${toyData.Thinking_Skills}.png`}
+                      src={`./assets/icons/scoring_icons/${searchedItems.Thinking_Skills}.png`}
                       onError={(e) => {
                         e.target.src = `./assets/icons/scoring_icons/0.png`;
                       }}
@@ -121,7 +121,7 @@ export default function ToySearchCard(props) {
                     />
                     {/* Personality Skill Score */}
                     <img
-                      src={`./assets/icons/scoring_icons/${toyData.Character_Development}.png`}
+                      src={`./assets/icons/scoring_icons/${searchedItems.Character_Development}.png`}
                       onError={(e) => {
                         e.target.src = `./assets/icons/scoring_icons/0.png`;
                       }}
@@ -134,7 +134,7 @@ export default function ToySearchCard(props) {
                     />
                     {/* Social Interaction Skill Score */}
                     <img
-                      src={`./assets/icons/scoring_icons/${toyData.Social_Interaction}.png`}
+                      src={`./assets/icons/scoring_icons/${searchedItems.Social_Interaction}.png`}
                       onError={(e) => {
                         e.target.src = `./assets/icons/scoring_icons/0.png`;
                       }}

@@ -15,6 +15,7 @@ const Navigation = (props) => {
 
   const getToyData = () => {
     Axios.get("http://localhost:8080/api/get")
+      // Axios.get("/api/get")
       .then((response) => {
         setToyData(response.data);
       })
@@ -63,7 +64,6 @@ const Navigation = (props) => {
             onChange={handleOnChange}
             className="mr-sm-2"
           />
-          {/* <Button variant="outline-light">Search</Button> */}
         </Form>
       </Navbar>
       <div
