@@ -5,15 +5,13 @@ import Axios from "axios";
 
 const Navigation = (props) => {
   const [toyData, setToyData] = useState("");
-  const [search, setSearch] = useState([]);
 
   useEffect(() => {
     getToyData();
   }, []);
 
   const handleOnChange = (e) => {
-    console.log(search);
-    setSearch(e.target.value);
+    props.onChange(e.target.value);
   };
 
   const getToyData = () => {
@@ -76,7 +74,7 @@ const Navigation = (props) => {
         Check out our "I'm a Toy Tester®" Playwear! Exclusive to Amazon
       </div>
 
-      <ToySearchCard toyData={toyData} search={search} />
+      {/* <ToySearchCard toyData={toyData} search={search} /> */}
     </div>
   );
 };
