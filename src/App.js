@@ -8,7 +8,7 @@ import About from "./pages/About";
 import Search from "./pages/Search";
 
 function App() {
-  const [search, setSearch] = useState("DEFAULT");
+  const [search, setSearch] = useState("");
 
   const handleOnChange = (searchTerm) => {
     setSearch(searchTerm);
@@ -17,12 +17,11 @@ function App() {
   return (
     <Router>
       <Navigation onChange={handleOnChange} search={search} />
-      <h2>Search From NAVIGATION: {search}</h2>
       {/* Component below will change per page */}
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/about" component={About} />
-        <Route path="/search" component={Search} />
+        <Route path="/search" render={() => <Search search={search} />} />
       </Switch>
       <Footer />
     </Router>

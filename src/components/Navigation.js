@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ToySearchCard from "./ToySearchCard";
 import { Button, Form, FormControl, Navbar, Nav } from "react-bootstrap";
 import Axios from "axios";
 
@@ -73,8 +72,6 @@ const Navigation = (props) => {
       >
         Check out our "I'm a Toy Tester®" Playwear! Exclusive to Amazon
       </div>
-
-      {/* <ToySearchCard toyData={toyData} search={search} /> */}
     </div>
   );
 };
