@@ -17,7 +17,9 @@ export default function ToySearchCard(props) {
         const asArray = Object.entries(toyData);
         // console.log(asArray);
         // const filtered = "";
-        if (asArray[0][1].includes("Disney")) {
+        if (
+          asArray[0][1].toLowerCase().includes(search.toString().toLowerCase())
+        ) {
           const filtered = asArray;
           const justStrings = Object.fromEntries(filtered);
           console.log(justStrings);
