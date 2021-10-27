@@ -45,17 +45,23 @@ app.use(express.urlencoded({ extended: true })); //updated version of body-parse
 // });
 // const connection
 // Route w MySQL
-// if (process.env.JAWSDB_URL) {
-//   connection = mysql.createConnection(process.env.JAWSDB_URL);
-// } else {
-connection = mysql.createPool({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "",
-  database: "toy_tips_db",
+
+// Production
+var connection = mysql.createPool({
+  host: dbConfig.HOST,
+  user: dbConfig.USER,
+  password: dbConfig.PASSWORD,
+  database: dbConfig.DB,
 });
-// }
+
+// Development;
+// var connection = mysql.createPool({
+//   host: "localhost",
+//   port: 3306,
+//   user: "root",
+//   password: "",
+//   database: "toy_tips_db",
+// });
 
 app.get("/api/get", (req, res) => {
   const sqlSearch =
