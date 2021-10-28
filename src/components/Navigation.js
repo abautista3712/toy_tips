@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Button, Form, FormControl, Navbar, Nav } from "react-bootstrap";
+import { Form, FormControl, Navbar, Nav } from "react-bootstrap";
 import Axios from "axios";
+
+const baseURL = "http://localhost:8080/api/get";
 
 const Navigation = (props) => {
   const [toyData, setToyData] = useState("");
@@ -14,7 +16,7 @@ const Navigation = (props) => {
   };
 
   const getToyData = () => {
-    Axios.get("http://localhost:8080/api/get")
+    Axios.get(baseURL)
       // Axios.get("/api/get")
       .then((response) => {
         setToyData(response.data);

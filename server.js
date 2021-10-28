@@ -9,7 +9,7 @@ const path = require("path");
 const mysql = require("mysql");
 
 // Shown if no server connection
-app.use(express.static("app/views/"));
+// app.use(express.static("app/views/"));
 
 const corsOptions = {
   origin: "http://localhost:8081",
@@ -38,11 +38,6 @@ app.use(express.urlencoded({ extended: true })); //updated version of body-parse
 //     console.log("Error syncing the table and model!");
 //   });
 
-// connection.query("SELECT * from reviews", function (err, rows, fields) {
-//   if (err) console.log(err);
-//   console.log("The solution is: ", rows);
-//   connection.end();
-// });
 // Route w MySQL
 console.log(process.env);
 // if (process.env.JAWSDB_URL) {
