@@ -45,8 +45,10 @@ app.use(express.urlencoded({ extended: true })); //updated version of body-parse
 // });
 // Route w MySQL
 if (process.env.JAWSDB_URL) {
+  console.log("Connected to JAWSDB_URL");
   var connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
+  console.log("Connected to local");
   var connection = mysql.createPool({
     host: "localhost",
     port: 3306,
