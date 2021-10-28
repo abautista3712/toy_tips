@@ -1,6 +1,12 @@
-DROP DATABASE IF EXISTS toy_tips_db;
-CREATE DATABASE toy_tips_db;
-USE toy_tips_db;
+-- Use During Development
+-- DROP DATABASE IF EXISTS toy_tips_db;
+-- CREATE DATABASE toy_tips_db;
+-- USE toy_tips_db;
+
+-- Use For Production
+DROP DATABASE IF EXISTS bi1kvz8znfs4e1vp;
+CREATE DATABASE bi1kvz8znfs4e1vp;
+USE bi1kvz8znfs4e1vp;
 
 -- Table structure for `reviews`
 
