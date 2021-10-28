@@ -9,7 +9,7 @@ const path = require("path");
 const mysql = require("mysql");
 
 // Shown if no server connection
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static("app/views/"));
 
 const corsOptions = {
   origin: "http://localhost:8081",
@@ -43,32 +43,25 @@ app.use(express.urlencoded({ extended: true })); //updated version of body-parse
 //   console.log("The solution is: ", rows);
 //   connection.end();
 // });
-// const connection
 // Route w MySQL
-
-// Production
-var connection = mysql.createPool({
-  host: dbConfig.HOST,
-  user: dbConfig.USER,
-  password: dbConfig.PASSWORD,
-  database: dbConfig.DB,
-});
-
-// Development;
-// var connection = mysql.createPool({
-//   host: "localhost",
-//   port: 3306,
-//   user: "root",
-//   password: "",
-//   database: "toy_tips_db",
-// });
+if (process.env.JAWSDB_URL) {
+  var connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  var connection = mysql.createPool({
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: "",
+    database: "toy_tips_db",
+  });
+}
 
 app.get("/api/get", (req, res) => {
   const sqlSearch =
     "SELECT ToyName, AgeRange1, categories, company_name, Character_Development, Kids_Rating, Long_Review, Motor_Movement, product_website, reviewer_longreview, Social_Interaction, ToyTipsRating, Thinking_Skills FROM reviews WHERE Long_Review IS NOT NULL AND Long_Review != ''";
 
   connection.query(sqlSearch, (err, result) => {
-    // console.log(result);
+    console.log(result);
     res.send(result);
   });
 });
@@ -84,7 +77,7 @@ app.get("/api/get", (req, res) => {
 // // simple route
 app.get("/*", (req, res) => {
   // console.log("Welcome to Toy Tips application.");
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "app/views/index.html"));
 });
 // }
 
