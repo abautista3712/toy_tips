@@ -46,7 +46,12 @@ app.use(express.urlencoded({ extended: true })); //updated version of body-parse
 // Route w MySQL
 if (process.env.JAWSDB_URL) {
   console.log("Connected to JAWSDB_URL");
-  var connection = mysql.createConnection(process.env.JAWSDB_URL);
+  var connection = mysql.createConnection({
+    HOST: "x8autxobia7sgh74.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    USER: "ea2ypjffdfvb8yao",
+    PASSWORD: "vt8g4eb8z215crow",
+    DB: "bi1kvz8znfs4e1vp",
+  });
 } else {
   console.log("Connected to local");
   var connection = mysql.createPool({
