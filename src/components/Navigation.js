@@ -17,7 +17,6 @@ const Navigation = (props) => {
 
   const getToyData = () => {
     Axios.get(baseURL)
-      // Axios.get("/api/get")
       .then((response) => {
         setToyData(response.data);
       })

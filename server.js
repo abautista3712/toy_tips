@@ -9,7 +9,7 @@ const path = require("path");
 const mysql = require("mysql");
 
 // Shown if no server connection
-// app.use(express.static("app/views/"));
+app.use(express.static("app/views/"));
 
 const corsOptions = {
   origin: "http://localhost:8081",
@@ -20,43 +20,25 @@ app.use(express.json()); //updated version of body-parser
 // Parse requests of content-type: application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true })); //updated version of body-parser
 
-// If using Sequelize ORM
-// const db = require("./app/models");
-
-// ---USE AFTER DEVELOPMENT---
-// db.sequelize.sync();
-// ---
-// ---USE DURING DEVELOPMENT---
-// db.sequelize
-//   .sync({ force: true })
-//   .then(() => {
-//     console.log("Table and model synced successfully!");
-//     console.log("Drop and re-sync db.");
-//     //run();
-//   })
-//   .catch(() => {
-//     console.log("Error syncing the table and model!");
-//   });
-
 // Route w MySQL
-console.log(process.env);
+// console.log(process.env);
 // if (process.env.JAWSDB_URL) {
-console.log("Connected to JAWSDB_URL");
-var connection = mysql.createConnection({
-  HOST: "x8autxobia7sgh74.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-  USER: "ea2ypjffdfvb8yao",
-  PASSWORD: "vt8g4eb8z215crow",
-  DB: "bi1kvz8znfs4e1vp",
-});
+// console.log("Connected to JAWSDB_URL");
+// var connection = mysql.createConnection({
+//   HOST: "x8autxobia7sgh74.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+//   USER: "ea2ypjffdfvb8yao",
+//   PASSWORD: "vt8g4eb8z215crow",
+//   DB: "bi1kvz8znfs4e1vp",
+// });
 // } else {
-//   console.log("Connected to local");
-//   var connection = mysql.createPool({
-//     host: "localhost",
-//     port: 3306,
-//     user: "root",
-//     password: "",
-//     database: "toy_tips_db",
-//   });
+console.log("Connected to local");
+var connection = mysql.createPool({
+  host: "localhost",
+  port: 3306,
+  user: "root",
+  password: "",
+  database: "toy_tips_db",
+});
 // }
 
 app.get("/api/get", (req, res) => {
@@ -64,8 +46,8 @@ app.get("/api/get", (req, res) => {
     "SELECT ToyName, AgeRange1, categories, company_name, Character_Development, Kids_Rating, Long_Review, Motor_Movement, product_website, reviewer_longreview, Social_Interaction, ToyTipsRating, Thinking_Skills FROM reviews WHERE Long_Review IS NOT NULL AND Long_Review != ''";
 
   connection.query(sqlSearch, (err, result) => {
-    console.log(result);
     res.send(result);
+    console.log("MySQL result successful from FRONT");
   });
 });
 
@@ -79,7 +61,7 @@ app.get("/api/get", (req, res) => {
 // } else {
 // // simple route
 app.get("/*", (req, res) => {
-  // console.log("Welcome to Toy Tips application.");
+  console.log("Successfully connection to LOCAL");
   res.sendFile(path.join(__dirname, "app/views/index.html"));
 });
 // }
@@ -93,14 +75,3 @@ app.listen(PORT, () => {
     `Server is running on PORT ${PORT}.\n\rView in browser on "localhost:${PORT}"`
   );
 });
-
-// abelard's code ----------------------
-
-/*const controller = require("./app/controllers/review.controller");
-
-const run = async () => {
-  const rev1 = await controller.createReview({
-    toyName: "Superman Action Figure",
-    shortReview: "Pretty good, but I'm a Batman guy.",
-  });
-};*/
