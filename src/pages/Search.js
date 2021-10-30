@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ToySearchCard from "../components/ToySearchCard";
 import Axios from "axios";
 
-const baseURL = "http://localhost:8080/api/get";
+const baseURL = "/api/get";
 
 const Search = (props) => {
   const [toyData, setToyData] = useState("");

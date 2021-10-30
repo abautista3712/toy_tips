@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Form, FormControl, Navbar, Nav } from "react-bootstrap";
 import Axios from "axios";
 
-const baseURL = "http://localhost:8080/api/get";
+const baseURL = "/api/get";
 
 const Navigation = (props) => {
   const [toyData, setToyData] = useState("");

@@ -11,7 +11,7 @@ const mysql = require("mysql");
 require("dotenv").config();
 var connection;
 
-// Shown if no server connection
+// Serve Static Assets
 app.use(express.static("app/views/"));
 
 const corsOptions = {
