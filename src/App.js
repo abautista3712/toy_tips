@@ -9,18 +9,38 @@ import Search from "./pages/Search";
 
 function App() {
   const [search, setSearch] = useState("");
+  const [userStartedSearch, setUserStartedSearch] = useState(false);
 
   const handleOnChange = (searchTerm) => {
     setSearch(searchTerm);
   };
+
+  if (search == "") {
+    // if (userStartedSearch == false) {
+    //   setUserStartedSearch(true);
+    // }
+  } else if (userStartedSearch == false) {
+    setUserStartedSearch(true);
+  }
 
   return (
     <Router>
       <Navigation onChange={handleOnChange} search={search} />
       {/* Component below will change per page */}
       <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route path="/about" component={About} />
+        <Route
+          exact
+          path="/"
+          render={() =>
+            userStartedSearch ? <Search search={search} /> : <Landing />
+          }
+        />
+        <Route
+          path="/about"
+          render={() =>
+            userStartedSearch ? <Search search={search} /> : <About />
+          }
+        />
         <Route path="/search" render={() => <Search search={search} />} />
       </Switch>
       <Footer />
