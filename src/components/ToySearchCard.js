@@ -276,7 +276,13 @@ export default function ToySearchCard(props) {
     } else {
       // console.log(props);
       console.log("No props loaded yet...");
-      return <h3> Loading... </h3>;
+      return (
+        <h3>Loading...</h3>
+        // <img
+        //   src={require(`./assets/gifs/loading_boucyBall.gif`)}
+        //   alt="Loading..."
+        // />
+      );
     }
   };
   // console.log(props);
