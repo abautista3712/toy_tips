@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
+import ShowMoreText from "react-show-more-text";
 
 export default function ToySearchCard(props) {
   const displayToySearchCard = (props) => {
@@ -7,11 +8,11 @@ export default function ToySearchCard(props) {
 
     if (toyData.length > 0) {
       return toyData.map((toyData, index) => {
-        const handleClick_product_website = () => {
-          if (toyData.product_website != "") {
-            window.open(toyData.product_website, "_blank");
-          }
-        };
+        // const handleClick_product_website = () => {
+        //   if (toyData.product_website != "") {
+        //     window.open(toyData.product_website, "_blank");
+        //   }
+        // };
 
         const asArray = Object.entries(toyData);
         if (
@@ -64,6 +65,8 @@ export default function ToySearchCard(props) {
           ) {
             count++;
           }
+
+          // Renders all elements except for Toy Report Card and Scores
           if (count === 6) {
             return (
               <div>
@@ -78,6 +81,7 @@ export default function ToySearchCard(props) {
                       xl={3}
                       className="flexCenter_center"
                     >
+                      {/* Toy Image */}
                       <Image
                         src="./assets/images/original/TTT_logo_hiRes.png"
                         thumbnail
@@ -88,6 +92,7 @@ export default function ToySearchCard(props) {
                       <Row className="flexCenter">
                         <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                           <Col className="p-0">
+                            {/* Toy Name */}
                             <h2
                             // Commented out because most product websites are outdated/missing
                             // onClick={handleClick_product_website}
@@ -96,13 +101,17 @@ export default function ToySearchCard(props) {
                             </h2>
                           </Col>
                           <Col className="p-0">
+                            {/* Company Name */}
                             <b>by {searchedItems.company_name}</b>
                           </Col>
                         </Col>
                       </Row>
                       <Row>
                         <Col>
-                          <p>{searchedItems.Long_Review}</p>
+                          {/* Long Review */}
+                          <ShowMoreText lines={5}>
+                            <p>{searchedItems.Long_Review}</p>
+                          </ShowMoreText>
                         </Col>
                       </Row>
                     </Col>
@@ -119,6 +128,7 @@ export default function ToySearchCard(props) {
               </div>
             );
           } else {
+            // Render All Elements
             return (
               <div>
                 <Container>
@@ -132,6 +142,7 @@ export default function ToySearchCard(props) {
                       xl={3}
                       className="flexCenter_center"
                     >
+                      {/* Toy Image */}
                       <Image
                         src="./assets/images/original/TTT_logo_hiRes.png"
                         thumbnail
@@ -142,18 +153,26 @@ export default function ToySearchCard(props) {
                       <Row className="flexCenter">
                         <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                           <Col className="p-0">
-                            <h2 onClick={handleClick_product_website}>
+                            {/* Toy Name */}
+                            <h2
+                            // Commented out because most product websites are outdated/missing
+                            // onClick={handleClick_product_website}
+                            >
                               {searchedItems.ToyName}
                             </h2>
                           </Col>
                           <Col className="p-0">
+                            {/* Company Name */}
                             <b>by {searchedItems.company_name}</b>
                           </Col>
                         </Col>
                       </Row>
                       <Row>
                         <Col>
-                          <p>{searchedItems.Long_Review}</p>
+                          {/* Review */}
+                          <ShowMoreText lines={5}>
+                            <p>{searchedItems.Long_Review}</p>
+                          </ShowMoreText>
                         </Col>
                       </Row>
                     </Col>
@@ -165,6 +184,7 @@ export default function ToySearchCard(props) {
                       xl={3}
                       style={{ display: "flex", alignItems: "center" }}
                     >
+                      {/* Blank Report Card */}
                       <Image src="./assets/icons/scoring_icons/report_card.png" />
                       {/* TT's Cumulative Research Score */}
                       <img
