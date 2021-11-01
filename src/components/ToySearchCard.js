@@ -88,7 +88,10 @@ export default function ToySearchCard(props) {
                       <Row className="flexCenter">
                         <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                           <Col className="p-0">
-                            <h2 onClick={handleClick_product_website}>
+                            <h2
+                            // Commented out because most product websites are outdated/missing
+                            // onClick={handleClick_product_website}
+                            >
                               {searchedItems.ToyName}
                             </h2>
                           </Col>
