@@ -74,11 +74,11 @@ export default function ToySearchCard(props) {
                   {/* Toy Search Card */}
                   <Row className="m-2 p-2 card_Row">
                     <Col
-                      xs={3}
-                      sm={3}
-                      md={3}
-                      lg={3}
-                      xl={3}
+                      xs={2}
+                      sm={2}
+                      md={2}
+                      lg={2}
+                      xl={2}
                       className="flexCenter_center"
                     >
                       {/* Toy Image */}
@@ -88,7 +88,7 @@ export default function ToySearchCard(props) {
                         // fluid
                       />
                     </Col>
-                    <Col xs={6} sm={6} md={6} lg={6} xl={6}>
+                    <Col xs={10} sm={10} md={10} lg={10} xl={10}>
                       <Row className="flexCenter">
                         <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                           <Col className="p-0">
@@ -115,14 +115,15 @@ export default function ToySearchCard(props) {
                         </Col>
                       </Row>
                     </Col>
-                    <Col
-                      xs={3}
-                      sm={3}
-                      md={3}
-                      lg={3}
-                      xl={3}
+                    {/* Spacer for where Toy Report Card would be */}
+                    {/* <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
                       style={{ display: "flex", alignItems: "center" }}
-                    ></Col>
+                    ></Col> */}
                   </Row>
                 </Container>
               </div>
@@ -135,11 +136,11 @@ export default function ToySearchCard(props) {
                   {/* Toy Search Card */}
                   <Row className="m-2 p-2 card_Row">
                     <Col
-                      xs={3}
-                      sm={3}
-                      md={3}
-                      lg={3}
-                      xl={3}
+                      xs={2}
+                      sm={2}
+                      md={2}
+                      lg={2}
+                      xl={2}
                       className="flexCenter_center"
                     >
                       {/* Toy Image */}
@@ -149,7 +150,7 @@ export default function ToySearchCard(props) {
                         // fluid
                       />
                     </Col>
-                    <Col xs={6} sm={6} md={6} lg={6} xl={6}>
+                    <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                       <Row className="flexCenter">
                         <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                           <Col className="p-0">
@@ -177,11 +178,11 @@ export default function ToySearchCard(props) {
                       </Row>
                     </Col>
                     <Col
-                      xs={3}
-                      sm={3}
-                      md={3}
-                      lg={3}
-                      xl={3}
+                      xs={2}
+                      sm={2}
+                      md={2}
+                      lg={2}
+                      xl={2}
                       style={{ display: "flex", alignItems: "center" }}
                     >
                       {/* Blank Report Card */}
