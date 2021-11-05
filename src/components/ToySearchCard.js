@@ -90,7 +90,7 @@ export default function ToySearchCard(props) {
 
                     {/* Text Container */}
                     <Col>
-                      {/* Toy Name */}
+                      {/* ROW 1: Toy Name */}
                       <Row className="flexCenter">
                         <Col className="p-0">
                           <h2
@@ -101,13 +101,28 @@ export default function ToySearchCard(props) {
                           </h2>
                         </Col>
                       </Row>
-                      {/* Company Name */}
+                      {/* ROW 2: Company Name */}
                       <Row className="flexCenter">
                         <Col className="p-0">
                           <b>by {searchedItems.company_name}</b>
                         </Col>
                       </Row>
-                      {/* Long Review */}
+                      {/* ROW 3: Ages, Price */}
+                      <Row className="flexCenter">
+                        <Col className="p-0">
+                          <b>For Ages:</b> {searchedItems.AgeRange1}
+                        </Col>
+                        <Col className="p-0">
+                          <b>Historical Price:</b> {searchedItems.Low_Price}
+                        </Col>
+                      </Row>
+                      {/* ROW 4: Categories */}
+                      <Row className="flexCenter">
+                        <Col className="p-0">
+                          <b>{searchedItems.categories}</b>
+                        </Col>
+                      </Row>
+                      {/* Row 5: Long Review */}
                       <Row className="flexCenter">
                         <Col className="p-0">
                           <ShowMoreText lines={5}>
@@ -143,9 +158,9 @@ export default function ToySearchCard(props) {
                     </Col>
                     {/* Text Container */}
                     <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-                      {/* Toy Name */}
+                      {/* ROW 1: Toy Name */}
                       <Row className="flexCenter">
-                        <Col xs={8} sm={8} md={8} lg={8} xl={8} className="p-0">
+                        <Col className="p-0">
                           <h2
                           // Commented out because most product websites are outdated/missing
                           // onClick={handleClick_product_website}
@@ -154,13 +169,28 @@ export default function ToySearchCard(props) {
                           </h2>
                         </Col>
                       </Row>
-                      {/* Company Name */}
+                      {/* ROW 2: Company Name */}
                       <Row className="flexCenter">
                         <Col className="p-0">
                           <b>by {searchedItems.company_name}</b>
                         </Col>
                       </Row>
-                      {/* Long Review */}
+                      {/* ROW 3: Ages, Price */}
+                      <Row className="flexCenter">
+                        <Col className="p-0">
+                          <b>For Ages:</b> {searchedItems.AgeRange1}
+                        </Col>
+                        <Col className="p-0">
+                          <b>Historical Price:</b> {searchedItems.Low_Price}
+                        </Col>
+                      </Row>
+                      {/* ROW 4: Categories */}
+                      <Row className="flexCenter">
+                        <Col className="p-0">
+                          <b>{searchedItems.categories}</b>
+                        </Col>
+                      </Row>
+                      {/* ROW 5: Long Review */}
                       <Row className="flexCenter">
                         <Col className="p-0">
                           <ShowMoreText lines={5}>
