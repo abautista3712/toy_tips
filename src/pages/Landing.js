@@ -18,7 +18,7 @@ const Landing = (props) => {
           onClick={handleClick_Search}
         />
         <Carousel.Caption className="caption_Slide1">
-          <h1>Thousands of Vintage Toys and Children's Things</h1>
+          <h1>Thousands of Vintage Toys</h1>
           <p>Browse our entire collection from the 1990s and 2000s!</p>
         </Carousel.Caption>
       </Carousel.Item>
