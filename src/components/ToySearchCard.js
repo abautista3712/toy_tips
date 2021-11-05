@@ -66,13 +66,14 @@ export default function ToySearchCard(props) {
             count++;
           }
 
-          // Renders all elements except for Toy Report Card and Scores
+          // Renders all elements EXCEPT FOR Toy Report Card
           if (count === 6) {
             return (
               <div>
                 <Container>
-                  {/* Toy Search Card */}
+                  {/* Toy Search Card Container*/}
                   <Row className="m-2 p-2 card_Row">
+                    {/* Toy Image */}
                     <Col
                       xs={2}
                       sm={2}
@@ -81,60 +82,52 @@ export default function ToySearchCard(props) {
                       xl={2}
                       className="flexCenter_center"
                     >
-                      {/* Toy Image */}
                       <Image
                         src="./assets/images/original/TTT_logo_hiRes.png"
                         thumbnail
-                        // fluid
                       />
                     </Col>
-                    <Col xs={10} sm={10} md={10} lg={10} xl={10}>
+
+                    {/* Text Container */}
+                    <Col>
+                      {/* Toy Name */}
                       <Row className="flexCenter">
-                        <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-                          <Col className="p-0">
-                            {/* Toy Name */}
-                            <h2
-                            // Commented out because most product websites are outdated/missing
-                            // onClick={handleClick_product_website}
-                            >
-                              {searchedItems.ToyName}
-                            </h2>
-                          </Col>
-                          <Col className="p-0">
-                            {/* Company Name */}
-                            <b>by {searchedItems.company_name}</b>
-                          </Col>
+                        <Col className="p-0">
+                          <h2
+                          // Commented out because most product websites are outdated/missing
+                          // onClick={handleClick_product_website}
+                          >
+                            {searchedItems.ToyName}
+                          </h2>
                         </Col>
                       </Row>
-                      <Row>
-                        <Col>
-                          {/* Long Review */}
+                      {/* Company Name */}
+                      <Row className="flexCenter">
+                        <Col className="p-0">
+                          <b>by {searchedItems.company_name}</b>
+                        </Col>
+                      </Row>
+                      {/* Long Review */}
+                      <Row className="flexCenter">
+                        <Col className="p-0">
                           <ShowMoreText lines={5}>
                             <p>{searchedItems.Long_Review}</p>
                           </ShowMoreText>
                         </Col>
                       </Row>
                     </Col>
-                    {/* Spacer for where Toy Report Card would be */}
-                    {/* <Col
-                      xs={4}
-                      sm={4}
-                      md={4}
-                      lg={4}
-                      xl={4}
-                      style={{ display: "flex", alignItems: "center" }}
-                    ></Col> */}
                   </Row>
                 </Container>
               </div>
             );
           } else {
-            // Render All Elements
+            // Render All Elements INCLUDING Report Card
             return (
               <div>
                 <Container>
-                  {/* Toy Search Card */}
+                  {/* Toy Search Card Container */}
                   <Row className="m-2 p-2 card_Row">
+                    {/* Toy Image */}
                     <Col
                       xs={2}
                       sm={2}
@@ -143,40 +136,40 @@ export default function ToySearchCard(props) {
                       xl={2}
                       className="flexCenter_center"
                     >
-                      {/* Toy Image */}
                       <Image
                         src="./assets/images/original/TTT_logo_hiRes.png"
                         thumbnail
-                        // fluid
                       />
                     </Col>
+                    {/* Text Container */}
                     <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+                      {/* Toy Name */}
                       <Row className="flexCenter">
-                        <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-                          <Col className="p-0">
-                            {/* Toy Name */}
-                            <h2
-                            // Commented out because most product websites are outdated/missing
-                            // onClick={handleClick_product_website}
-                            >
-                              {searchedItems.ToyName}
-                            </h2>
-                          </Col>
-                          <Col className="p-0">
-                            {/* Company Name */}
-                            <b>by {searchedItems.company_name}</b>
-                          </Col>
+                        <Col xs={8} sm={8} md={8} lg={8} xl={8} className="p-0">
+                          <h2
+                          // Commented out because most product websites are outdated/missing
+                          // onClick={handleClick_product_website}
+                          >
+                            {searchedItems.ToyName}
+                          </h2>
                         </Col>
                       </Row>
-                      <Row>
-                        <Col>
-                          {/* Review */}
+                      {/* Company Name */}
+                      <Row className="flexCenter">
+                        <Col className="p-0">
+                          <b>by {searchedItems.company_name}</b>
+                        </Col>
+                      </Row>
+                      {/* Long Review */}
+                      <Row className="flexCenter">
+                        <Col className="p-0">
                           <ShowMoreText lines={5}>
                             <p>{searchedItems.Long_Review}</p>
                           </ShowMoreText>
                         </Col>
                       </Row>
                     </Col>
+                    {/* Blank Report Card */}
                     <Col
                       xs={2}
                       sm={2}
@@ -185,7 +178,6 @@ export default function ToySearchCard(props) {
                       xl={2}
                       style={{ display: "flex", alignItems: "center" }}
                     >
-                      {/* Blank Report Card */}
                       <Image src="./assets/icons/scoring_icons/report_card.png" />
                       {/* TT's Cumulative Research Score */}
                       <img
@@ -274,18 +266,13 @@ export default function ToySearchCard(props) {
         }
       });
     } else {
-      // console.log(props);
       console.log("No props loaded yet...");
       return (
         <h3>Loading...</h3>
-        // <img
-        //   src={require(`./assets/gifs/loading_boucyBall.gif`)}
-        //   alt="Loading..."
-        // />
+        // <img src={loading} alt="Loading..." />
       );
     }
   };
-  // console.log(props);
   console.log("Calling displayToySearchCard(props) again...");
   return <> {displayToySearchCard(props)} </>;
 }

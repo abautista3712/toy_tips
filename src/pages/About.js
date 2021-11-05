@@ -14,7 +14,7 @@ const About = (props) => {
         {/* FAQ: About Toy Tips */}
         <Row className="m-2 p-2 card_Row">
           <Col
-            xs={6}
+            xs={4}
             sm={4}
             md={4}
             lg={4}
@@ -27,7 +27,7 @@ const About = (props) => {
               alt="Toy Tips Trusted Mark of Excellence"
             />
           </Col>
-          <Col xs={6} sm={8} md={8} lg={8} xl={8}>
+          <Col xs={8} sm={8} md={8} lg={8} xl={8}>
             <h2>What is Toy Tips?</h2>
             <p>
               Toy Tips is the testing group for the 'TTT' mark of excellence. A
@@ -129,9 +129,9 @@ const About = (props) => {
             </p>
           </Col>
           <Col
-            xs={2}
-            sm={2}
-            md={2}
+            xs={4}
+            sm={4}
+            md={4}
             lg={2}
             xl={2}
             className="flexCenter_flexEnd"
