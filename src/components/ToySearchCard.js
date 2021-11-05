@@ -122,10 +122,19 @@ export default function ToySearchCard(props) {
                           <b>{searchedItems.categories}</b>
                         </Col>
                       </Row>
-                      {/* Row 5: Long Review */}
+                      {/* ROW 5: Manufacturer's Description */}
                       <Row className="flexCenter">
                         <Col className="p-0">
-                          <ShowMoreText lines={5}>
+                          <b>Manufacturer's Description</b>
+                          <ShowMoreText lines={3}>
+                            <p>{searchedItems.mfg_desc}</p>
+                          </ShowMoreText>
+                        </Col>
+                      </Row>
+                      {/* Row 6: Long Review */}
+                      <Row className="flexCenter">
+                        <Col className="p-0">
+                          <ShowMoreText lines={3}>
                             <p>{searchedItems.Long_Review}</p>
                           </ShowMoreText>
                         </Col>
@@ -190,10 +199,20 @@ export default function ToySearchCard(props) {
                           <b>{searchedItems.categories}</b>
                         </Col>
                       </Row>
-                      {/* ROW 5: Long Review */}
+                      {/* ROW 5: Manufacturer's Description */}
                       <Row className="flexCenter">
                         <Col className="p-0">
-                          <ShowMoreText lines={5}>
+                          <b>Manufacturer's Description</b>
+                          <ShowMoreText lines={3}>
+                            <p>{searchedItems.mfg_desc}</p>
+                          </ShowMoreText>
+                        </Col>
+                      </Row>
+                      {/* ROW 6: Review */}
+                      <Row className="flexCenter">
+                        <Col className="p-0">
+                          <b>Expert's Review</b>
+                          <ShowMoreText lines={3}>
                             <p>{searchedItems.Long_Review}</p>
                           </ShowMoreText>
                         </Col>
