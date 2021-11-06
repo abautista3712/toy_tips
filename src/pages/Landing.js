@@ -25,7 +25,7 @@ const Landing = (props) => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="./assets/images/original/stock_toys2.jpeg"
+          src="./assets/images/resized/stock_toys2_shortHeight.jpeg"
           alt="Second slide"
           onClick={handleClick_About}
         />
