@@ -131,9 +131,10 @@ export default function ToySearchCard(props) {
                           </ShowMoreText>
                         </Col>
                       </Row>
-                      {/* Row 6: Long Review */}
+                      {/* Row 6: Review */}
                       <Row className="flexCenter">
                         <Col className="p-0">
+                          <b>Expert Review</b>
                           <ShowMoreText lines={3}>
                             <p>{searchedItems.Long_Review}</p>
                           </ShowMoreText>
@@ -166,7 +167,7 @@ export default function ToySearchCard(props) {
                       />
                     </Col>
                     {/* Text Container */}
-                    <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+                    <Col xs={7} sm={7} md={7} lg={8} xl={8}>
                       {/* ROW 1: Toy Name */}
                       <Row className="flexCenter">
                         <Col className="p-0">
@@ -211,7 +212,7 @@ export default function ToySearchCard(props) {
                       {/* ROW 6: Review */}
                       <Row className="flexCenter">
                         <Col className="p-0">
-                          <b>Expert's Review</b>
+                          <b>Expert Review</b>
                           <ShowMoreText lines={3}>
                             <p>{searchedItems.Long_Review}</p>
                           </ShowMoreText>
@@ -220,9 +221,9 @@ export default function ToySearchCard(props) {
                     </Col>
                     {/* Blank Report Card */}
                     <Col
-                      xs={2}
-                      sm={2}
-                      md={2}
+                      xs={3}
+                      sm={3}
+                      md={3}
                       lg={2}
                       xl={2}
                       style={{ display: "flex", alignItems: "center" }}
