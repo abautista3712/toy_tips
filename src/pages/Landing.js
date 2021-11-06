@@ -30,9 +30,9 @@ const Landing = (props) => {
           onClick={handleClick_About}
         />
         <Carousel.Caption className="caption_Slide2">
-          <h1>30 Years of Independent Research on </h1>
-          <h1>Smart Consumer Choices</h1>
-          <p>Learn more about Toy Tips</p>
+          <h1>30 Years of Independent Research </h1>
+          <h1>on Smart Consumer Choices</h1>
+          <p>Click to learn more about Toy Tips</p>
         </Carousel.Caption>
       </Carousel.Item>
       {/* <Carousel.Item>
