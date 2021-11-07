@@ -11,7 +11,7 @@ const About = (props) => {
             <h1>Frequently Asked Questions</h1>
           </Col>
           <Col className="mt-3 d-block d-md-none">
-            <h1>FAQs</h1>
+            <h2>FAQs</h2>
           </Col>
         </Row>
         {/* What is Toy Tips? */}
@@ -43,7 +43,10 @@ const About = (props) => {
           </Col>
           {/* What is Toy Tips? */}
           <Col>
-            <h2>What is Toy Tips?</h2>
+            {/* Desktop and Tablet */}
+            <h2 className="d-none d-md-flex">What is Toy Tips?</h2>
+            {/* MOBILE */}
+            <h4 className="d-flex d-md-none">What is Toy Tips?</h4>
             <p>
               Toy Tips is the testing group for the 'TTT' mark of excellence. A
               'TTT' rating means that a toy exceeds our standards to deliver a
@@ -65,7 +68,14 @@ const About = (props) => {
         {/* Research Process*/}
         <Row className="m-2 p-2 card_Row">
           <Col>
-            <h2>Can you tell me more about the research process?</h2>
+            {/* Desktop and Tablet */}
+            <h2 className="d-none d-md-flex">
+              Can you tell me more about the research process?
+            </h2>
+            {/* MOBILE */}
+            <h4 className="d-flex d-md-none">
+              Can you tell me more about the research process?
+            </h4>
             <p>
               Celebrating 3 decades of research, our product reviews assist
               consumers in making appropriate purchases. Our advisory team is
@@ -96,9 +106,14 @@ const About = (props) => {
         {/* What do you do with tested toys?*/}
         <Row className="m-2 p-2 card_Row">
           <Col>
-            <h2 style={{ textAlign: "right" }}>
+            {/* Desktop and Tablet */}
+            <h2 style={{ textAlign: "right" }} className="d-none d-md-flex">
               What do you do with toys that have been tested?
             </h2>
+            {/* MOBILE */}
+            <h4 style={{ textAlign: "right" }} className="d-flex d-md-none">
+              What do you do with toys that have been tested?
+            </h4>
             <p>
               It is our strict policy that after toys are 'Toy Tips®' tested,
               they are donated to children through a variety of programs we have
@@ -111,7 +126,10 @@ const About = (props) => {
         {/* ---Rating System--- */}
         <Row>
           <Col className="mt-3">
-            <h1>Our Rating System</h1>
+            {/* Desktop and Tablet */}
+            <h1 className="d-none d-md-flex">Our Rating System</h1>
+            {/* MOBILE */}
+            <h2 className="d-flex d-md-none">Our Rating System</h2>
           </Col>
         </Row>
         {/* How do you come up with scoring?*/}
@@ -125,7 +143,14 @@ const About = (props) => {
             />
           </Col>
           <Col>
-            <h2>How do you come up with your scoring?</h2>
+            {/* Desktop and Tablet */}
+            <h2 className="d-none d-md-flex">
+              How do you come up with your scoring?
+            </h2>
+            {/* MOBILE */}
+            <h4 className="d-flex d-md-none">
+              How do you come up with your scoring?
+            </h4>
             <p>
               Our Toy Report Cards include basic information about the toy and
               all the research we have found out. Factual information includes
@@ -168,9 +193,14 @@ const About = (props) => {
         {/* Rating System: Cumulative Research Score*/}
         <Row className="m-2 p-2 card_Row">
           <Col>
-            <h2 style={{ textAlign: "right" }}>
+            {/* Desktop and Tablet */}
+            <h2 style={{ textAlign: "right" }} className="d-none d-md-flex">
               What is Toy Tips® Cumulative Research Score?
             </h2>
+            {/* MOBILE */}
+            <h4 style={{ textAlign: "right" }} className="d-flex d-md-none">
+              What is Toy Tips® Cumulative Research Score?
+            </h4>
             <p>
               This score is a combination of our researchers' observation of
               enjoyment and development skills. Each researcher uses an original
@@ -186,7 +216,14 @@ const About = (props) => {
         {/* Rating System: Testers' 'Fun' Score*/}
         <Row className="m-2 p-2 card_Row">
           <Col>
-            <h2>How about the Testers' Fun Score?</h2>
+            {/* Desktop and Tablet */}
+            <h2 className="d-none d-md-flex">
+              How about the Testers' Fun Score?
+            </h2>
+            {/* MOBILE */}
+            <h4 className="d-flex d-md-none">
+              How about the Testers' Fun Score?
+            </h4>
             <p>
               This 'Fun' rating score is solely based on subjective evaluations
               and interviews with the actual children testing the toy. The
@@ -208,9 +245,14 @@ const About = (props) => {
         {/* Rating System: Skill Scores*/}
         <Row className="m-2 p-2 card_Row">
           <Col>
-            <h2 style={{ textAlign: "right" }}>
+            {/* Desktop and Tablet */}
+            <h2 style={{ textAlign: "right" }} className="d-none d-md-flex">
               Can you tell me more about Toy Tips® Skill Scores?
             </h2>
+            {/* MOBILE */}
+            <h4 style={{ textAlign: "right" }} className="d-flex d-md-none">
+              Can you tell me more about Toy Tips® Skill Scores?
+            </h4>
             <h4>Movement</h4>
             <p>
               These skills can be fine motor skills, gross motor skills or both.
@@ -250,7 +292,10 @@ const About = (props) => {
         {/* ---Meet the Team--- */}
         <Row>
           <Col className="mt-3">
-            <h1>Meet the Team</h1>
+            {/* Desktop and Tablet */}
+            <h1 className="d-none d-md-flex">Meet the Team</h1>
+            {/* MOBILE */}
+            <h2 className="d-flex d-md-none">Meet the Team</h2>
           </Col>
         </Row>
         {/* About Our Founder*/}
@@ -265,7 +310,10 @@ const About = (props) => {
           </Col>
           {/* About Our Founder Text */}
           <Col md={8} lg={8} xl={8}>
-            <h2>Our Founder</h2>
+            {/* Desktop and Tablet */}
+            <h2 className="d-none d-md-flex">Our Founder</h2>
+            {/* MOBILE */}
+            <h4 className="d-flex d-md-none">Our Founder</h4>
             <p>
               Marianne M. Szymanski created Toy Tips and has been an active
               media personality for close to three decades!
