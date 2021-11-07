@@ -12,7 +12,7 @@ const Landing = (props) => {
     <Carousel fade>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="w-100"
           src="./assets/images/original/stock_toys1.jpeg"
           alt="First slide"
           onClick={handleClick_Search}
@@ -24,14 +24,14 @@ const Landing = (props) => {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="./assets/images/resized/stock_toys2_shortHeight.jpeg"
+          className="w-100"
+          src="./assets/images/resized/stock_toys2_shortHeight_large.jpeg"
           alt="Second slide"
           onClick={handleClick_About}
         />
         <Carousel.Caption className="caption_Slide2">
           <h1>30 Years of Independent Research </h1>
-          <h1>on Smart Consumer Choices</h1>
+          <h1 className="d-none d-lg-block">on Smart Consumer Choices</h1>
           <p>Click to learn more about Toy Tips</p>
         </Carousel.Caption>
       </Carousel.Item>

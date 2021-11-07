@@ -7,6 +7,15 @@ body {
 .bgColor_nav {
   background-color: burlywood;
 }
+@media screen and (max-width: 425px) {
+  .mobile_navLink {
+    background-color: antiquewhite;
+    color: black !important;
+    padding-left: 2%;
+    border: blanchedalmond;
+    border-style: groove;
+  }
+}
 
 /* Custom Styling for TTT Playware banner  */
 .bgColor_playware {
@@ -86,11 +95,16 @@ body {
   justify-content: center;
 }
 
+/* Vertical Center + Flex-Start Justification */
+.flexCenter_flexStart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 /* Vertical Center + Flex-End Justification */
 .flexCenter_flexEnd {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-
-/* For Mobile Sizing */
