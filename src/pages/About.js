@@ -7,19 +7,21 @@ const About = (props) => {
       <Container>
         {/* ---FAQs--- */}
         <Row>
-          <Col className="mt-3">
+          <Col className="mt-3 d-none d-md-block">
             <h1>Frequently Asked Questions</h1>
           </Col>
+          <Col className="mt-3 d-block d-md-none">
+            <h1>FAQs</h1>
+          </Col>
         </Row>
-        {/* FAQ: About Toy Tips */}
+        {/* What is Toy Tips? */}
         <Row className="m-2 p-2 card_Row">
+          {/* Toy Tips Trusted Image */}
           <Col
-            xs={4}
-            sm={4}
             md={4}
             lg={4}
             xl={4}
-            className="flexCenter_flexEnd"
+            className="mt-3 d-none d-md-flex flexCenter_flexEnd"
           >
             <img
               src="./assets/images/original/TTT_logo_hiRes.png"
@@ -27,7 +29,20 @@ const About = (props) => {
               alt="Toy Tips Trusted Mark of Excellence"
             />
           </Col>
-          <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+          {/* Toy Tips Trusted Image - MOBILE*/}
+          <Col
+            xs={12}
+            sm={12}
+            className="mt-3 d-flex d-md-none flexCenter_center"
+          >
+            <img
+              src="./assets/images/original/TTT_logo_hiRes.png"
+              width="50%"
+              alt="Toy Tips Trusted Mark of Excellence"
+            />
+          </Col>
+          {/* What is Toy Tips? */}
+          <Col>
             <h2>What is Toy Tips?</h2>
             <p>
               Toy Tips is the testing group for the 'TTT' mark of excellence. A
@@ -47,7 +62,7 @@ const About = (props) => {
             </p>
           </Col>
         </Row>
-        {/* FAQ: About Our Research*/}
+        {/* Research Process*/}
         <Row className="m-2 p-2 card_Row">
           <Col>
             <h2>Can you tell me more about the research process?</h2>
@@ -78,7 +93,7 @@ const About = (props) => {
             </p>
           </Col>
         </Row> */}
-        {/* FAQ: About Tested Toys*/}
+        {/* What do you do with tested toys?*/}
         <Row className="m-2 p-2 card_Row">
           <Col>
             <h2 style={{ textAlign: "right" }}>
@@ -99,8 +114,16 @@ const About = (props) => {
             <h1>Our Rating System</h1>
           </Col>
         </Row>
-        {/* Rating System: What Our Scores Mean*/}
+        {/* How do you come up with scoring?*/}
         <Row className="m-2 p-2 card_Row">
+          {/* TT Report Card Image - MOBILE*/}
+          <Col xs={12} sm={12} className="d-flex d-md-none flexCenter_center">
+            <img
+              src="./assets/images/original/TT_reportCard.png"
+              width="40%"
+              alt="Toy Tips Trusted Mark of Excellence"
+            />
+          </Col>
           <Col>
             <h2>How do you come up with your scoring?</h2>
             <p>
@@ -128,13 +151,12 @@ const About = (props) => {
               bad, just below average for that particualr skill.
             </p>
           </Col>
+          {/* TT Report Card Image */}
           <Col
-            xs={4}
-            sm={4}
             md={4}
-            lg={2}
+            lg={3}
             xl={2}
-            className="flexCenter_flexEnd"
+            className="d-none d-md-flex flexCenter_flexEnd"
           >
             <img
               src="./assets/images/original/TT_reportCard.png"
@@ -233,7 +255,16 @@ const About = (props) => {
         </Row>
         {/* About Our Founder*/}
         <Row className="m-2 p-2 card_Row">
-          <Col xs={6} sm={8} md={8} lg={8} xl={8}>
+          {/* Founder Profile Image - MOBILE*/}
+          <Col xs={12} sm={12} className="d-flex d-md-none flexCenter_center">
+            <img
+              src="./assets/images/original/profilePic_Marianne.jpg"
+              width="100%"
+              alt="Marianne Profile Pic"
+            />
+          </Col>
+          {/* About Our Founder Text */}
+          <Col md={8} lg={8} xl={8}>
             <h2>Our Founder</h2>
             <p>
               Marianne M. Szymanski created Toy Tips and has been an active
@@ -258,13 +289,12 @@ const About = (props) => {
               marianne@toytips.com
             </p>
           </Col>
+          {/* Founder Profile Image */}
           <Col
-            xs={6}
-            sm={4}
             md={4}
             lg={4}
             xl={4}
-            className="flexCenter_flexEnd"
+            className="d-none d-md-flex flexCenter_flexEnd"
           >
             <img
               src="./assets/images/original/profilePic_Marianne.jpg"
