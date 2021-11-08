@@ -10,9 +10,9 @@ const Landing = (props) => {
   };
   return (
     <Carousel fade>
-      <Carousel.Item>
+      {/* <Carousel.Item>
         <img
-          className="caroselImage_sizing"
+          className="caroselImage_mobileSizing"
           src="./assets/images/original/stock_toys1.jpeg"
           alt="First slide"
           onClick={handleClick_Search}
@@ -26,8 +26,8 @@ const Landing = (props) => {
           </h3>
           <p>Browse our entire collection from the 1990s and 2000s!</p>
         </Carousel.Caption>
-      </Carousel.Item>
-      {/* <Carousel.Item>
+      </Carousel.Item> */}
+      <Carousel.Item>
         <img
           className="w-100"
           src="./assets/images/resized/stock_toys2_shortHeight_large.jpeg"
@@ -39,7 +39,7 @@ const Landing = (props) => {
           <h1 className="d-none d-lg-block">on Smart Consumer Choices</h1>
           <p>Click to learn more about Toy Tips</p>
         </Carousel.Caption>
-      </Carousel.Item> */}
+      </Carousel.Item>
       {/* <Carousel.Item>
         <img
           className="d-block w-100"

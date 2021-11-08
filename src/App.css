@@ -75,11 +75,11 @@ body {
   padding-right: 5%;
 }
 
-.caroselImage_sizing {
+.caroselImage_mobileSizing {
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  .caroselImage_sizing {
+  .caroselImage_mobileSizing {
     height: 100vh;
     object-fit: cover;
   }
