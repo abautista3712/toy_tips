@@ -20,7 +20,10 @@ const Landing = (props) => {
           onClick={handleClick_Search}
         />
         {/* Carousel Caption */}
-        <Carousel.Caption className="caption_Slide1">
+        <Carousel.Caption
+          className="caption_Slide1"
+          onClick={handleClick_Search}
+        >
           {/* Main line of caption */}
           <h1 className="d-none d-md-block">
             Thousands of Vintage Toy Reviews
@@ -43,7 +46,10 @@ const Landing = (props) => {
           onClick={handleClick_About}
         />
         {/* Carousel Caption */}
-        <Carousel.Caption className="caption_Slide2">
+        <Carousel.Caption
+          className="caption_Slide2"
+          onClick={handleClick_About}
+        >
           {/* Main line of caption */}
           <h1 className="d-none d-md-block">
             30 Years of Independent Research{" "}
@@ -55,11 +61,8 @@ const Landing = (props) => {
 
           {/* Sub line of caption */}
           <h1 className="d-none d-lg-block">on Smart Consumer Choices</h1>
-          <p className="d-none d-md-block">
-            Click to learn more about Toy Tips
-          </p>
+          <p>Click here to learn more about Toy Tips</p>
           {/* MOBILE */}
-          <p className="d-block d-md-none">Click to learn more</p>
         </Carousel.Caption>
       </Carousel.Item>
       {/* <Carousel.Item>
