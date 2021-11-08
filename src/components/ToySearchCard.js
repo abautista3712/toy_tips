@@ -104,31 +104,65 @@ export default function ToySearchCard(props) {
                       <Row className="flexCenter">
                         <Col className="p-0">
                           <h2
-                          // Commented out because most product websites are outdated/missing
-                          // onClick={handleClick_product_website}
+                            className="d-none d-md-flex"
+                            // Commented out because most product websites are outdated/missing
+                            // onClick={handleClick_product_website}
                           >
                             {searchedItems.ToyName}
                           </h2>
+                          {/* MOBILE */}
+                          <h4
+                            className="d-flex d-md-none flexCenter_center_textAlign"
+                            // Commented out because most product websites are outdated/missing
+                            // onClick={handleClick_product_website}
+                          >
+                            {searchedItems.ToyName}
+                          </h4>
                         </Col>
                       </Row>
                       {/* ROW 2: Company Name */}
                       <Row className="flexCenter">
-                        <Col className="p-0">
-                          <b>by {searchedItems.company_name}</b>
+                        <Col className="d-none d-md-flex p-0">
+                          by {searchedItems.company_name}
+                        </Col>
+                        {/* MOBILE */}
+                        <Col className="d-flex d-md-none flexCenter_center_textAlign">
+                          by {searchedItems.company_name}
                         </Col>
                       </Row>
                       {/* ROW 3: Ages, Price */}
                       <Row className="flexCenter">
-                        <Col className="p-0">
-                          <b>For Ages:</b> {searchedItems.AgeRange1}
+                        <Col className="d-none d-md-flex p-0">
+                          <b className="age_price_margin">For Ages: </b>
+                          {searchedItems.AgeRange1}
                         </Col>
-                        <Col className="p-0">
-                          <b>Historical Price:</b> {searchedItems.Low_Price}
+                        <Col className="d-none d-md-flex p-0">
+                          <b className="age_price_margin">Price: </b>
+                          {searchedItems.Low_Price}
+                        </Col>
+                        {/* MOBILE */}
+                        <Col className="d-flex d-md-none flexCenter_center">
+                          <b className="age_price_margin">For Ages: </b>
+                          {searchedItems.AgeRange1}
+                        </Col>
+                        <Col className="d-flex d-md-none flexCenter_center_textAlign">
+                          <b className="age_price_margin">Price: </b>
+                          {searchedItems.Low_Price}
                         </Col>
                       </Row>
                       {/* ROW 4: Categories */}
                       <Row className="flexCenter">
-                        <Col className="p-0">
+                        <Col
+                          className="d-none d-md-flex p-0"
+                          style={{ fontSize: "small" }}
+                        >
+                          <b>{searchedItems.categories}</b>
+                        </Col>
+                        {/* MOBILE */}
+                        <Col
+                          className="d-flex d-md-none flexCenter_center_textAlign"
+                          style={{ fontSize: "small" }}
+                        >
                           <b>{searchedItems.categories}</b>
                         </Col>
                       </Row>
@@ -285,31 +319,65 @@ export default function ToySearchCard(props) {
                       <Row className="flexCenter">
                         <Col className="p-0">
                           <h2
-                          // Commented out because most product websites are outdated/missing
-                          // onClick={handleClick_product_website}
+                            className="d-none d-md-flex"
+                            // Commented out because most product websites are outdated/missing
+                            // onClick={handleClick_product_website}
                           >
                             {searchedItems.ToyName}
                           </h2>
+                          {/* MOBILE */}
+                          <h4
+                            className="d-flex d-md-none flexCenter_center_textAlign"
+                            // Commented out because most product websites are outdated/missing
+                            // onClick={handleClick_product_website}
+                          >
+                            {searchedItems.ToyName}
+                          </h4>
                         </Col>
                       </Row>
                       {/* ROW 2: Company Name */}
                       <Row className="flexCenter">
-                        <Col className="p-0">
-                          <b>by {searchedItems.company_name}</b>
+                        <Col className="d-none d-md-flex p-0">
+                          by {searchedItems.company_name}
+                        </Col>
+                        {/* MOBILE */}
+                        <Col className="d-flex d-md-none flexCenter_center_textAlign">
+                          by {searchedItems.company_name}
                         </Col>
                       </Row>
                       {/* ROW 3: Ages, Price */}
                       <Row className="flexCenter">
-                        <Col className="p-0">
-                          <b>For Ages:</b> {searchedItems.AgeRange1}
+                        <Col className="d-none d-md-flex p-0">
+                          <b className="age_price_margin">For Ages: </b>
+                          {searchedItems.AgeRange1}
                         </Col>
-                        <Col className="p-0">
-                          <b>Historical Price:</b> {searchedItems.Low_Price}
+                        <Col className="d-none d-md-flex p-0">
+                          <b className="age_price_margin">Price: </b>
+                          {searchedItems.Low_Price}
+                        </Col>
+                        {/* MOBILE */}
+                        <Col className="d-flex d-md-none flexCenter_center">
+                          <b className="age_price_margin">For Ages: </b>
+                          {searchedItems.AgeRange1}
+                        </Col>
+                        <Col className="d-flex d-md-none flexCenter_center_textAlign">
+                          <b className="age_price_margin">Price: </b>
+                          {searchedItems.Low_Price}
                         </Col>
                       </Row>
                       {/* ROW 4: Categories */}
                       <Row className="flexCenter">
-                        <Col className="p-0">
+                        <Col
+                          className="d-none d-md-flex p-0"
+                          style={{ fontSize: "small" }}
+                        >
+                          <b>{searchedItems.categories}</b>
+                        </Col>
+                        {/* MOBILE */}
+                        <Col
+                          className="d-flex d-md-none flexCenter_center_textAlign"
+                          style={{ fontSize: "small" }}
+                        >
                           <b>{searchedItems.categories}</b>
                         </Col>
                       </Row>

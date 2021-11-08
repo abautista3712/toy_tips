@@ -126,6 +126,13 @@ body {
   justify-content: center;
 }
 
+.flexCenter_center_textAlign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 /* Vertical Center + Flex-Start Justification */
 .flexCenter_flexStart {
   display: flex;
@@ -185,4 +192,9 @@ body {
     display: flex;
     transform: none;
   }
+}
+
+.age_price_margin {
+  display: contents;
+  margin-inline-end: 0 2%;
 }
