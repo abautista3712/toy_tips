@@ -75,6 +75,22 @@ body {
   padding-right: 5%;
 }
 
+.caroselImage_sizing {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .caroselImage_sizing {
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .caption_Slide1 {
+    top: 22%;
+    bottom: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
 /* ---Card Styling in About Component--- */
 .card_Row {
   border-radius: 10px;
@@ -107,4 +123,29 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+@media screen and (max-width: 576px) {
+  .scores_mobileTransform {
+    display: flex;
+    transform: scale(0.7) translateX(-29) !important;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .scores_mobileTransform {
+    background-color: blue;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .scores_mobileTransform {
+    background-color: blue;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .scores_mobileTransform {
+    background-color: blue;
+  }
 }

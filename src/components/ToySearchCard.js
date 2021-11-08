@@ -75,16 +75,26 @@ export default function ToySearchCard(props) {
                   <Row className="m-2 p-2 card_Row">
                     {/* Toy Image */}
                     <Col
-                      xs={2}
-                      sm={2}
                       md={2}
                       lg={2}
                       xl={2}
-                      className="flexCenter_center"
+                      className="d-none d-md-flex flexCenter_center"
                     >
                       <Image
                         src="./assets/images/original/TTT_logo_hiRes.png"
                         thumbnail
+                      />
+                    </Col>
+                    {/* Toy Image - MOBILE*/}
+                    <Col
+                      xs={12}
+                      sm={12}
+                      className="d-flex d-md-none flexCenter_center"
+                    >
+                      <Image
+                        src="./assets/images/original/TTT_logo_hiRes.png"
+                        thumbnail
+                        style={{ width: "65%" }}
                       />
                     </Col>
 
@@ -154,20 +164,123 @@ export default function ToySearchCard(props) {
                   <Row className="m-2 p-2 card_Row">
                     {/* Toy Image */}
                     <Col
-                      xs={2}
-                      sm={2}
                       md={2}
                       lg={2}
                       xl={2}
-                      className="flexCenter_center"
+                      className="d-none d-md-flex flexCenter_center"
                     >
                       <Image
                         src="./assets/images/original/TTT_logo_hiRes.png"
                         thumbnail
                       />
                     </Col>
+                    {/* Toy Image - MOBILE */}
+                    <Col
+                      xs={6}
+                      sm={6}
+                      className="d-flex d-md-none flexCenter_center"
+                    >
+                      <Image
+                        src="./assets/images/original/TTT_logo_hiRes.png"
+                        thumbnail
+                      />
+                    </Col>
+                    {/* Blank Report Card - MOBILE*/}
+                    <Col
+                      xs={6}
+                      sm={6}
+                      style={{
+                        alignItems: "center",
+                      }}
+                      className="d-flex d-md-none"
+                    >
+                      <Image
+                        src="./assets/icons/scoring_icons/report_card.png"
+                        style={{ width: "100%" }}
+                      />
+                      <div className="scores_mobileTransform">
+                        {/* TT's Cumulative Research Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${searchedItems.ToyTipsRating}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: -39,
+                            right: 30,
+                            height: 28,
+                          }}
+                        />
+                        {/* Testers' Fun Grade */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${searchedItems.Kids_Rating}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: -13,
+                            right: 58,
+                            height: 28,
+                          }}
+                        />
+                        {/* Movement Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${searchedItems.Motor_Movement}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 33,
+                            right: 82,
+                            height: 20,
+                          }}
+                        />
+                        {/* Thinking Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${searchedItems.Thinking_Skills}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 52,
+                            right: 102,
+                            height: 20,
+                          }}
+                        />
+                        {/* Personality Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${searchedItems.Character_Development}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 71,
+                            right: 122,
+                            height: 20,
+                          }}
+                        />
+                        {/* Social Interaction Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${searchedItems.Social_Interaction}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 90,
+                            right: 142,
+                            height: 20,
+                          }}
+                        />
+                      </div>
+                    </Col>
                     {/* Text Container */}
-                    <Col xs={7} sm={7} md={7} lg={8} xl={8}>
+                    <Col xs={12} sm={12} md={7} lg={7} xl={7}>
                       {/* ROW 1: Toy Name */}
                       <Row className="flexCenter">
                         <Col className="p-0">
@@ -221,14 +334,19 @@ export default function ToySearchCard(props) {
                     </Col>
                     {/* Blank Report Card */}
                     <Col
-                      xs={3}
-                      sm={3}
                       md={3}
-                      lg={2}
-                      xl={2}
-                      style={{ display: "flex", alignItems: "center" }}
+                      lg={3}
+                      xl={3}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                      className="d-none d-md-flex"
                     >
-                      <Image src="./assets/icons/scoring_icons/report_card.png" />
+                      <Image
+                        src="./assets/icons/scoring_icons/report_card.png"
+                        style={{ width: "100%" }}
+                      />
                       {/* TT's Cumulative Research Score */}
                       <img
                         src={`./assets/icons/scoring_icons/${searchedItems.ToyTipsRating}.png`}
