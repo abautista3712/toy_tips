@@ -233,7 +233,7 @@ export default function ToySearchCard(props) {
                           }}
                           style={{
                             position: "relative",
-                            top: 33,
+                            top: 37,
                             right: 82,
                             height: 20,
                           }}
@@ -246,7 +246,7 @@ export default function ToySearchCard(props) {
                           }}
                           style={{
                             position: "relative",
-                            top: 52,
+                            top: 56,
                             right: 102,
                             height: 20,
                           }}
@@ -259,7 +259,7 @@ export default function ToySearchCard(props) {
                           }}
                           style={{
                             position: "relative",
-                            top: 71,
+                            top: 75,
                             right: 122,
                             height: 20,
                           }}
@@ -272,7 +272,7 @@ export default function ToySearchCard(props) {
                           }}
                           style={{
                             position: "relative",
-                            top: 90,
+                            top: 94,
                             right: 142,
                             height: 20,
                           }}
@@ -347,84 +347,86 @@ export default function ToySearchCard(props) {
                         src="./assets/icons/scoring_icons/report_card.png"
                         style={{ width: "100%" }}
                       />
-                      {/* TT's Cumulative Research Score */}
-                      <img
-                        src={`./assets/icons/scoring_icons/${searchedItems.ToyTipsRating}.png`}
-                        onError={(e) => {
-                          e.target.src = `./assets/icons/scoring_icons/0.png`;
-                        }}
-                        style={{
-                          position: "relative",
-                          top: -39,
-                          right: 30,
-                          height: 28,
-                        }}
-                      />
-                      {/* Testers' Fun Grade */}
-                      <img
-                        src={`./assets/icons/scoring_icons/${searchedItems.Kids_Rating}.png`}
-                        onError={(e) => {
-                          e.target.src = `./assets/icons/scoring_icons/0.png`;
-                        }}
-                        style={{
-                          position: "relative",
-                          top: -13,
-                          right: 58,
-                          height: 28,
-                        }}
-                      />
-                      {/* Movement Skill Score */}
-                      <img
-                        src={`./assets/icons/scoring_icons/${searchedItems.Motor_Movement}.png`}
-                        onError={(e) => {
-                          e.target.src = `./assets/icons/scoring_icons/0.png`;
-                        }}
-                        style={{
-                          position: "relative",
-                          top: 33,
-                          right: 82,
-                          height: 20,
-                        }}
-                      />
-                      {/* Thinking Skill Score */}
-                      <img
-                        src={`./assets/icons/scoring_icons/${searchedItems.Thinking_Skills}.png`}
-                        onError={(e) => {
-                          e.target.src = `./assets/icons/scoring_icons/0.png`;
-                        }}
-                        style={{
-                          position: "relative",
-                          top: 52,
-                          right: 102,
-                          height: 20,
-                        }}
-                      />
-                      {/* Personality Skill Score */}
-                      <img
-                        src={`./assets/icons/scoring_icons/${searchedItems.Character_Development}.png`}
-                        onError={(e) => {
-                          e.target.src = `./assets/icons/scoring_icons/0.png`;
-                        }}
-                        style={{
-                          position: "relative",
-                          top: 71,
-                          right: 122,
-                          height: 20,
-                        }}
-                      />
-                      {/* Social Interaction Skill Score */}
-                      <img
-                        src={`./assets/icons/scoring_icons/${searchedItems.Social_Interaction}.png`}
-                        onError={(e) => {
-                          e.target.src = `./assets/icons/scoring_icons/0.png`;
-                        }}
-                        style={{
-                          position: "relative",
-                          top: 90,
-                          right: 142,
-                          height: 20,
-                        }}
-                      />
+                      <div className="scores_mobileTransform">
+                        {/* TT's Cumulative Research Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${searchedItems.ToyTipsRating}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: -39,
+                            right: 30,
+                            height: 28,
+                          }}
+                        />
+                        {/* Testers' Fun Grade */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${searchedItems.Kids_Rating}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: -13,
+                            right: 58,
+                            height: 28,
+                          }}
+                        />
+                        {/* Movement Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${searchedItems.Motor_Movement}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 36,
+                            right: 82,
+                            height: 20,
+                          }}
+                        />
+                        {/* Thinking Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${searchedItems.Thinking_Skills}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 55,
+                            right: 102,
+                            height: 20,
+                          }}
+                        />
+                        {/* Personality Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${searchedItems.Character_Development}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 74,
+                            right: 122,
+                            height: 20,
+                          }}
+                        />
+                        {/* Social Interaction Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${searchedItems.Social_Interaction}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 93,
+                            right: 142,
+                            height: 20,
+                          }}
+                        />
+                      </div>
                     </Col>
                   </Row>
                 </Container>
