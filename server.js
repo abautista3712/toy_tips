@@ -43,7 +43,7 @@ if (process.env.JAWSDB_URL) {
 // GET Route for MySQL
 app.get("/api/get", (req, res) => {
   const sqlSearch =
-    "SELECT ToyName, AgeRange1, categories, company_name, Character_Development, Kids_Rating, Long_Review, Low_Price, mfg_desc, Motor_Movement, product_website, reviewer_longreview, Social_Interaction, ToyTipsRating, Thinking_Skills FROM reviews WHERE Long_Review IS NOT NULL AND Long_Review != '' LIMIT 0, 5000";
+    "SELECT ToyName, AgeRange1, categories, company_name, Character_Development, Kids_Rating, Long_Review, Low_Price, mfg_desc, Motor_Movement, product_website, reviewer_longreview, Social_Interaction, ToyTipsRating, Thinking_Skills FROM reviews WHERE Long_Review IS NOT NULL AND Long_Review != '' LIMIT 0, 2000 ";
 
   // Connect to MySQL. Send result to GET route at /api/get
   connection.query(sqlSearch, (err, result) => {

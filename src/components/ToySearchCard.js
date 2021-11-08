@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import ShowMoreText from "react-show-more-text";
+// import LazyLoad from "react-lazyload";
 
 export default function ToySearchCard(props) {
   const displayToySearchCard = (props) => {
