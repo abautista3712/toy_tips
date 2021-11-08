@@ -137,7 +137,7 @@ const About = (props) => {
           {/* TT Report Card Image - MOBILE*/}
           <Col xs={12} sm={12} className="d-flex d-md-none flexCenter_center">
             <img
-              src="./assets/images/original/TTT_logo_hiRes.png"
+              src="./assets/images/original/TT_reportCard.png"
               width="40%"
               alt="Toy Tips Report Card"
             />
@@ -184,7 +184,7 @@ const About = (props) => {
             className="d-none d-md-flex flexCenter_flexEnd"
           >
             <img
-              src="./assets/images/original/TTT_logo_hiRes.png"
+              src="./assets/images/original/TT_reportCard.png"
               width="100%"
               alt="Toy Tips Report Card"
             />
