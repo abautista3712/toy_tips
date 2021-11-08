@@ -10,34 +10,56 @@ const Landing = (props) => {
   };
   return (
     <Carousel fade>
-      {/* <Carousel.Item>
+      {/* First Carousel Slide */}
+      <Carousel.Item>
+        {/* Carousel Image */}
         <img
-          className="caroselImage_mobileSizing"
+          className="carouselImage_mobileSizing"
           src="./assets/images/original/stock_toys1.jpeg"
           alt="First slide"
           onClick={handleClick_Search}
         />
+        {/* Carousel Caption */}
         <Carousel.Caption className="caption_Slide1">
+          {/* Main line of caption */}
           <h1 className="d-none d-md-block">
             Thousands of Vintage Toy Reviews
           </h1>
+          {/* MOBILE */}
           <h3 className="d-block d-md-none">
             Thousands of Vintage Toy Reviews
           </h3>
+          {/* Sub line of caption */}
           <p>Browse our entire collection from the 1990s and 2000s!</p>
         </Carousel.Caption>
-      </Carousel.Item> */}
+      </Carousel.Item>
+      {/* Second Carousel Slide */}
       <Carousel.Item>
+        {/* Carousel Image */}
         <img
-          className="w-100"
+          className="carouselImage_mobileSizing"
           src="./assets/images/resized/stock_toys2_shortHeight_large.jpeg"
           alt="Second slide"
           onClick={handleClick_About}
         />
+        {/* Carousel Caption */}
         <Carousel.Caption className="caption_Slide2">
-          <h1>30 Years of Independent Research </h1>
+          {/* Main line of caption */}
+          <h1 className="d-none d-md-block">
+            30 Years of Independent Research{" "}
+          </h1>
+          {/* MOBILE */}
+          <h3 className="d-block d-md-none">
+            30 Years of Independent Research{" "}
+          </h3>
+
+          {/* Sub line of caption */}
           <h1 className="d-none d-lg-block">on Smart Consumer Choices</h1>
-          <p>Click to learn more about Toy Tips</p>
+          <p className="d-none d-md-block">
+            Click to learn more about Toy Tips
+          </p>
+          {/* MOBILE */}
+          <p className="d-block d-md-none">Click to learn more</p>
         </Carousel.Caption>
       </Carousel.Item>
       {/* <Carousel.Item>

@@ -56,7 +56,7 @@ body {
   opacity: 0.6;
 }
 
-/* ---Carosel Component in Landing Page--- */
+/* ---Carousel Component in Landing Page--- */
 .caption_Slide1 {
   /* Positioning and Background Color */
   top: 40%;
@@ -75,16 +75,22 @@ body {
   padding-right: 5%;
 }
 
-.caroselImage_mobileSizing {
+.carouselImage_mobileSizing {
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  .caroselImage_mobileSizing {
+  .carouselImage_mobileSizing {
     height: 100vh;
     object-fit: cover;
   }
 
   .caption_Slide1 {
+    top: 22%;
+    bottom: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .caption_Slide2 {
     top: 22%;
     bottom: auto;
     background-color: rgba(0, 0, 0, 0.7);
