@@ -506,10 +506,10 @@ export default function ToySearchCard(props) {
       });
     } else {
       console.log("No props loaded yet...");
-      return (
-        <h3>Loading...</h3>
-        // <img src={loading} alt="Loading..." />
-      );
+      // return (
+      //   <h3>Loading...</h3>
+      //   // <img src={loading} alt="Loading..." />
+      // );
     }
   };
   console.log("Calling displayToySearchCard(props) again...");
