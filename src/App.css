@@ -41,10 +41,11 @@ body {
 .footer {
   /* Main styling */
   background-color: rgb(255, 255, 255);
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
   padding: 0.25rem;
+  z-index: 1;
 
   /* Flex centering */
   display: flex;

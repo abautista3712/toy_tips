@@ -61,7 +61,7 @@ const ToySearchCard = (props) => {
         dataLength={current.length}
         hasMore={hasMore}
         next={getMoreData}
-        height={750}
+        height={500}
         loader={<h4>Loading...</h4>}
       >
         <div>

@@ -43,7 +43,7 @@ function App() {
         />
         <Route path="/search" render={() => <Search search={search} />} />
       </Switch>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 }

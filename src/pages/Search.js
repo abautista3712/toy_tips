@@ -1,8 +1,7 @@
 import React, { useState, useEffect, Suspense, lazy } from "react";
 import Axios from "axios";
-import ToySearchCard from "../components/ToySearchCard";
 
-// const ToySearchCard = React.lazy(() => import("../components/ToySearchCard"));
+const ToySearchCard = React.lazy(() => import("../components/ToySearchCard"));
 const baseURL = "/api/get";
 
 const Search = (props) => {
@@ -22,9 +21,9 @@ const Search = (props) => {
 
   return (
     <div>
-      {/* <Suspense fallback={<h3>Loading... but from Search component</h3>}> */}
-      <ToySearchCard toyData={toyData} search={props.search} />
-      {/* </Suspense> */}
+      <Suspense fallback={<h3>Loading...</h3>}>
+        <ToySearchCard toyData={toyData} search={props.search} />
+      </Suspense>
     </div>
   );
 };
