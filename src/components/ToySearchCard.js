@@ -5,53 +5,85 @@ import faker from "faker";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const ToySearchCard = (props) => {
-  // const [isInitialized, setIsInitialized] = useState(false);
-  // const [dataPayload, setDataPayload] = useState({});
-
-  // const { toyData, search } = props;
-
-  // // Recursively call initializeDataFetch until props are loaded into component. Save props into dataPayload state.
-  // const initializeDataFetch = () => {
-  //   if (toyData.length > 0) {
-  //     if (isInitialized == false) {
-  //       setIsInitialized(true);
-  //       setDataPayload(toyData);
-  //       console.log("Data successfully initialized");
-  //     }
-  //   } else {
-  //     console.log("No props loaded yet...");
-  //   }
-  // };
-  // if (isInitialized == false) {
-  //   console.log("Calling initializeDataFetch(props)...");
-  //   return <>{initializeDataFetch()}</>;
-  // }
-
-  const data = new Array(1000).fill().map((value, id) => ({
-    id: id,
-    title: faker.lorem.words(5),
-    body: faker.lorem.sentences(8),
-  }));
-
+  const [isInitialized, setIsInitialized] = useState(false);
+  const [toyData_array, setToyData_array] = useState([{}]);
+  const [current, setCurrent] = useState([{}]);
+  const [min_windowHeight, setMin_windowHeight] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
   const [count, setCount] = useState({
     prev: 0,
-    next: 10,
+    next: 15,
   });
-  const [hasMore, setHasMore] = useState(true);
-  const [current, setCurrent] = useState(data.slice(count.prev, count.next));
+
+  const { toyData, search } = props;
+
+  // Recursively call initializeDataFetch until props are loaded into component. Save props into dataPayload state.
+  const initializeDataFetch = () => {
+    if (toyData.length > 0) {
+      if (isInitialized == false) {
+        setIsInitialized(true);
+
+        // Convert object to array for InfiniteScroll
+        const toyData_array = Object.entries(toyData).map(
+          (toyData_object, index) => {
+            return toyData_object[1];
+          }
+        );
+
+        // Set states for toyData_array and current
+        setToyData_array(toyData_array);
+        setCurrent(toyData_array.slice(count.prev, count.next));
+
+        // Adjust min loading height for InfiniteScroll
+        if (window.screen.availHeight != window.screen.height) {
+          window.screen.availHeight < window.screen.height
+            ? setMin_windowHeight(Math.floor(window.screen.availHeight * 0.73))
+            : setMin_windowHeight(Math.floor(window.screen.height * 0.73));
+        } else {
+          setMin_windowHeight(Math.floor(window.screen.availHeight * 0.73));
+        }
+
+        // Adjust min loading height for InfiniteScroll - MOBILE
+        if ((window.screen.availWidth <= 490) | (window.screen.width <= 490)) {
+          if (window.screen.availHeight != window.screen.height) {
+            window.screen.availHeight < window.screen.height
+              ? setMin_windowHeight(
+                  Math.floor(window.screen.availHeight * 0.65)
+                )
+              : setMin_windowHeight(Math.floor(window.screen.height * 0.65));
+          } else {
+            setMin_windowHeight(Math.floor(window.screen.availHeight * 0.65));
+          }
+        }
+
+        console.log("Data successfully initialized");
+      }
+      if (toyData_array) {
+        return toyData_array;
+      }
+    } else {
+      console.log("No props loaded yet...");
+    }
+  };
+  if (isInitialized == false) {
+    console.log("Calling initializeDataFetch(props)...");
+    return <>{initializeDataFetch()}</>;
+  }
 
   const getMoreData = () => {
     console.log("getMoreData has been called");
-    if (current.length === data.length) {
+    if (current.length === toyData_array.length) {
       setHasMore(false);
       return;
     }
     setTimeout(() => {
-      setCurrent(current.concat(data.slice(count.prev + 10, count.next + 10)));
+      setCurrent(
+        current.concat(toyData_array.slice(count.prev + 15, count.next + 15))
+      );
     }, 2000);
     setCount((prevState) => ({
-      prev: prevState.prev + 10,
-      next: prevState.next + 10,
+      prev: prevState.prev + 15,
+      next: prevState.next + 15,
     }));
   };
 
@@ -61,15 +93,130 @@ const ToySearchCard = (props) => {
         dataLength={current.length}
         hasMore={hasMore}
         next={getMoreData}
-        height={500}
+        height={min_windowHeight}
         loader={<h4>Loading...</h4>}
       >
         <div>
           {current &&
-            current.map((item, index) => (
-              <div key={index} className="post">
-                <h3>{`${item.title}-${item.id}`}</h3>
-                <p>{item.body}</p>
+            current.map((toyData, index) => (
+              <div>
+                <Container>
+                  {/* Toy Search Card Container*/}
+                  <Row className="m-2 p-2 card_Row">
+                    {/* Toy Image */}
+                    <Col
+                      md={2}
+                      lg={2}
+                      xl={2}
+                      className="d-none d-md-flex flexCenter_center"
+                    >
+                      <Image
+                        src="./assets/images/original/TTT_logo_hiRes.png"
+                        thumbnail
+                      />
+                    </Col>
+                    {/* Toy Image - MOBILE*/}
+                    <Col
+                      xs={12}
+                      sm={12}
+                      className="d-flex d-md-none flexCenter_center"
+                    >
+                      <Image
+                        src="./assets/images/original/TTT_logo_hiRes.png"
+                        thumbnail
+                        style={{ width: "65%" }}
+                      />
+                    </Col>
+
+                    {/* Text Container */}
+                    <Col>
+                      {/* ROW 1: Toy Name */}
+                      <Row className="flexCenter">
+                        <Col className="p-0">
+                          <h2
+                            className="d-none d-md-flex"
+                            // Commented out because most product websites are outdated/missing
+                            // onClick={handleClick_product_website}
+                          >
+                            {toyData.ToyName}
+                          </h2>
+                          {/* MOBILE */}
+                          <h4
+                            className="d-flex d-md-none flexCenter_center_textAlign"
+                            // Commented out because most product websites are outdated/missing
+                            // onClick={handleClick_product_website}
+                          >
+                            {toyData.ToyName}
+                          </h4>
+                        </Col>
+                      </Row>
+                      {/* ROW 2: Company Name */}
+                      <Row className="flexCenter">
+                        <Col className="d-none d-md-flex p-0">
+                          by {toyData.company_name}
+                        </Col>
+                        {/* MOBILE */}
+                        <Col className="d-flex d-md-none flexCenter_center_textAlign">
+                          by {toyData.company_name}
+                        </Col>
+                      </Row>
+                      {/* ROW 3: Ages, Price */}
+                      <Row className="flexCenter">
+                        <Col className="d-none d-md-flex p-0">
+                          <b className="age_price_margin">For Ages: </b>
+                          {toyData.AgeRange1}
+                        </Col>
+                        <Col className="d-none d-md-flex p-0">
+                          <b className="age_price_margin">Price: </b>
+                          {toyData.Low_Price}
+                        </Col>
+                        {/* MOBILE */}
+                        <Col className="d-flex d-md-none flexCenter_center">
+                          <b className="age_price_margin">For Ages: </b>
+                          {toyData.AgeRange1}
+                        </Col>
+                        <Col className="d-flex d-md-none flexCenter_center_textAlign">
+                          <b className="age_price_margin">Price: </b>
+                          {toyData.Low_Price}
+                        </Col>
+                      </Row>
+                      {/* ROW 4: Categories */}
+                      <Row className="flexCenter">
+                        <Col
+                          className="d-none d-md-flex p-0"
+                          style={{ fontSize: "small" }}
+                        >
+                          <b>{toyData.categories}</b>
+                        </Col>
+                        {/* MOBILE */}
+                        <Col
+                          className="d-flex d-md-none flexCenter_center_textAlign"
+                          style={{ fontSize: "small" }}
+                        >
+                          <b>{toyData.categories}</b>
+                        </Col>
+                      </Row>
+                      {/* ROW 5: Manufacturer's Description */}
+                      <Row className="flexCenter">
+                        <Col className="p-0">
+                          <b>Manufacturer's Description</b>
+                          <ShowMoreText lines={3}>
+                            <p>{toyData.mfg_desc}</p>
+                          </ShowMoreText>
+                        </Col>
+                      </Row>
+                      {/* Row 6: Review */}
+                      <Row className="flexCenter">
+                        <Col className="p-0">
+                          <b>Expert Review</b>
+                          <ShowMoreText lines={3}>
+                            <p>{toyData.Long_Review}</p>
+                          </ShowMoreText>
+                        </Col>
+                      </Row>
+                    </Col>
+                  </Row>
+                </Container>
               </div>
             ))}
         </div>
@@ -83,14 +230,6 @@ const ToySearchCard = (props) => {
   //   if (asArray[0][1].toLowerCase().includes(search.toString().toLowerCase())) {
   //     const filtered = asArray;
   //     const searchedItems = Object.fromEntries(filtered);
-
-  //     return (
-  //       <div>
-  //         <div>
-  //           ({index}) {toyData.ToyName}
-  //         </div>
-  //       </div>
-  //     );
 
   // return (
   //   <div>
