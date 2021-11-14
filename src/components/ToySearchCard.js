@@ -26,6 +26,55 @@ const ToySearchCard = (props) => {
         // Convert object to array for InfiniteScroll
         const toyData_array = Object.entries(toyData).map(
           (toyData_object, index) => {
+            // Calculate 'count' to check if entire report card should be hidden. Per client, if all scores are blank (i.e., count === 6) hide report card.
+            let count = 0;
+            if (
+              (toyData_object[1].ToyTipsRating < 2) |
+              (toyData_object[1].ToyTipsRating > 5) |
+              (toyData_object[1].ToyTipsRating == undefined)
+            ) {
+              count++;
+            }
+            if (
+              (toyData_object[1].Kids_Rating < 2) |
+              (toyData_object[1].Kids_Rating > 5) |
+              (toyData_object[1].Kids_Rating == undefined)
+            ) {
+              count++;
+            }
+            if (
+              (toyData_object[1].Motor_Movement < 2) |
+              (toyData_object[1].Motor_Movement > 5) |
+              (toyData_object[1].Motor_Movement == undefined)
+            ) {
+              count++;
+            }
+            if (
+              (toyData_object[1].Thinking_Skills < 2) |
+              (toyData_object[1].Thinking_Skills > 5) |
+              (toyData_object[1].Thinking_Skills == undefined)
+            ) {
+              count++;
+            }
+            if (
+              (toyData_object[1].Character_Development < 2) |
+              (toyData_object[1].Character_Development > 5) |
+              (toyData_object[1].Character_Development == undefined)
+            ) {
+              count++;
+            }
+            if (
+              (toyData_object[1].Social_Interaction < 2) |
+              (toyData_object[1].Social_Interaction > 5) |
+              (toyData_object[1].Social_Interaction == undefined)
+            ) {
+              count++;
+            }
+
+            // Add 'count' to toyData_object
+            toyData_object[1].count = count;
+
+            // Return object containing data from database plus count
             return toyData_object[1];
           }
         );
@@ -101,7 +150,7 @@ const ToySearchCard = (props) => {
             current.map((toyData, index) => (
               <div>
                 <Container>
-                  {/* Toy Search Card Container*/}
+                  {/* Toy Search Card Container */}
                   <Row className="m-2 p-2 card_Row">
                     {/* Toy Image */}
                     <Col
@@ -110,26 +159,119 @@ const ToySearchCard = (props) => {
                       xl={2}
                       className="d-none d-md-flex flexCenter_center"
                     >
+                      <div>toyData.count = {toyData.count}</div>
                       <Image
                         src="./assets/images/original/TTT_logo_hiRes.png"
                         thumbnail
                       />
                     </Col>
-                    {/* Toy Image - MOBILE*/}
+                    {/* Toy Image - MOBILE */}
                     <Col
-                      xs={12}
-                      sm={12}
+                      xs={6}
+                      sm={6}
                       className="d-flex d-md-none flexCenter_center"
                     >
                       <Image
                         src="./assets/images/original/TTT_logo_hiRes.png"
                         thumbnail
-                        style={{ width: "65%" }}
                       />
                     </Col>
-
+                    {/* Blank Report Card - MOBILE*/}
+                    <Col
+                      xs={6}
+                      sm={6}
+                      style={{
+                        alignItems: "center",
+                      }}
+                      className="d-flex d-md-none"
+                    >
+                      <Image
+                        src="./assets/icons/scoring_icons/report_card.png"
+                        style={{ width: "100%" }}
+                      />
+                      <div className="scores_mobileTransform">
+                        {/* TT's Cumulative Research Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${toyData.ToyTipsRating}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: -39,
+                            right: 30,
+                            height: 28,
+                          }}
+                        />
+                        {/* Testers' Fun Grade */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${toyData.Kids_Rating}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: -13,
+                            right: 58,
+                            height: 28,
+                          }}
+                        />
+                        {/* Movement Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${toyData.Motor_Movement}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 37,
+                            right: 82,
+                            height: 20,
+                          }}
+                        />
+                        {/* Thinking Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${toyData.Thinking_Skills}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 56,
+                            right: 102,
+                            height: 20,
+                          }}
+                        />
+                        {/* Personality Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${toyData.Character_Development}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 75,
+                            right: 122,
+                            height: 20,
+                          }}
+                        />
+                        {/* Social Interaction Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${toyData.Social_Interaction}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 94,
+                            right: 142,
+                            height: 20,
+                          }}
+                        />
+                      </div>
+                    </Col>
                     {/* Text Container */}
-                    <Col>
+                    <Col xs={12} sm={12} md={7} lg={7} xl={7}>
                       {/* ROW 1: Toy Name */}
                       <Row className="flexCenter">
                         <Col className="p-0">
@@ -205,7 +347,7 @@ const ToySearchCard = (props) => {
                           </ShowMoreText>
                         </Col>
                       </Row>
-                      {/* Row 6: Review */}
+                      {/* ROW 6: Review */}
                       <Row className="flexCenter">
                         <Col className="p-0">
                           <b>Expert Review</b>
@@ -214,6 +356,102 @@ const ToySearchCard = (props) => {
                           </ShowMoreText>
                         </Col>
                       </Row>
+                    </Col>
+                    {/* Blank Report Card */}
+                    <Col
+                      md={3}
+                      lg={3}
+                      xl={3}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                      className="d-none d-md-flex"
+                    >
+                      <Image
+                        src="./assets/icons/scoring_icons/report_card.png"
+                        style={{ width: "100%" }}
+                      />
+                      <div className="scores_mobileTransform">
+                        {/* TT's Cumulative Research Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${toyData.ToyTipsRating}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: -39,
+                            right: 30,
+                            height: 28,
+                          }}
+                        />
+                        {/* Testers' Fun Grade */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${toyData.Kids_Rating}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: -13,
+                            right: 58,
+                            height: 28,
+                          }}
+                        />
+                        {/* Movement Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${toyData.Motor_Movement}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 36,
+                            right: 82,
+                            height: 20,
+                          }}
+                        />
+                        {/* Thinking Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${toyData.Thinking_Skills}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 55,
+                            right: 102,
+                            height: 20,
+                          }}
+                        />
+                        {/* Personality Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${toyData.Character_Development}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 74,
+                            right: 122,
+                            height: 20,
+                          }}
+                        />
+                        {/* Social Interaction Skill Score */}
+                        <img
+                          src={`./assets/icons/scoring_icons/${toyData.Social_Interaction}.png`}
+                          onError={(e) => {
+                            e.target.src = `./assets/icons/scoring_icons/0.png`;
+                          }}
+                          style={{
+                            position: "relative",
+                            top: 93,
+                            right: 142,
+                            height: 20,
+                          }}
+                        />
+                      </div>
                     </Col>
                   </Row>
                 </Container>
