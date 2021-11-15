@@ -58,8 +58,6 @@ app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "app/views/index.html"));
 });
 
-require("./app/routes/review.routes")(app);
-
 // Set PORT. Listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
