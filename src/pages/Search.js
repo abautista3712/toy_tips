@@ -21,7 +21,20 @@ const Search = (props) => {
 
   return (
     <div>
-      <Suspense fallback={<h3>Loading...</h3>}>
+      <Suspense
+        fallback={
+          <h3
+            style={{
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Grading report cards...
+          </h3>
+        }
+      >
         <ToySearchCard toyData={toyData} search={props.search} />
       </Suspense>
     </div>
