@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import ShowMoreText from "react-show-more-text";
-import faker from "faker";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const ToySearchCard = (props) => {
@@ -72,22 +71,32 @@ const ToySearchCard = (props) => {
             }
 
             // Initialize variables to handle styling during report card omission
-            let handleReportCard = "flex";
-            let handleNoRC_colSpacing = 6;
+            let handleDisplay_RC = "flex";
+            let handleNoRC_imgSpacing = 6;
+            let handleNoRC_RCSpacing = 3;
+            let handleNoRC_RCSpacing_mobile = 6;
+            let handleNoRC_textSpacing = 7;
             let handleNoRC_toyImgSize = "100%";
 
             // Element style will change if count === 6
             if (count == 6) {
-              handleReportCard = "none";
-              handleNoRC_colSpacing = 12;
+              handleDisplay_RC = "none";
+              handleNoRC_imgSpacing = 12;
+              handleNoRC_RCSpacing = 0;
+              handleNoRC_RCSpacing_mobile = 0;
+              handleNoRC_textSpacing = 10;
               handleNoRC_toyImgSize = "65%";
             }
-            // Add 'handleReportCard', 'handleNoRC_colSpacing', and 'handleNoRC_toyImgSize' to toyData_object
-            toyData_object[1].handleReportCard = handleReportCard;
-            toyData_object[1].handleNoRC_colSpacing = handleNoRC_colSpacing;
+            // Add key and values to toyData_object
+            toyData_object[1].handleDisplay_RC = handleDisplay_RC;
+            toyData_object[1].handleNoRC_imgSpacing = handleNoRC_imgSpacing;
+            toyData_object[1].handleNoRC_RCSpacing = handleNoRC_RCSpacing;
+            toyData_object[1].handleNoRC_RCSpacing_mobile =
+              handleNoRC_RCSpacing_mobile;
+            toyData_object[1].handleNoRC_textSpacing = handleNoRC_textSpacing;
             toyData_object[1].handleNoRC_toyImgSize = handleNoRC_toyImgSize;
 
-            // Return object containing data from database plus handleReportCard
+            // Return object containing data from database plus handleDisplay_RC
             return toyData_object[1];
           }
         );
@@ -115,6 +124,38 @@ const ToySearchCard = (props) => {
               : setMin_windowHeight(Math.floor(window.screen.height * 0.65));
           } else {
             setMin_windowHeight(Math.floor(window.screen.availHeight * 0.65));
+          }
+        }
+
+        // Adjust min loading height for InfiniteScroll - Laptop L
+        if (
+          (window.screen.availWidth >= 1440) |
+          (window.screen.width >= 1440)
+        ) {
+          if (window.screen.availHeight != window.screen.height) {
+            window.screen.availHeight < window.screen.height
+              ? setMin_windowHeight(
+                  Math.floor(window.screen.availHeight * 0.82)
+                )
+              : setMin_windowHeight(Math.floor(window.screen.height * 0.82));
+          } else {
+            setMin_windowHeight(Math.floor(window.screen.availHeight * 0.82));
+          }
+        }
+
+        // Adjust min loading height for InfiniteScroll - 4K
+        if (
+          (window.screen.availWidth >= 2560) |
+          (window.screen.width >= 2560)
+        ) {
+          if (window.screen.availHeight != window.screen.height) {
+            window.screen.availHeight < window.screen.height
+              ? setMin_windowHeight(
+                  Math.floor(window.screen.availHeight * 0.91)
+                )
+              : setMin_windowHeight(Math.floor(window.screen.height * 0.91));
+          } else {
+            setMin_windowHeight(Math.floor(window.screen.availHeight * 0.91));
           }
         }
 
@@ -157,6 +198,7 @@ const ToySearchCard = (props) => {
         next={getMoreData}
         height={min_windowHeight}
         loader={<h4>Loading...</h4>}
+        style={{ margin: 0, padding: 0, width: "100%", overflowX: "hidden" }}
       >
         <div>
           {current &&
@@ -179,8 +221,8 @@ const ToySearchCard = (props) => {
                     </Col>
                     {/* Toy Image - MOBILE */}
                     <Col
-                      xs={toyData.handleNoRC_colSpacing}
-                      sm={toyData.handleNoRC_colSpacing}
+                      xs={toyData.handleNoRC_imgSpacing}
+                      sm={toyData.handleNoRC_imgSpacing}
                       className="d-flex d-md-none flexCenter_center"
                     >
                       <Image
@@ -191,19 +233,19 @@ const ToySearchCard = (props) => {
                     </Col>
                     {/* Blank Report Card - MOBILE*/}
                     <Col
-                      xs={6}
-                      sm={6}
+                      xs={toyData.handleNoRC_RCSpacing_mobile}
+                      sm={toyData.handleNoRC_RCSpacing_mobile}
                       className="d-flex d-md-none"
                       style={{
                         alignItems: "center",
-                        display: toyData.handleReportCard,
+                        display: toyData.handleDisplay_RC,
                       }}
                     >
                       <Image
                         src="./assets/icons/scoring_icons/report_card.png"
                         style={{
                           width: "100%",
-                          display: toyData.handleReportCard,
+                          display: toyData.handleDisplay_RC,
                         }}
                       />
                       <div className="scores_mobileTransform">
@@ -218,7 +260,7 @@ const ToySearchCard = (props) => {
                             top: -39,
                             right: 30,
                             height: 28,
-                            display: toyData.handleReportCard,
+                            display: toyData.handleDisplay_RC,
                           }}
                         />
                         {/* Testers' Fun Grade */}
@@ -232,7 +274,7 @@ const ToySearchCard = (props) => {
                             top: -13,
                             right: 58,
                             height: 28,
-                            display: toyData.handleReportCard,
+                            display: toyData.handleDisplay_RC,
                           }}
                         />
                         {/* Movement Skill Score */}
@@ -246,7 +288,7 @@ const ToySearchCard = (props) => {
                             top: 37,
                             right: 82,
                             height: 20,
-                            display: toyData.handleReportCard,
+                            display: toyData.handleDisplay_RC,
                           }}
                         />
                         {/* Thinking Skill Score */}
@@ -260,7 +302,7 @@ const ToySearchCard = (props) => {
                             top: 56,
                             right: 102,
                             height: 20,
-                            display: toyData.handleReportCard,
+                            display: toyData.handleDisplay_RC,
                           }}
                         />
                         {/* Personality Skill Score */}
@@ -274,7 +316,7 @@ const ToySearchCard = (props) => {
                             top: 75,
                             right: 122,
                             height: 20,
-                            display: toyData.handleReportCard,
+                            display: toyData.handleDisplay_RC,
                           }}
                         />
                         {/* Social Interaction Skill Score */}
@@ -288,14 +330,20 @@ const ToySearchCard = (props) => {
                             top: 94,
                             right: 142,
                             height: 20,
-                            display: toyData.handleReportCard,
+                            display: toyData.handleDisplay_RC,
                           }}
                         />
                       </div>
                     </Col>
 
                     {/* Text Container */}
-                    <Col xs={12} sm={12} md={7} lg={7} xl={7}>
+                    <Col
+                      xs={12}
+                      sm={12}
+                      md={toyData.handleNoRC_textSpacing}
+                      lg={toyData.handleNoRC_textSpacing}
+                      xl={toyData.handleNoRC_textSpacing}
+                    >
                       {/* ROW 1: Toy Name */}
                       <Row className="flexCenter">
                         <Col className="p-0">
@@ -383,20 +431,20 @@ const ToySearchCard = (props) => {
                     </Col>
                     {/* Blank Report Card */}
                     <Col
-                      md={3}
-                      lg={3}
-                      xl={3}
+                      md={toyData.handleNoRC_RCSpacing}
+                      lg={toyData.handleNoRC_RCSpacing}
+                      xl={toyData.handleNoRC_RCSpacing}
                       className="d-none d-md-flex"
                       style={{
                         alignItems: "center",
-                        display: toyData.handleReportCard,
+                        display: toyData.handleDisplay_RC,
                       }}
                     >
                       <Image
                         src="./assets/icons/scoring_icons/report_card.png"
                         style={{
                           width: "100%",
-                          display: toyData.handleReportCard,
+                          display: toyData.handleDisplay_RC,
                         }}
                       />
                       <div className="scores_mobileTransform">
@@ -411,7 +459,7 @@ const ToySearchCard = (props) => {
                             top: -39,
                             right: 30,
                             height: 28,
-                            display: toyData.handleReportCard,
+                            display: toyData.handleDisplay_RC,
                           }}
                         />
                         {/* Testers' Fun Grade */}
@@ -425,7 +473,7 @@ const ToySearchCard = (props) => {
                             top: -13,
                             right: 58,
                             height: 28,
-                            display: toyData.handleReportCard,
+                            display: toyData.handleDisplay_RC,
                           }}
                         />
                         {/* Movement Skill Score */}
@@ -439,7 +487,7 @@ const ToySearchCard = (props) => {
                             top: 36,
                             right: 82,
                             height: 20,
-                            display: toyData.handleReportCard,
+                            display: toyData.handleDisplay_RC,
                           }}
                         />
                         {/* Thinking Skill Score */}
@@ -453,7 +501,7 @@ const ToySearchCard = (props) => {
                             top: 55,
                             right: 102,
                             height: 20,
-                            display: toyData.handleReportCard,
+                            display: toyData.handleDisplay_RC,
                           }}
                         />
                         {/* Personality Skill Score */}
@@ -467,7 +515,7 @@ const ToySearchCard = (props) => {
                             top: 74,
                             right: 122,
                             height: 20,
-                            display: toyData.handleReportCard,
+                            display: toyData.handleDisplay_RC,
                           }}
                         />
                         {/* Social Interaction Skill Score */}
@@ -481,7 +529,7 @@ const ToySearchCard = (props) => {
                             top: 93,
                             right: 142,
                             height: 20,
-                            display: toyData.handleReportCard,
+                            display: toyData.handleDisplay_RC,
                           }}
                         />
                       </div>
