@@ -71,10 +71,15 @@ const ToySearchCard = (props) => {
               count++;
             }
 
-            // Add 'count' to toyData_object
-            toyData_object[1].count = count;
+            // Create variable 'handleReportCard'. If count === 6, handleReportCard will change element style to display:none
+            let handleReportCard = "flex";
+            if (count == 6) {
+              handleReportCard = "none";
+            }
+            // Add 'handleReportCard' to toyData_object
+            toyData_object[1].handleReportCard = handleReportCard;
 
-            // Return object containing data from database plus count
+            // Return object containing data from database plus handleReportCard
             return toyData_object[1];
           }
         );
@@ -159,7 +164,6 @@ const ToySearchCard = (props) => {
                       xl={2}
                       className="d-none d-md-flex flexCenter_center"
                     >
-                      <div>toyData.count = {toyData.count}</div>
                       <Image
                         src="./assets/images/original/TTT_logo_hiRes.png"
                         thumbnail
@@ -180,14 +184,18 @@ const ToySearchCard = (props) => {
                     <Col
                       xs={6}
                       sm={6}
+                      className="d-flex d-md-none"
                       style={{
                         alignItems: "center",
+                        display: toyData.handleReportCard,
                       }}
-                      className="d-flex d-md-none"
                     >
                       <Image
                         src="./assets/icons/scoring_icons/report_card.png"
-                        style={{ width: "100%" }}
+                        style={{
+                          width: "100%",
+                          display: toyData.handleReportCard,
+                        }}
                       />
                       <div className="scores_mobileTransform">
                         {/* TT's Cumulative Research Score */}
@@ -201,6 +209,7 @@ const ToySearchCard = (props) => {
                             top: -39,
                             right: 30,
                             height: 28,
+                            display: toyData.handleReportCard,
                           }}
                         />
                         {/* Testers' Fun Grade */}
@@ -214,6 +223,7 @@ const ToySearchCard = (props) => {
                             top: -13,
                             right: 58,
                             height: 28,
+                            display: toyData.handleReportCard,
                           }}
                         />
                         {/* Movement Skill Score */}
@@ -227,6 +237,7 @@ const ToySearchCard = (props) => {
                             top: 37,
                             right: 82,
                             height: 20,
+                            display: toyData.handleReportCard,
                           }}
                         />
                         {/* Thinking Skill Score */}
@@ -240,6 +251,7 @@ const ToySearchCard = (props) => {
                             top: 56,
                             right: 102,
                             height: 20,
+                            display: toyData.handleReportCard,
                           }}
                         />
                         {/* Personality Skill Score */}
@@ -253,6 +265,7 @@ const ToySearchCard = (props) => {
                             top: 75,
                             right: 122,
                             height: 20,
+                            display: toyData.handleReportCard,
                           }}
                         />
                         {/* Social Interaction Skill Score */}
@@ -266,10 +279,12 @@ const ToySearchCard = (props) => {
                             top: 94,
                             right: 142,
                             height: 20,
+                            display: toyData.handleReportCard,
                           }}
                         />
                       </div>
                     </Col>
+
                     {/* Text Container */}
                     <Col xs={12} sm={12} md={7} lg={7} xl={7}>
                       {/* ROW 1: Toy Name */}
@@ -362,15 +377,18 @@ const ToySearchCard = (props) => {
                       md={3}
                       lg={3}
                       xl={3}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                      }}
                       className="d-none d-md-flex"
+                      style={{
+                        alignItems: "center",
+                        display: toyData.handleReportCard,
+                      }}
                     >
                       <Image
                         src="./assets/icons/scoring_icons/report_card.png"
-                        style={{ width: "100%" }}
+                        style={{
+                          width: "100%",
+                          display: toyData.handleReportCard,
+                        }}
                       />
                       <div className="scores_mobileTransform">
                         {/* TT's Cumulative Research Score */}
@@ -384,6 +402,7 @@ const ToySearchCard = (props) => {
                             top: -39,
                             right: 30,
                             height: 28,
+                            display: toyData.handleReportCard,
                           }}
                         />
                         {/* Testers' Fun Grade */}
@@ -397,6 +416,7 @@ const ToySearchCard = (props) => {
                             top: -13,
                             right: 58,
                             height: 28,
+                            display: toyData.handleReportCard,
                           }}
                         />
                         {/* Movement Skill Score */}
@@ -410,6 +430,7 @@ const ToySearchCard = (props) => {
                             top: 36,
                             right: 82,
                             height: 20,
+                            display: toyData.handleReportCard,
                           }}
                         />
                         {/* Thinking Skill Score */}
@@ -423,6 +444,7 @@ const ToySearchCard = (props) => {
                             top: 55,
                             right: 102,
                             height: 20,
+                            display: toyData.handleReportCard,
                           }}
                         />
                         {/* Personality Skill Score */}
@@ -436,6 +458,7 @@ const ToySearchCard = (props) => {
                             top: 74,
                             right: 122,
                             height: 20,
+                            display: toyData.handleReportCard,
                           }}
                         />
                         {/* Social Interaction Skill Score */}
@@ -449,6 +472,7 @@ const ToySearchCard = (props) => {
                             top: 93,
                             right: 142,
                             height: 20,
+                            display: toyData.handleReportCard,
                           }}
                         />
                       </div>
