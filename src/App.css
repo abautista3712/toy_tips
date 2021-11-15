@@ -152,6 +152,9 @@ body {
   display: flex;
   transform: none;
 }
+.paddingBot_about {
+  padding-bottom: 22%;
+}
 @media screen and (max-width: 320px) {
   .scores_mobileTransform {
     display: flex;
@@ -186,6 +189,9 @@ body {
   .scores_mobileTransform {
     display: flex;
     transform: scale(0.92) translate(-6px, 2px);
+  }
+  .paddingBot_about {
+    padding-bottom: 7%;
   }
 }
 @media screen and (min-width: 1024px) {

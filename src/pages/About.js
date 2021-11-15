@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 const About = (props) => {
   return (
     <div>
-      <Container>
+      <Container className="paddingBot_about">
         {/* ---FAQs--- */}
         <Row>
           <Col className="mt-3 d-none d-md-block">
