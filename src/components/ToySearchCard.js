@@ -108,54 +108,34 @@ const ToySearchCard = (props) => {
         // Adjust min loading height for InfiniteScroll
         if (window.screen.availHeight != window.screen.height) {
           window.screen.availHeight < window.screen.height
-            ? setMin_windowHeight(Math.floor(window.screen.availHeight * 0.73))
-            : setMin_windowHeight(Math.floor(window.screen.height * 0.73));
+            ? setMin_windowHeight(Math.floor(window.screen.availHeight - 185))
+            : setMin_windowHeight(Math.floor(window.screen.height - 185));
         } else {
-          setMin_windowHeight(Math.floor(window.screen.availHeight * 0.73));
+          setMin_windowHeight(Math.floor(window.screen.availHeight - 185));
         }
 
         // Adjust min loading height for InfiniteScroll - MOBILE
-        if ((window.screen.availWidth <= 490) | (window.screen.width <= 490)) {
+        if ((window.screen.availWidth <= 540) | (window.screen.width <= 540)) {
           if (window.screen.availHeight != window.screen.height) {
             window.screen.availHeight < window.screen.height
-              ? setMin_windowHeight(
-                  Math.floor(window.screen.availHeight * 0.65)
-                )
-              : setMin_windowHeight(Math.floor(window.screen.height * 0.65));
+              ? setMin_windowHeight(Math.floor(window.screen.availHeight - 175))
+              : setMin_windowHeight(Math.floor(window.screen.height - 175));
           } else {
-            setMin_windowHeight(Math.floor(window.screen.availHeight * 0.65));
+            setMin_windowHeight(Math.floor(window.screen.availHeight - 175));
           }
         }
 
         // Adjust min loading height for InfiniteScroll - Laptop L
         if (
-          (window.screen.availWidth >= 1440) |
-          (window.screen.width >= 1440)
+          (window.screen.availWidth >= 1024) |
+          (window.screen.width >= 1024)
         ) {
           if (window.screen.availHeight != window.screen.height) {
             window.screen.availHeight < window.screen.height
-              ? setMin_windowHeight(
-                  Math.floor(window.screen.availHeight * 0.82)
-                )
-              : setMin_windowHeight(Math.floor(window.screen.height * 0.82));
+              ? setMin_windowHeight(Math.floor(window.screen.availHeight - 178))
+              : setMin_windowHeight(Math.floor(window.screen.height - 178));
           } else {
-            setMin_windowHeight(Math.floor(window.screen.availHeight * 0.82));
-          }
-        }
-
-        // Adjust min loading height for InfiniteScroll - 4K
-        if (
-          (window.screen.availWidth >= 2560) |
-          (window.screen.width >= 2560)
-        ) {
-          if (window.screen.availHeight != window.screen.height) {
-            window.screen.availHeight < window.screen.height
-              ? setMin_windowHeight(
-                  Math.floor(window.screen.availHeight * 0.91)
-                )
-              : setMin_windowHeight(Math.floor(window.screen.height * 0.91));
-          } else {
-            setMin_windowHeight(Math.floor(window.screen.availHeight * 0.91));
+            setMin_windowHeight(Math.floor(window.screen.availHeight - 178));
           }
         }
 
@@ -197,7 +177,17 @@ const ToySearchCard = (props) => {
         hasMore={hasMore}
         next={getMoreData}
         height={min_windowHeight}
-        loader={<h4>Loading...</h4>}
+        loader={
+          <h4
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            Loading more toys...
+          </h4>
+        }
         style={{ margin: 0, padding: 0, width: "100%", overflowX: "hidden" }}
       >
         <div>
