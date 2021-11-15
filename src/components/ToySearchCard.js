@@ -71,13 +71,21 @@ const ToySearchCard = (props) => {
               count++;
             }
 
-            // Create variable 'handleReportCard'. If count === 6, handleReportCard will change element style to display:none
+            // Initialize variables to handle styling during report card omission
             let handleReportCard = "flex";
+            let handleNoRC_colSpacing = 6;
+            let handleNoRC_toyImgSize = "100%";
+
+            // Element style will change if count === 6
             if (count == 6) {
               handleReportCard = "none";
+              handleNoRC_colSpacing = 12;
+              handleNoRC_toyImgSize = "65%";
             }
-            // Add 'handleReportCard' to toyData_object
+            // Add 'handleReportCard', 'handleNoRC_colSpacing', and 'handleNoRC_toyImgSize' to toyData_object
             toyData_object[1].handleReportCard = handleReportCard;
+            toyData_object[1].handleNoRC_colSpacing = handleNoRC_colSpacing;
+            toyData_object[1].handleNoRC_toyImgSize = handleNoRC_toyImgSize;
 
             // Return object containing data from database plus handleReportCard
             return toyData_object[1];
@@ -171,13 +179,14 @@ const ToySearchCard = (props) => {
                     </Col>
                     {/* Toy Image - MOBILE */}
                     <Col
-                      xs={6}
-                      sm={6}
+                      xs={toyData.handleNoRC_colSpacing}
+                      sm={toyData.handleNoRC_colSpacing}
                       className="d-flex d-md-none flexCenter_center"
                     >
                       <Image
                         src="./assets/images/original/TTT_logo_hiRes.png"
                         thumbnail
+                        style={{ width: toyData.handleNoRC_toyImgSize }}
                       />
                     </Col>
                     {/* Blank Report Card - MOBILE*/}
