@@ -44,6 +44,7 @@ const Navigation = (props) => {
     <div>
       <Navbar expand="md" variant="dark" className="my-auto py-1 bgColor_nav">
         <Navbar.Brand href="/">
+          {/* Brand Image */}
           <img
             src="./assets/images/original/TTT_logo_hiRes.png"
             width="75"
@@ -51,8 +52,7 @@ const Navigation = (props) => {
             alt="Toy Tips Trusted Logo"
             className="d-none d-sm-block"
           />
-
-          {/* Brand Image for Mobile */}
+          {/* Brand Image - MOBILE */}
           <img
             src="./assets/images/original/TTT_logo_hiRes.png"
             width="45"
@@ -61,6 +61,7 @@ const Navigation = (props) => {
             className="d-block d-sm-none"
           />
         </Navbar.Brand>
+        {/* Company Name */}
         <Navbar.Brand href="/" className="flexCenter_flexStart">
           <h1>Toy Tips</h1>
         </Navbar.Brand>
@@ -68,33 +69,20 @@ const Navigation = (props) => {
           <Navbar.Text>The Independent Voice on Toys</Navbar.Text>
         </container>
 
-        {/* <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          // className="flexCenter_flexEnd"
-        />
-        <Nav className="mr-auto">
-          <NavDropdown title="test" id="collasible-nav-dropdown">
-            <Navbar.Collapse
-              id="responsive-navbar-nav"
-              // className="flexCenter_flexEnd"
-            >
-              <NavDropdown.Item href="/about">About</NavDropdown.Item>
-              <NavDropdown.Item href="/search">Browse</NavDropdown.Item>
-            </Navbar.Collapse>
-          </NavDropdown>
-        </Nav> */}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav variant="pills" className="ml-auto">
+            {/* About Button */}
             <Nav.Link href="/about" className="my-auto px-2 mobile_navLink">
               About
             </Nav.Link>
+            {/* Link Separator */}
             <Navbar.Text className="d-none d-sm-block">|</Navbar.Text>
-
+            {/* Browse Button */}
             <Nav.Link href="/search" className="d-none d-lg-block my-auto">
               Browse Entire Collection
             </Nav.Link>
-            {/* Condense "Browse Entire Collection" for Tablet */}
+            {/* Browse - Tablet */}
             <Nav.Link
               href="/search"
               className="d-lg-none my-auto px-2 mobile_navLink"
@@ -102,7 +90,7 @@ const Navigation = (props) => {
               Browse
             </Nav.Link>
           </Nav>
-
+          {/* Search Input Field */}
           <Form inline>
             <FormControl
               type="text"
@@ -113,12 +101,14 @@ const Navigation = (props) => {
           </Form>
         </Navbar.Collapse>
       </Navbar>
+      {/* Toy Tester Playwear Banner */}
       <div
         className="d-none d-md-block py-1 px-2 bgColor_playware alignText_playware click_playware"
         onClick={handleClick_TTT_playware}
       >
         Check out our "I'm a Toy Tester®" Playwear! Exclusive to Amazon
       </div>
+      {/* Toy Tester Playwear Banner - MOBILE */}
       <div
         className="d-block d-md-none py-1 px-2 bgColor_playware alignText_playware click_playware"
         style={{ fontSize: "smaller", textAlign: "center" }}
