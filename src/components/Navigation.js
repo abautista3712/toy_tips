@@ -6,13 +6,23 @@ const baseURL = "/api/get";
 
 const Navigation = (props) => {
   const [toyData, setToyData] = useState("");
+  const [typingTimeout, setTypingTimeout] = useState(0);
 
   useEffect(() => {
     getToyData();
   }, []);
 
   const handleOnChange = (e) => {
-    props.onChange(e.target.value);
+    // Capture search input and set as props in single data payload
+    if (typingTimeout) {
+      clearTimeout(typingTimeout);
+    }
+
+    setTypingTimeout(
+      setTimeout(() => {
+        props.onChange(e.target.value);
+      }, 1000)
+    );
   };
 
   const getToyData = () => {

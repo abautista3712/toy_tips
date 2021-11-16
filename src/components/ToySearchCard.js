@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import ShowMoreText from "react-show-more-text";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -13,6 +13,14 @@ const ToySearchCard = (props) => {
     prev: 0,
     next: 15,
   });
+  const [searchTerm, setSearchTerm] = useState();
+  const [isTyping, setIsTyping] = useState(false);
+
+  // useEffect(() => {
+  //   console.log(`search = ${search}`);
+  //   setSearchTerm(search);
+  //   console.log(`searchTerm = ${searchTerm}`);
+  // }, [searchTerm]);
 
   const { toyData, search } = props;
 
@@ -103,6 +111,8 @@ const ToySearchCard = (props) => {
 
         // Set states for toyData_array and current
         setToyData_array(toyData_array);
+
+        // Code-split data payload for InfiniteScroll
         setCurrent(toyData_array.slice(count.prev, count.next));
 
         // Adjust min loading height for InfiniteScroll
@@ -152,6 +162,35 @@ const ToySearchCard = (props) => {
     console.log("Calling initializeDataFetch(props)...");
     return <>{initializeDataFetch()}</>;
   }
+
+  setTimeout(() => {
+    //   // console.log(search);
+    //   if (){
+    //   }
+    //   setSearchTerm(search);
+  }, 2000);
+  // console.log(searchTerm);
+  console.log(search);
+
+  const handleSearch = () => {
+    console.log(search);
+    // (1) Pass in search prop
+    // (2) On each keystroke, reset timeout and if(searchComplete == true){setSearchComplete(false))}
+    // (3) Once timeout expires, set searchComplete to true
+    // setTimeout(() => {
+    //   setCurrent();
+    //   // current.concat(toyData_array.slice(count.prev + 15, count.next + 15))
+    // }, 2000);
+    // (4) Use .includes() and/or .filter() to drill into data payload to narrow search results
+    // const asArray = Object.entries(toyData);
+    //  if (asArray[0][1].toLowerCase().includes(search.toString().toLowerCase())) {
+    //   const filtered = asArray;
+    //   const searchedItems = Object.fromEntries(filtered);
+    // (5) If not .filter(), create new array / object with search results
+    // (6) Return / set state with results
+    // ...
+    // (7) Change mapped toyData to search_toyData
+  };
 
   const getMoreData = () => {
     console.log("getMoreData has been called");
@@ -532,146 +571,6 @@ const ToySearchCard = (props) => {
       </InfiniteScroll>
     </div>
   );
-
-  // return dataPayload.map((toyData, index) => {
-  //   // Search facilitated by converting Object to array then using .inclues().
-  //   const asArray = Object.entries(toyData);
-  //   if (asArray[0][1].toLowerCase().includes(search.toString().toLowerCase())) {
-  //     const filtered = asArray;
-  //     const searchedItems = Object.fromEntries(filtered);
-
-  // return (
-  //   <div>
-  //     {/* <InfiniteScroll
-  //       dataLength={toyData.length}
-  //       next={initializeDataFetch(props)}
-  //       hasMore={false}
-  //       height={400}
-  //     > */}
-  //     <div>
-  //       <Container>
-  //         {/* Toy Search Card Container*/}
-  //         <Row className="m-2 p-2 card_Row">
-  //           {/* Toy Image */}
-  //           <Col
-  //             md={2}
-  //             lg={2}
-  //             xl={2}
-  //             className="d-none d-md-flex flexCenter_center"
-  //           >
-  //             <Image
-  //               src="./assets/images/original/TTT_logo_hiRes.png"
-  //               thumbnail
-  //             />
-  //           </Col>
-  //           {/* Toy Image - MOBILE*/}
-  //           <Col
-  //             xs={12}
-  //             sm={12}
-  //             className="d-flex d-md-none flexCenter_center"
-  //           >
-  //             <Image
-  //               src="./assets/images/original/TTT_logo_hiRes.png"
-  //               thumbnail
-  //               style={{ width: "65%" }}
-  //             />
-  //           </Col>
-
-  //           {/* Text Container */}
-  //           <Col>
-  //             {/* ROW 1: Toy Name */}
-  //             <Row className="flexCenter">
-  //               <Col className="p-0">
-  //                 <h2
-  //                   className="d-none d-md-flex"
-  //                   // Commented out because most product websites are outdated/missing
-  //                   // onClick={handleClick_product_website}
-  //                 >
-  //                   {toyData.ToyName}
-  //                 </h2>
-  //                 {/* MOBILE */}
-  //                 <h4
-  //                   className="d-flex d-md-none flexCenter_center_textAlign"
-  //                   // Commented out because most product websites are outdated/missing
-  //                   // onClick={handleClick_product_website}
-  //                 >
-  //                   {toyData.ToyName}
-  //                 </h4>
-  //               </Col>
-  //             </Row>
-  //             {/* ROW 2: Company Name */}
-  //             <Row className="flexCenter">
-  //               <Col className="d-none d-md-flex p-0">
-  //                 by {toyData.company_name}
-  //               </Col>
-  //               {/* MOBILE */}
-  //               <Col className="d-flex d-md-none flexCenter_center_textAlign">
-  //                 by {toyData.company_name}
-  //               </Col>
-  //             </Row>
-  //             {/* ROW 3: Ages, Price */}
-  //             <Row className="flexCenter">
-  //               <Col className="d-none d-md-flex p-0">
-  //                 <b className="age_price_margin">For Ages: </b>
-  //                 {toyData.AgeRange1}
-  //               </Col>
-  //               <Col className="d-none d-md-flex p-0">
-  //                 <b className="age_price_margin">Price: </b>
-  //                 {toyData.Low_Price}
-  //               </Col>
-  //               {/* MOBILE */}
-  //               <Col className="d-flex d-md-none flexCenter_center">
-  //                 <b className="age_price_margin">For Ages: </b>
-  //                 {toyData.AgeRange1}
-  //               </Col>
-  //               <Col className="d-flex d-md-none flexCenter_center_textAlign">
-  //                 <b className="age_price_margin">Price: </b>
-  //                 {toyData.Low_Price}
-  //               </Col>
-  //             </Row>
-  //             {/* ROW 4: Categories */}
-  //             <Row className="flexCenter">
-  //               <Col
-  //                 className="d-none d-md-flex p-0"
-  //                 style={{ fontSize: "small" }}
-  //               >
-  //                 <b>{toyData.categories}</b>
-  //               </Col>
-  //               {/* MOBILE */}
-  //               <Col
-  //                 className="d-flex d-md-none flexCenter_center_textAlign"
-  //                 style={{ fontSize: "small" }}
-  //               >
-  //                 <b>{toyData.categories}</b>
-  //               </Col>
-  //             </Row>
-  //             {/* ROW 5: Manufacturer's Description */}
-  //             <Row className="flexCenter">
-  //               <Col className="p-0">
-  //                 <b>Manufacturer's Description</b>
-  //                 <ShowMoreText lines={3}>
-  //                   <p>{toyData.mfg_desc}</p>
-  //                 </ShowMoreText>
-  //               </Col>
-  //             </Row>
-  //             {/* Row 6: Review */}
-  //             <Row className="flexCenter">
-  //               <Col className="p-0">
-  //                 <b>Expert Review</b>
-  //                 <ShowMoreText lines={3}>
-  //                   <p>{toyData.Long_Review}</p>
-  //                 </ShowMoreText>
-  //               </Col>
-  //             </Row>
-  //           </Col>
-  //         </Row>
-  //       </Container>
-  //     </div>
-  //     {/* </InfiniteScroll> */}
-  //   </div>
-  // );
-  //   }
-  // });
 };
 
 // // Search facilitated by converting Object to array then using .inclues().
@@ -679,51 +578,6 @@ const ToySearchCard = (props) => {
 // if (asArray[0][1].toLowerCase().includes(search.toString().toLowerCase())) {
 //   const filtered = asArray;
 //   const searchedItems = Object.fromEntries(filtered);
-
-//   // Count is used to check if entire report card should be hidden. Per client, if all scores are blank (i.e., count === 6) hide report card.
-//   let count = 0;
-//   if (
-//     (searchedItems.ToyTipsRating <= 2) |
-//     (searchedItems.ToyTipsRating >= 5) |
-//     (searchedItems.ToyTipsRating == undefined)
-//   ) {
-//     count++;
-//   }
-//   if (
-//     (searchedItems.Kids_Rating <= 2) |
-//     (searchedItems.Kids_Rating >= 5) |
-//     (searchedItems.Kids_Rating == undefined)
-//   ) {
-//     count++;
-//   }
-//   if (
-//     (searchedItems.Motor_Movement <= 2) |
-//     (searchedItems.Motor_Movement >= 5) |
-//     (searchedItems.Motor_Movement == undefined)
-//   ) {
-//     count++;
-//   }
-//   if (
-//     (searchedItems.Thinking_Skills <= 2) |
-//     (searchedItems.Thinking_Skills >= 5) |
-//     (searchedItems.Thinking_Skills == undefined)
-//   ) {
-//     count++;
-//   }
-//   if (
-//     (searchedItems.Character_Development <= 2) |
-//     (searchedItems.Character_Development >= 5) |
-//     (searchedItems.Character_Development == undefined)
-//   ) {
-//     count++;
-//   }
-//   if (
-//     (searchedItems.Social_Interaction <= 2) |
-//     (searchedItems.Social_Interaction >= 5) |
-//     (searchedItems.Social_Interaction == undefined)
-//   ) {
-//     count++;
-//   }
 
 //   // Renders all elements EXCEPT FOR Toy Report Card
 //   if (count === 6) {
