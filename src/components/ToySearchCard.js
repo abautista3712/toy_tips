@@ -13,14 +13,76 @@ const ToySearchCard = (props) => {
     prev: 0,
     next: 15,
   });
-  const [searchTerm, setSearchTerm] = useState();
-  const [isTyping, setIsTyping] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  // useEffect(() => {
-  //   console.log(`search = ${search}`);
-  //   setSearchTerm(search);
-  //   console.log(`searchTerm = ${searchTerm}`);
-  // }, [searchTerm]);
+  useEffect(() => {
+    console.log("useEffect called");
+    // console.log(toyData_array);
+
+    // Re-initialize toyData_array and current states
+    // toyData_array =
+    // setToyData_array(toyData_object);
+
+    //   setCount({ prev: 0, next: 15 });
+    // setCurrent(toyData_array.slice(count.prev, count.next));
+
+    // Compare search and toy data object. Only return data that include ssearch
+    const searchedItems = toyData_array.map((toyData_object, index) => {
+      if (toyData_object.ToyName) {
+        if (
+          toyData_object.ToyName.toLowerCase().includes(search.toLowerCase())
+        ) {
+          return toyData_object;
+        }
+      }
+    });
+
+    // Alphabetize and remove undefined index items
+    const filtered = searchedItems
+      .sort((a, b) => {
+        if (a.ToyName < b.ToyName) {
+          return -1;
+        }
+        if (a.ToyName > b.ToyName) {
+          return 1;
+        }
+        return 0;
+      })
+      .filter((x) => {
+        return x !== undefined;
+      });
+    console.log(filtered);
+    // if (toyData_array) {
+    //   if (
+    //     toyData_array.map((, index) => {
+
+    //     })
+
+    //     [0][1].toLowerCase().incluldes(searchTerm.toLowerCase())
+    //   ) {
+    //     const filtered = toyData_array;
+    //     const searchedItems = Object.fromEntries(filtered);
+    //     console.log(searchedItems);
+    //   }
+    // }
+
+    // (X) Pass in search prop
+    // (X) On each keystroke, reset timeout and if(searchComplete == true){setSearchComplete(false))}
+    // (X) Once timeout expires, set searchComplete to true
+    // setTimeout(() => {
+    //   setCurrent();
+    //   // current.concat(toyData_array.slice(count.prev + 15, count.next + 15))
+    // }, 2000);
+    // (4) Use .includes() and/or .filter() to drill into data payload to narrow search results
+    // const asArray = Object.entries(toyData);
+    //  if (asArray[0][1].toLowerCase().includes(search.toString().toLowerCase())) {
+    //   const filtered = asArray;
+    //   const searchedItems = Object.fromEntries(filtered);
+    // (5) If not .filter(), create new array / object with search results
+    // (6) Return / set state with results
+    // ...
+    // (7) Change mapped toyData to search_toyData
+  }, [searchTerm]);
 
   const { toyData, search } = props;
 
@@ -34,48 +96,48 @@ const ToySearchCard = (props) => {
         const toyData_array = Object.entries(toyData).map(
           (toyData_object, index) => {
             // Calculate 'count' to check if entire report card should be hidden. Per client, if all scores are blank (i.e., count === 6) hide report card.
-            let count = 0;
+            let blank = 0;
             if (
               (toyData_object[1].ToyTipsRating < 2) |
               (toyData_object[1].ToyTipsRating > 5) |
               (toyData_object[1].ToyTipsRating == undefined)
             ) {
-              count++;
+              blank++;
             }
             if (
               (toyData_object[1].Kids_Rating < 2) |
               (toyData_object[1].Kids_Rating > 5) |
               (toyData_object[1].Kids_Rating == undefined)
             ) {
-              count++;
+              blank++;
             }
             if (
               (toyData_object[1].Motor_Movement < 2) |
               (toyData_object[1].Motor_Movement > 5) |
               (toyData_object[1].Motor_Movement == undefined)
             ) {
-              count++;
+              blank++;
             }
             if (
               (toyData_object[1].Thinking_Skills < 2) |
               (toyData_object[1].Thinking_Skills > 5) |
               (toyData_object[1].Thinking_Skills == undefined)
             ) {
-              count++;
+              blank++;
             }
             if (
               (toyData_object[1].Character_Development < 2) |
               (toyData_object[1].Character_Development > 5) |
               (toyData_object[1].Character_Development == undefined)
             ) {
-              count++;
+              blank++;
             }
             if (
               (toyData_object[1].Social_Interaction < 2) |
               (toyData_object[1].Social_Interaction > 5) |
               (toyData_object[1].Social_Interaction == undefined)
             ) {
-              count++;
+              blank++;
             }
 
             // Initialize variables to handle styling during report card omission
@@ -86,8 +148,8 @@ const ToySearchCard = (props) => {
             let handleNoRC_textSpacing = 7;
             let handleNoRC_toyImgSize = "100%";
 
-            // Element style will change if count === 6
-            if (count == 6) {
+            // Element style will change if blank === 6
+            if (blank == 6) {
               handleDisplay_RC = "none";
               handleNoRC_imgSpacing = 12;
               handleNoRC_RCSpacing = 0;
@@ -167,16 +229,18 @@ const ToySearchCard = (props) => {
     //   // console.log(search);
     //   if (){
     //   }
-    //   setSearchTerm(search);
-  }, 2000);
+    setSearchTerm(search);
+  }, 500);
   // console.log(searchTerm);
-  console.log(search);
+  // console.log(typeof search);
+
+  // setSearchTerm(search);
 
   const handleSearch = () => {
     console.log(search);
-    // (1) Pass in search prop
-    // (2) On each keystroke, reset timeout and if(searchComplete == true){setSearchComplete(false))}
-    // (3) Once timeout expires, set searchComplete to true
+    // (X) Pass in search prop
+    // (X) On each keystroke, reset timeout and if(searchComplete == true){setSearchComplete(false))}
+    // (X) Once timeout expires, set searchComplete to true
     // setTimeout(() => {
     //   setCurrent();
     //   // current.concat(toyData_array.slice(count.prev + 15, count.next + 15))

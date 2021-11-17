@@ -41,7 +41,16 @@ function App() {
             userStartedSearch ? <Search search={search} /> : <About />
           }
         />
-        <Route path="/search" render={() => <Search search={search} />} />
+        <Route
+          path="/search"
+          render={() =>
+            userStartedSearch ? (
+              <Search search={search} />
+            ) : (
+              <Search search={search} />
+            )
+          }
+        />
       </Switch>
       <Footer />
     </Router>
