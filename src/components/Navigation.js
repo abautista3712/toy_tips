@@ -21,7 +21,8 @@ const Navigation = (props) => {
     setTypingTimeout(
       setTimeout(() => {
         props.onChange(e.target.value);
-      }, 500)
+        e.target.value = "";
+      }, 1500)
     );
   };
 
