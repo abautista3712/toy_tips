@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Form, FormControl, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import {
+  Form,
+  FormControl,
+  Navbar,
+  Nav,
+  NavDropdown,
+  Dropdown,
+} from "react-bootstrap";
+import Select from "react-select";
 import Axios from "axios";
 
 const baseURL = "/api/get";
@@ -80,7 +88,7 @@ const Navigation = (props) => {
             <Navbar.Text className="d-none d-sm-block">|</Navbar.Text>
             {/* Browse Button */}
             <Nav.Link href="/search" className="d-none d-lg-block my-auto">
-              Browse Entire Collection
+              Browse All
             </Nav.Link>
             {/* Browse - Tablet */}
             <Nav.Link
@@ -99,6 +107,50 @@ const Navigation = (props) => {
               className="d-none d-md-block mr-sm-2"
             />
           </Form>
+          <Dropdown>
+            <Dropdown.Toggle
+              style={{
+                backgroundColor: "#deb887",
+                borderColor: "#ffebcd",
+                padding: "7px",
+                borderRadius: "5px",
+              }}
+              className="d-none d-md-block dropdown-toggle flexCenter_center"
+              align="end"
+              id="dropdown-basic"
+            >
+              <img
+                src="./assets/icons/filter/filter.png"
+                width="15"
+                height="15"
+                alt="Filter Button"
+                className="flexCenter_center"
+              />
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+          {/* <span
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "blanchedalmond",
+              padding: "7px",
+              borderRadius: "5px",
+            }}
+          >
+            <img
+              src="./assets/icons/filter/filter.png"
+              width="15"
+              height="15"
+              alt="Filter Button"
+            />
+          </span> */}
         </Navbar.Collapse>
       </Navbar>
       {/* Toy Tester Playwear Banner */}
