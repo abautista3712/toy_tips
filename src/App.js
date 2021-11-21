@@ -10,7 +10,7 @@ import Search from "./pages/Search";
 function App() {
   const [search, setSearch] = useState("");
   const [userStartedSearch, setUserStartedSearch] = useState(false);
-  const [filterBy, setFilterBy] = useState("ToyName");
+  const [filterOption, setfilterOption] = useState("ToyName");
 
   const handleOnChange_search = (searchTerm) => {
     setSearch(searchTerm);
@@ -18,7 +18,7 @@ function App() {
 
   const handleOnClick_filter = (filterTerm) => {
     console.log(filterTerm);
-    setFilterBy(filterTerm);
+    setfilterOption(filterTerm);
   };
 
   if (search !== "") {
@@ -33,7 +33,7 @@ function App() {
         onChange={handleOnChange_search}
         search={search}
         onClick={handleOnClick_filter}
-        filterBy={filterBy}
+        filterOption={filterOption}
       />
       {/* Component below will change per page */}
       <Switch>
@@ -42,7 +42,7 @@ function App() {
           path="/"
           render={() =>
             userStartedSearch ? (
-              <Search search={search} filterBy={filterBy} />
+              <Search search={search} filterOption={filterOption} />
             ) : (
               <Landing />
             )
@@ -52,7 +52,7 @@ function App() {
           path="/about"
           render={() =>
             userStartedSearch ? (
-              <Search search={search} filterBy={filterBy} />
+              <Search search={search} filterOption={filterOption} />
             ) : (
               <About />
             )
@@ -60,7 +60,7 @@ function App() {
         />
         <Route
           path="/search"
-          render={() => <Search search={search} filterBy={filterBy} />}
+          render={() => <Search search={search} filterOption={filterOption} />}
         />
       </Switch>
       <Footer />

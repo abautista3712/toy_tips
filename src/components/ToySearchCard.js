@@ -22,6 +22,7 @@ const ToySearchCard = (props) => {
 
   // useState hooks for search and filtering data
   const [searchTerm, setSearchTerm] = useState("");
+  const [filterOption, setFilterOption] = useState("ToyName");
   const [filteredData, setFilteredData] = useState([]);
 
   // useEffect hook to handle filtering entire toyData payload by search term
@@ -68,6 +69,7 @@ const ToySearchCard = (props) => {
   }, [isInitialized]);
 
   console.log(props);
+  console.log(props.filter);
 
   // Destructing toyData and search props
   const { toyData, search, filter } = props;
@@ -222,6 +224,7 @@ const ToySearchCard = (props) => {
   // Set searchTerm state to search prop
   setTimeout(() => {
     setSearchTerm(search);
+    setFilterOption(filterOption);
   }, 100);
 
   // Function used to get more data for InfiniteScroll

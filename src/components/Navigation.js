@@ -7,7 +7,6 @@ import {
   NavDropdown,
   Dropdown,
 } from "react-bootstrap";
-import Select from "react-select";
 import Axios from "axios";
 
 const baseURL = "/api/get";
@@ -17,12 +16,15 @@ const Navigation = (props) => {
   const [typingTimeout, setTypingTimeout] = useState(0);
   const [inputPlaceholder, setInputPlaceholder] =
     useState("Search by Toy Name");
+  const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     getToyData();
   }, []);
 
   const handleOnChange_search = (e) => {
+    setInputValue(e.target.value);
+
     // Capture search input and set as props in single data payload
     if (typingTimeout) {
       clearTimeout(typingTimeout);
@@ -35,29 +37,37 @@ const Navigation = (props) => {
     );
   };
 
+  const resetInputField = () => {
+    setInputValue("");
+  };
+
   // Pass filter value via onClick to parent
-  const filterBy_toyName = () => {
+  const filterOption_toyName = () => {
     console.log("filter by toy name selected");
     props.onClick("ToyName");
     setInputPlaceholder("Search by Toy Name");
+    resetInputField();
   };
 
-  const filterBy_companyName = () => {
+  const filterOption_companyName = () => {
     console.log("filter by company name selected");
     props.onClick("company_name");
     setInputPlaceholder("Search by Company");
+    resetInputField();
   };
 
-  const filterBy_ageRange = () => {
+  const filterOption_ageRange = () => {
     console.log("filter by age range selected");
     props.onClick("AgeRange1");
     setInputPlaceholder("Search by Age Range");
+    resetInputField();
   };
 
-  const filterBy_category = () => {
+  const filterOption_category = () => {
     console.log("filter by category selected");
     props.onClick("categories");
     setInputPlaceholder("Search by Category");
+    resetInputField();
   };
 
   const getToyData = () => {
@@ -130,6 +140,7 @@ const Navigation = (props) => {
             <FormControl
               type="text"
               placeholder={inputPlaceholder}
+              value={inputValue}
               onChange={handleOnChange_search}
               className="d-none d-md-block mr-sm-2"
             />
@@ -158,36 +169,20 @@ const Navigation = (props) => {
             <Dropdown.Menu className="dropdown-menu">
               <Dropdown.Header>Search by...</Dropdown.Header>
               <Dropdown.Divider />
-              <Dropdown.Item onClick={filterBy_toyName}>Toy Name</Dropdown.Item>
-              <Dropdown.Item onClick={filterBy_ageRange}>
+              <Dropdown.Item onClick={filterOption_toyName}>
+                Toy Name
+              </Dropdown.Item>
+              <Dropdown.Item onClick={filterOption_companyName}>
+                Company Name
+              </Dropdown.Item>
+              <Dropdown.Item onClick={filterOption_ageRange}>
                 Age Range
               </Dropdown.Item>
-              <Dropdown.Item onClick={filterBy_category}>
+              <Dropdown.Item onClick={filterOption_category}>
                 Category
-              </Dropdown.Item>
-              <Dropdown.Item onClick={filterBy_companyName}>
-                Company Name
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-
-          {/* <span
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              background: "blanchedalmond",
-              padding: "7px",
-              borderRadius: "5px",
-            }}
-          >
-            <img
-              src="./assets/icons/filter/filter.png"
-              width="15"
-              height="15"
-              alt="Filter Button"
-            />
-          </span> */}
         </Navbar.Collapse>
       </Navbar>
       {/* Toy Tester Playwear Banner */}
