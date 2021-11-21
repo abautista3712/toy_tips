@@ -209,6 +209,12 @@ body {
   margin-inline-end: 0 2%;
 }
 
+/* Hide dropdown default arrow */
 .dropdown-toggle::after {
   content: none;
+}
+
+.dropdown-menu {
+  right: 0;
+  left: auto;
 }
