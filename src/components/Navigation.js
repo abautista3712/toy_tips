@@ -22,7 +22,7 @@ const Navigation = (props) => {
       setTimeout(() => {
         props.onChange(e.target.value);
         e.target.value = "";
-      }, 1500)
+      }, 1000)
     );
   };
 

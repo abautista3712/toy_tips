@@ -4,30 +4,30 @@ import ShowMoreText from "react-show-more-text";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const ToySearchCard = (props) => {
+  // useState hooks for initialization of data
   const [isInitialized, setIsInitialized] = useState(false);
   const [toyData_array, setToyData_array] = useState([{}]);
+  const [toyData_fullArr, setToyData_fullArr] = useState([{}]);
+
+  // useState hooks for InfiniteScroll
   const [current, setCurrent] = useState([{}]);
-  const [min_windowHeight, setMin_windowHeight] = useState(0);
   const [hasMore, setHasMore] = useState(true);
+
+  // useState hooks for styling
   const [count, setCount] = useState({
     prev: 0,
     next: 15,
   });
+  const [min_windowHeight, setMin_windowHeight] = useState(0);
+
+  // useState hooks for search and filtering data
   const [searchTerm, setSearchTerm] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
 
+  // useEffect hook to handle filtering entire toyData payload by search term
   useEffect(() => {
-    console.log("useEffect called");
-    // console.log(toyData_array);
-
-    // Re-initialize toyData_array and current states
-    // toyData_array =
-    // setToyData_array(toyData_object);
-
-    //   setCount({ prev: 0, next: 15 });
-    // setCurrent(toyData_array.slice(count.prev, count.next));
-
-    // Compare search and toy data object. Only return data that include ssearch
-    const searchedItems = toyData_array.map((toyData_object, index) => {
+    // Compare search and toy data object. Only return data that includes search
+    let searchedItems = toyData_fullArr.map((toyData_object, index) => {
       if (toyData_object.ToyName) {
         if (
           toyData_object.ToyName.toLowerCase().includes(search.toLowerCase())
@@ -38,7 +38,7 @@ const ToySearchCard = (props) => {
     });
 
     // Alphabetize and remove undefined index items
-    const filtered = searchedItems
+    let filtered = searchedItems
       .sort((a, b) => {
         if (a.ToyName < b.ToyName) {
           return -1;
@@ -51,168 +51,158 @@ const ToySearchCard = (props) => {
       .filter((x) => {
         return x !== undefined;
       });
-    console.log(filtered);
-    // if (toyData_array) {
-    //   if (
-    //     toyData_array.map((, index) => {
 
-    //     })
-
-    //     [0][1].toLowerCase().incluldes(searchTerm.toLowerCase())
-    //   ) {
-    //     const filtered = toyData_array;
-    //     const searchedItems = Object.fromEntries(filtered);
-    //     console.log(searchedItems);
-    //   }
-    // }
-
-    // (X) Pass in search prop
-    // (X) On each keystroke, reset timeout and if(searchComplete == true){setSearchComplete(false))}
-    // (X) Once timeout expires, set searchComplete to true
-    // setTimeout(() => {
-    //   setCurrent();
-    //   // current.concat(toyData_array.slice(count.prev + 15, count.next + 15))
-    // }, 2000);
-    // (4) Use .includes() and/or .filter() to drill into data payload to narrow search results
-    // const asArray = Object.entries(toyData);
-    //  if (asArray[0][1].toLowerCase().includes(search.toString().toLowerCase())) {
-    //   const filtered = asArray;
-    //   const searchedItems = Object.fromEntries(filtered);
-    // (5) If not .filter(), create new array / object with search results
-    // (6) Return / set state with results
-    // ...
-    // (7) Change mapped toyData to search_toyData
+    if (filtered.length) {
+      setFilteredData(filtered);
+    }
   }, [searchTerm]);
 
+  // Wait until filteredData state has been updated to setIsInitialized(false)
+  useEffect(() => {
+    setIsInitialized(false);
+  }, [filteredData]);
+
+  // Wait for isInitialized to be false before calling initializeDataFetch()
+  useEffect(() => {
+    initializeDataFetch();
+  }, [isInitialized]);
+
+  // Destructing toyData and search props
   const { toyData, search } = props;
 
-  // Recursively call initializeDataFetch until props are loaded into component. Save props into dataPayload state.
+  // Recursively call initializeDataFetch until props are loaded into component. Save props into toyData_array and current states.
   const initializeDataFetch = () => {
-    if (toyData.length > 0) {
-      if (isInitialized == false) {
-        setIsInitialized(true);
+    if (toyData.length > 0 && isInitialized == false) {
+      let objectEntries = toyData;
+      if (filteredData.length) {
+        objectEntries = filteredData;
+      }
 
-        // Convert object to array for InfiniteScroll
-        const toyData_array = Object.entries(toyData).map(
-          (toyData_object, index) => {
-            // Calculate 'count' to check if entire report card should be hidden. Per client, if all scores are blank (i.e., count === 6) hide report card.
-            let blank = 0;
-            if (
-              (toyData_object[1].ToyTipsRating < 2) |
-              (toyData_object[1].ToyTipsRating > 5) |
-              (toyData_object[1].ToyTipsRating == undefined)
-            ) {
-              blank++;
-            }
-            if (
-              (toyData_object[1].Kids_Rating < 2) |
-              (toyData_object[1].Kids_Rating > 5) |
-              (toyData_object[1].Kids_Rating == undefined)
-            ) {
-              blank++;
-            }
-            if (
-              (toyData_object[1].Motor_Movement < 2) |
-              (toyData_object[1].Motor_Movement > 5) |
-              (toyData_object[1].Motor_Movement == undefined)
-            ) {
-              blank++;
-            }
-            if (
-              (toyData_object[1].Thinking_Skills < 2) |
-              (toyData_object[1].Thinking_Skills > 5) |
-              (toyData_object[1].Thinking_Skills == undefined)
-            ) {
-              blank++;
-            }
-            if (
-              (toyData_object[1].Character_Development < 2) |
-              (toyData_object[1].Character_Development > 5) |
-              (toyData_object[1].Character_Development == undefined)
-            ) {
-              blank++;
-            }
-            if (
-              (toyData_object[1].Social_Interaction < 2) |
-              (toyData_object[1].Social_Interaction > 5) |
-              (toyData_object[1].Social_Interaction == undefined)
-            ) {
-              blank++;
-            }
-
-            // Initialize variables to handle styling during report card omission
-            let handleDisplay_RC = "flex";
-            let handleNoRC_imgSpacing = 6;
-            let handleNoRC_RCSpacing = 3;
-            let handleNoRC_RCSpacing_mobile = 6;
-            let handleNoRC_textSpacing = 7;
-            let handleNoRC_toyImgSize = "100%";
-
-            // Element style will change if blank === 6
-            if (blank == 6) {
-              handleDisplay_RC = "none";
-              handleNoRC_imgSpacing = 12;
-              handleNoRC_RCSpacing = 0;
-              handleNoRC_RCSpacing_mobile = 0;
-              handleNoRC_textSpacing = 10;
-              handleNoRC_toyImgSize = "65%";
-            }
-            // Add key and values to toyData_object
-            toyData_object[1].handleDisplay_RC = handleDisplay_RC;
-            toyData_object[1].handleNoRC_imgSpacing = handleNoRC_imgSpacing;
-            toyData_object[1].handleNoRC_RCSpacing = handleNoRC_RCSpacing;
-            toyData_object[1].handleNoRC_RCSpacing_mobile =
-              handleNoRC_RCSpacing_mobile;
-            toyData_object[1].handleNoRC_textSpacing = handleNoRC_textSpacing;
-            toyData_object[1].handleNoRC_toyImgSize = handleNoRC_toyImgSize;
-
-            // Return object containing data from database plus handleDisplay_RC
-            return toyData_object[1];
+      // Convert object to array for InfiniteScroll
+      let toyData_array = Object.entries(objectEntries).map(
+        (toyData_object, index) => {
+          // Calculate 'blank' to check if entire report card should be hidden. Per client, if all scores are blank (i.e., blank === 6) hide report card.
+          let blank = 0;
+          if (
+            (toyData_object[1].ToyTipsRating < 2) |
+            (toyData_object[1].ToyTipsRating > 5) |
+            (toyData_object[1].ToyTipsRating == undefined)
+          ) {
+            blank++;
           }
-        );
+          if (
+            (toyData_object[1].Kids_Rating < 2) |
+            (toyData_object[1].Kids_Rating > 5) |
+            (toyData_object[1].Kids_Rating == undefined)
+          ) {
+            blank++;
+          }
+          if (
+            (toyData_object[1].Motor_Movement < 2) |
+            (toyData_object[1].Motor_Movement > 5) |
+            (toyData_object[1].Motor_Movement == undefined)
+          ) {
+            blank++;
+          }
+          if (
+            (toyData_object[1].Thinking_Skills < 2) |
+            (toyData_object[1].Thinking_Skills > 5) |
+            (toyData_object[1].Thinking_Skills == undefined)
+          ) {
+            blank++;
+          }
+          if (
+            (toyData_object[1].Character_Development < 2) |
+            (toyData_object[1].Character_Development > 5) |
+            (toyData_object[1].Character_Development == undefined)
+          ) {
+            blank++;
+          }
+          if (
+            (toyData_object[1].Social_Interaction < 2) |
+            (toyData_object[1].Social_Interaction > 5) |
+            (toyData_object[1].Social_Interaction == undefined)
+          ) {
+            blank++;
+          }
 
-        // Set states for toyData_array and current
-        setToyData_array(toyData_array);
+          // Initialize variables to handle styling during report card omission
+          let handleDisplay_RC = "flex";
+          let handleNoRC_imgSpacing = 6;
+          let handleNoRC_RCSpacing = 3;
+          let handleNoRC_RCSpacing_mobile = 6;
+          let handleNoRC_textSpacing = 7;
+          let handleNoRC_toyImgSize = "100%";
 
-        // Code-split data payload for InfiniteScroll
-        setCurrent(toyData_array.slice(count.prev, count.next));
+          // Element style will change if blank === 6
+          if (blank == 6) {
+            handleDisplay_RC = "none";
+            handleNoRC_imgSpacing = 12;
+            handleNoRC_RCSpacing = 0;
+            handleNoRC_RCSpacing_mobile = 0;
+            handleNoRC_textSpacing = 10;
+            handleNoRC_toyImgSize = "65%";
+          }
+          // Add key and values to toyData_object
+          toyData_object[1].handleDisplay_RC = handleDisplay_RC;
+          toyData_object[1].handleNoRC_imgSpacing = handleNoRC_imgSpacing;
+          toyData_object[1].handleNoRC_RCSpacing = handleNoRC_RCSpacing;
+          toyData_object[1].handleNoRC_RCSpacing_mobile =
+            handleNoRC_RCSpacing_mobile;
+          toyData_object[1].handleNoRC_textSpacing = handleNoRC_textSpacing;
+          toyData_object[1].handleNoRC_toyImgSize = handleNoRC_toyImgSize;
 
-        // Adjust min loading height for InfiniteScroll
+          // Return object containing data from database plus handleDisplay_RC
+          return toyData_object[1];
+        }
+      );
+
+      // Set toyData_array state
+      setToyData_array(toyData_array);
+
+      // Set toyData_fullArr state
+      if (toyData_fullArr.length == 1) {
+        setToyData_fullArr(toyData_array);
+      }
+
+      // Set current state to code-split data payload for InfiniteScroll
+      setCurrent(toyData_array.slice((count.prev = 0), (count.next = 15)));
+
+      // Styling adjustments for window height
+      // Adjust min loading height for InfiniteScroll
+      if (window.screen.availHeight != window.screen.height) {
+        window.screen.availHeight < window.screen.height
+          ? setMin_windowHeight(Math.floor(window.screen.availHeight - 185))
+          : setMin_windowHeight(Math.floor(window.screen.height - 185));
+      } else {
+        setMin_windowHeight(Math.floor(window.screen.availHeight - 185));
+      }
+
+      // Adjust min loading height for InfiniteScroll - MOBILE
+      if ((window.screen.availWidth <= 540) | (window.screen.width <= 540)) {
         if (window.screen.availHeight != window.screen.height) {
           window.screen.availHeight < window.screen.height
-            ? setMin_windowHeight(Math.floor(window.screen.availHeight - 185))
-            : setMin_windowHeight(Math.floor(window.screen.height - 185));
+            ? setMin_windowHeight(Math.floor(window.screen.availHeight - 175))
+            : setMin_windowHeight(Math.floor(window.screen.height - 175));
         } else {
-          setMin_windowHeight(Math.floor(window.screen.availHeight - 185));
+          setMin_windowHeight(Math.floor(window.screen.availHeight - 175));
         }
-
-        // Adjust min loading height for InfiniteScroll - MOBILE
-        if ((window.screen.availWidth <= 540) | (window.screen.width <= 540)) {
-          if (window.screen.availHeight != window.screen.height) {
-            window.screen.availHeight < window.screen.height
-              ? setMin_windowHeight(Math.floor(window.screen.availHeight - 175))
-              : setMin_windowHeight(Math.floor(window.screen.height - 175));
-          } else {
-            setMin_windowHeight(Math.floor(window.screen.availHeight - 175));
-          }
-        }
-
-        // Adjust min loading height for InfiniteScroll - Laptop L
-        if (
-          (window.screen.availWidth >= 1024) |
-          (window.screen.width >= 1024)
-        ) {
-          if (window.screen.availHeight != window.screen.height) {
-            window.screen.availHeight < window.screen.height
-              ? setMin_windowHeight(Math.floor(window.screen.availHeight - 178))
-              : setMin_windowHeight(Math.floor(window.screen.height - 178));
-          } else {
-            setMin_windowHeight(Math.floor(window.screen.availHeight - 178));
-          }
-        }
-
-        console.log("Data successfully initialized");
       }
+
+      // Adjust min loading height for InfiniteScroll - Laptop L
+      if ((window.screen.availWidth >= 1024) | (window.screen.width >= 1024)) {
+        if (window.screen.availHeight != window.screen.height) {
+          window.screen.availHeight < window.screen.height
+            ? setMin_windowHeight(Math.floor(window.screen.availHeight - 178))
+            : setMin_windowHeight(Math.floor(window.screen.height - 178));
+        } else {
+          setMin_windowHeight(Math.floor(window.screen.availHeight - 178));
+        }
+      }
+      setIsInitialized(true);
+      console.log("---Data successfully initialized---");
+      // window.scrollTo(0, 0);
+
       if (toyData_array) {
         return toyData_array;
       }
@@ -220,42 +210,18 @@ const ToySearchCard = (props) => {
       console.log("No props loaded yet...");
     }
   };
+
+  // Recursively call initializeDataFetch()
   if (isInitialized == false) {
-    console.log("Calling initializeDataFetch(props)...");
     return <>{initializeDataFetch()}</>;
   }
 
+  // Set searchTerm state to search prop
   setTimeout(() => {
-    //   // console.log(search);
-    //   if (){
-    //   }
     setSearchTerm(search);
-  }, 500);
-  // console.log(searchTerm);
-  // console.log(typeof search);
+  }, 100);
 
-  // setSearchTerm(search);
-
-  const handleSearch = () => {
-    console.log(search);
-    // (X) Pass in search prop
-    // (X) On each keystroke, reset timeout and if(searchComplete == true){setSearchComplete(false))}
-    // (X) Once timeout expires, set searchComplete to true
-    // setTimeout(() => {
-    //   setCurrent();
-    //   // current.concat(toyData_array.slice(count.prev + 15, count.next + 15))
-    // }, 2000);
-    // (4) Use .includes() and/or .filter() to drill into data payload to narrow search results
-    // const asArray = Object.entries(toyData);
-    //  if (asArray[0][1].toLowerCase().includes(search.toString().toLowerCase())) {
-    //   const filtered = asArray;
-    //   const searchedItems = Object.fromEntries(filtered);
-    // (5) If not .filter(), create new array / object with search results
-    // (6) Return / set state with results
-    // ...
-    // (7) Change mapped toyData to search_toyData
-  };
-
+  // Function used to get more data for InfiniteScroll
   const getMoreData = () => {
     console.log("getMoreData has been called");
     if (current.length === toyData_array.length) {
