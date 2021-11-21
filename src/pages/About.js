@@ -8,14 +8,14 @@ const About = (props) => {
         {/* ---FAQs--- */}
         <Row>
           <Col className="mt-3 d-none d-md-block">
-            <h1>Frequently Asked Questions</h1>
+            <h1 className="font-weight-bold">Frequently Asked Questions</h1>
           </Col>
           <Col className="mt-3 d-block d-md-none">
-            <h2>FAQs</h2>
+            <h2 className="font-weight-bold">FAQs</h2>
           </Col>
         </Row>
         {/* What is Toy Tips? */}
-        <Row className="m-2 p-2 card_Row">
+        <Row className="mb-3 p-2 card_Row box_Shadow">
           {/* Toy Tips Trusted Image */}
           <Col
             md={4}
@@ -66,7 +66,7 @@ const About = (props) => {
           </Col>
         </Row>
         {/* Research Process*/}
-        <Row className="m-2 p-2 card_Row">
+        <Row className="mb-3 p-2 card_Row box_Shadow">
           <Col>
             {/* Desktop and Tablet */}
             <h2 className="d-none d-md-flex">
@@ -104,7 +104,7 @@ const About = (props) => {
           </Col>
         </Row> */}
         {/* What do you do with tested toys?*/}
-        <Row className="m-2 p-2 card_Row">
+        <Row className="mb-3 p-2 card_Row box_Shadow">
           <Col>
             {/* Desktop and Tablet */}
             <h2 style={{ textAlign: "right" }} className="d-none d-md-flex">
@@ -127,13 +127,17 @@ const About = (props) => {
         <Row>
           <Col className="mt-3">
             {/* Desktop and Tablet */}
-            <h1 className="d-none d-md-flex">Our Rating System</h1>
+            <h1 className="d-none d-md-flex font-weight-bold">
+              Our Rating System
+            </h1>
             {/* MOBILE */}
-            <h2 className="d-flex d-md-none">Our Rating System</h2>
+            <h2 className="d-flex d-md-none font-weight-bold">
+              Our Rating System
+            </h2>
           </Col>
         </Row>
         {/* How do you come up with scoring?*/}
-        <Row className="m-2 p-2 card_Row">
+        <Row className="mb-3 p-2 card_Row box_Shadow">
           {/* TT Report Card Image - MOBILE*/}
           <Col xs={12} sm={12} className="d-flex d-md-none flexCenter_center">
             <img
@@ -191,7 +195,7 @@ const About = (props) => {
           </Col>
         </Row>
         {/* Rating System: Cumulative Research Score*/}
-        <Row className="m-2 p-2 card_Row">
+        <Row className="mb-3 p-2 card_Row box_Shadow">
           <Col>
             {/* Desktop and Tablet */}
             <h2 style={{ textAlign: "right" }} className="d-none d-md-flex">
@@ -214,7 +218,7 @@ const About = (props) => {
           </Col>
         </Row>
         {/* Rating System: Testers' 'Fun' Score*/}
-        <Row className="m-2 p-2 card_Row">
+        <Row className="mb-3 p-2 card_Row box_Shadow">
           <Col>
             {/* Desktop and Tablet */}
             <h2 className="d-none d-md-flex">
@@ -243,7 +247,7 @@ const About = (props) => {
           </Col>
         </Row>
         {/* Rating System: Skill Scores*/}
-        <Row className="m-2 p-2 card_Row">
+        <Row className="mb-3 p-2 card_Row box_Shadow">
           <Col>
             {/* Desktop and Tablet */}
             <h2 style={{ textAlign: "right" }} className="d-none d-md-flex">
@@ -293,13 +297,13 @@ const About = (props) => {
         <Row>
           <Col className="mt-3">
             {/* Desktop and Tablet */}
-            <h1 className="d-none d-md-flex">Meet the Team</h1>
+            <h1 className="d-none d-md-flex font-weight-bold">Meet the Team</h1>
             {/* MOBILE */}
-            <h2 className="d-flex d-md-none">Meet the Team</h2>
+            <h2 className="d-flex d-md-none font-weight-bold">Meet the Team</h2>
           </Col>
         </Row>
         {/* About Our Founder*/}
-        <Row className="m-2 p-2 card_Row">
+        <Row className="mb-3 p-2 card_Row box_Shadow">
           {/* Founder Profile Image - MOBILE*/}
           <Col xs={12} sm={12} className="d-flex d-md-none flexCenter_center">
             <img

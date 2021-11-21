@@ -109,8 +109,11 @@ body {
 
 /* ---Card Styling in About Component--- */
 .card_Row {
-  border-radius: 10px;
+  border-radius: 30px;
   background: white;
+}
+.box_Shadow {
+  box-shadow: 2px 2px 4px grey;
 }
 
 /* ---General Use--- */
