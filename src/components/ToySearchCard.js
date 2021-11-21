@@ -407,7 +407,7 @@ const ToySearchCard = (props) => {
                       <Row className="flexCenter">
                         <Col className="p-0">
                           <h2
-                            className="d-none d-md-flex"
+                            className="d-none d-md-flex m-0 font-weight-bold"
                             // Commented out because most product websites are outdated/missing
                             // onClick={handleClick_product_website}
                           >
@@ -415,7 +415,7 @@ const ToySearchCard = (props) => {
                           </h2>
                           {/* MOBILE */}
                           <h4
-                            className="d-flex d-md-none flexCenter_center_textAlign"
+                            className="d-flex d-md-none flexCenter_center_textAlign m-0 font-weight-bold"
                             // Commented out because most product websites are outdated/missing
                             // onClick={handleClick_product_website}
                           >
@@ -425,11 +425,11 @@ const ToySearchCard = (props) => {
                       </Row>
                       {/* ROW 2: Company Name */}
                       <Row className="flexCenter">
-                        <Col className="d-none d-md-flex p-0">
+                        <Col className="d-none d-md-flex p-0 mb-2">
                           by {toyData.company_name}
                         </Col>
                         {/* MOBILE */}
-                        <Col className="d-flex d-md-none flexCenter_center_textAlign">
+                        <Col className="d-flex d-md-none flexCenter_center_textAlign mb-2">
                           by {toyData.company_name}
                         </Col>
                       </Row>
@@ -454,19 +454,19 @@ const ToySearchCard = (props) => {
                         </Col>
                       </Row>
                       {/* ROW 4: Categories */}
-                      <Row className="flexCenter">
+                      <Row className="flexCenter mb-2">
                         <Col
                           className="d-none d-md-flex p-0"
                           style={{ fontSize: "small" }}
                         >
-                          <b>{toyData.categories}</b>
+                          {toyData.categories}
                         </Col>
                         {/* MOBILE */}
                         <Col
                           className="d-flex d-md-none flexCenter_center_textAlign"
                           style={{ fontSize: "small" }}
                         >
-                          <b>{toyData.categories}</b>
+                          {toyData.categories}
                         </Col>
                       </Row>
                       {/* ROW 5: Manufacturer's Description */}
