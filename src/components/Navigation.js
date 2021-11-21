@@ -15,12 +15,14 @@ const baseURL = "/api/get";
 const Navigation = (props) => {
   const [toyData, setToyData] = useState("");
   const [typingTimeout, setTypingTimeout] = useState(0);
+  const [inputPlaceholder, setInputPlaceholder] =
+    useState("Search by Toy Name");
 
   useEffect(() => {
     getToyData();
   }, []);
 
-  const handleOnChange = (e) => {
+  const handleOnChange_search = (e) => {
     // Capture search input and set as props in single data payload
     if (typingTimeout) {
       clearTimeout(typingTimeout);
@@ -31,6 +33,31 @@ const Navigation = (props) => {
         props.onChange(e.target.value);
       }, 1000)
     );
+  };
+
+  // Pass filter value via onClick to parent
+  const filterBy_toyName = () => {
+    console.log("filter by toy name selected");
+    props.onClick("ToyName");
+    setInputPlaceholder("Search by Toy Name");
+  };
+
+  const filterBy_companyName = () => {
+    console.log("filter by company name selected");
+    props.onClick("company_name");
+    setInputPlaceholder("Search by Company");
+  };
+
+  const filterBy_ageRange = () => {
+    console.log("filter by age range selected");
+    props.onClick("AgeRange1");
+    setInputPlaceholder("Search by Age Range");
+  };
+
+  const filterBy_category = () => {
+    console.log("filter by category selected");
+    props.onClick("categories");
+    setInputPlaceholder("Search by Category");
   };
 
   const getToyData = () => {
@@ -102,8 +129,8 @@ const Navigation = (props) => {
           <Form inline>
             <FormControl
               type="text"
-              placeholder="Search Toy Name"
-              onChange={handleOnChange}
+              placeholder={inputPlaceholder}
+              onChange={handleOnChange_search}
               className="d-none d-md-block mr-sm-2"
             />
           </Form>
@@ -129,9 +156,18 @@ const Navigation = (props) => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu className="dropdown-menu">
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              <Dropdown.Header>Search by...</Dropdown.Header>
+              <Dropdown.Divider />
+              <Dropdown.Item onClick={filterBy_toyName}>Toy Name</Dropdown.Item>
+              <Dropdown.Item onClick={filterBy_ageRange}>
+                Age Range
+              </Dropdown.Item>
+              <Dropdown.Item onClick={filterBy_category}>
+                Category
+              </Dropdown.Item>
+              <Dropdown.Item onClick={filterBy_companyName}>
+                Company Name
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 

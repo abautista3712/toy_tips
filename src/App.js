@@ -10,38 +10,58 @@ import Search from "./pages/Search";
 function App() {
   const [search, setSearch] = useState("");
   const [userStartedSearch, setUserStartedSearch] = useState(false);
+  const [filterBy, setFilterBy] = useState("ToyName");
 
-  const handleOnChange = (searchTerm) => {
+  const handleOnChange_search = (searchTerm) => {
     setSearch(searchTerm);
   };
 
-  if (search == "") {
-    // if (userStartedSearch == false) {
-    //   setUserStartedSearch(true);
-    // }
-  } else if (userStartedSearch == false) {
-    setUserStartedSearch(true);
+  const handleOnClick_filter = (filterTerm) => {
+    console.log(filterTerm);
+    setFilterBy(filterTerm);
+  };
+
+  if (search !== "") {
+    if (userStartedSearch == false) {
+      setUserStartedSearch(true);
+    }
   }
 
   return (
     <Router>
-      <Navigation onChange={handleOnChange} search={search} />
+      <Navigation
+        onChange={handleOnChange_search}
+        search={search}
+        onClick={handleOnClick_filter}
+        filterBy={filterBy}
+      />
       {/* Component below will change per page */}
       <Switch>
         <Route
           exact
           path="/"
           render={() =>
-            userStartedSearch ? <Search search={search} /> : <Landing />
+            userStartedSearch ? (
+              <Search search={search} filterBy={filterBy} />
+            ) : (
+              <Landing />
+            )
           }
         />
         <Route
           path="/about"
           render={() =>
-            userStartedSearch ? <Search search={search} /> : <About />
+            userStartedSearch ? (
+              <Search search={search} filterBy={filterBy} />
+            ) : (
+              <About />
+            )
           }
         />
-        <Route path="/search" render={() => <Search search={search} />} />
+        <Route
+          path="/search"
+          render={() => <Search search={search} filterBy={filterBy} />}
+        />
       </Switch>
       <Footer />
     </Router>

@@ -67,8 +67,10 @@ const ToySearchCard = (props) => {
     initializeDataFetch();
   }, [isInitialized]);
 
+  console.log(props);
+
   // Destructing toyData and search props
-  const { toyData, search } = props;
+  const { toyData, search, filter } = props;
 
   // Recursively call initializeDataFetch until props are loaded into component. Save props into toyData_array and current states.
   const initializeDataFetch = () => {
@@ -201,6 +203,7 @@ const ToySearchCard = (props) => {
       }
       setIsInitialized(true);
       console.log("---Data successfully initialized---");
+      console.log(props);
       // window.scrollTo(0, 0);
 
       if (toyData_array) {

@@ -209,12 +209,18 @@ body {
   margin-inline-end: 0 2%;
 }
 
+/* ---Filter Button--- */
 /* Hide dropdown default arrow */
 .dropdown-toggle::after {
   content: none;
 }
 
+/* Fix overflow bug where dropdown items overflow to right of page */
 .dropdown-menu {
   right: 0;
   left: auto;
+}
+
+button:focus {
+  outline: none;
 }
