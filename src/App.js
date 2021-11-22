@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Landing from "./pages/Landing";
@@ -17,7 +17,6 @@ function App() {
   };
 
   const handleOnClick_filter = (filterTerm) => {
-    console.log(filterTerm);
     setfilterOption(filterTerm);
   };
 

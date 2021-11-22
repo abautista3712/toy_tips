@@ -35,7 +35,7 @@ const ToySearchCard = (props) => {
         if (
           toyData_object[filterOption]
             .toLowerCase()
-            .includes(search.toLowerCase())
+            .includes(searchTerm.toLowerCase())
         ) {
           return toyData_object;
         }
@@ -206,14 +206,12 @@ const ToySearchCard = (props) => {
       }
       setIsInitialized(true);
       console.log("---Data successfully initialized---");
-      console.log(props);
-      // window.scrollTo(0, 0);
 
       if (toyData_array) {
         return toyData_array;
       }
     } else {
-      console.log("No props loaded yet...");
+      console.log("Props still loading...");
     }
   };
 
