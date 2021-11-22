@@ -29,9 +29,13 @@ const ToySearchCard = (props) => {
   useEffect(() => {
     // Compare search and toy data object. Only return data that includes search
     let searchedItems = toyData_fullArr.map((toyData_object, index) => {
-      if (toyData_object.ToyName) {
+      let filterOption = props.filterOption;
+
+      if (toyData_object[filterOption]) {
         if (
-          toyData_object.ToyName.toLowerCase().includes(search.toLowerCase())
+          toyData_object[filterOption]
+            .toLowerCase()
+            .includes(search.toLowerCase())
         ) {
           return toyData_object;
         }
@@ -41,10 +45,10 @@ const ToySearchCard = (props) => {
     // Alphabetize and remove undefined index items
     let filtered = searchedItems
       .sort((a, b) => {
-        if (a.ToyName < b.ToyName) {
+        if (a[filterOption] < b[filterOption]) {
           return -1;
         }
-        if (a.ToyName > b.ToyName) {
+        if (a[filterOption] > b[filterOption]) {
           return 1;
         }
         return 0;
@@ -68,11 +72,8 @@ const ToySearchCard = (props) => {
     initializeDataFetch();
   }, [isInitialized]);
 
-  console.log(props);
-  console.log(props.filter);
-
   // Destructing toyData and search props
-  const { toyData, search, filter } = props;
+  const { toyData, search } = props;
 
   // Recursively call initializeDataFetch until props are loaded into component. Save props into toyData_array and current states.
   const initializeDataFetch = () => {

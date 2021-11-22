@@ -35,7 +35,11 @@ const Search = (props) => {
           </h3>
         }
       >
-        <ToySearchCard toyData={toyData} search={props.search} />
+        <ToySearchCard
+          toyData={toyData}
+          search={props.search}
+          filterOption={props.filterOption}
+        />
       </Suspense>
     </div>
   );
