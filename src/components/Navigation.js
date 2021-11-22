@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import {
   Form,
   FormControl,
+  InputGroup,
   Navbar,
   Nav,
-  NavDropdown,
   Dropdown,
 } from "react-bootstrap";
 import Axios from "axios";
@@ -22,10 +22,31 @@ const Navigation = (props) => {
     getToyData();
   }, []);
 
+  // const ageRanges = {
+  //   ageRanges: ["K-4", "Infant", "Toddler", "Preschool", "5-7", "Family"],
+  //   categories: [
+  //     "Action Figures",
+  //     "Artistic",
+  //     "Construction",
+  //     "Creative",
+  //     "Dolls",
+  //     "DVD/Video",
+  //     "Educational",
+  //     "For Classroom Use",
+  //     "Games",
+  //     "Imaginary",
+  //     "Musical",
+  //     "Outdoor",
+  //     "Parent-Child Interaction",
+  //     "Pre-Kindergarten Learning",
+  //     "Role Play",
+  //     "Sports",
+  //     "Travel",
+  //   ],
+  // };
   const handleOnChange_search = (e) => {
     setInputValue(e.target.value);
 
-    // Capture search input and set as props in single data payload
     if (typingTimeout) {
       clearTimeout(typingTimeout);
     }
@@ -37,6 +58,7 @@ const Navigation = (props) => {
     );
   };
 
+  // Reset input field to blank after selecting filter option
   const resetInputField = () => {
     setInputValue("");
   };
@@ -48,21 +70,18 @@ const Navigation = (props) => {
     setInputPlaceholder("Search by Toy Name");
     resetInputField();
   };
-
   const filterOption_companyName = () => {
     console.log("filter by company name selected");
     props.onClick("company_name");
     setInputPlaceholder("Search by Company");
     resetInputField();
   };
-
   const filterOption_ageRange = () => {
     console.log("filter by age range selected");
     props.onClick("AgeRange1");
     setInputPlaceholder("Search by Age Range");
     resetInputField();
   };
-
   const filterOption_category = () => {
     console.log("filter by category selected");
     props.onClick("categories");
@@ -137,13 +156,15 @@ const Navigation = (props) => {
           </Nav>
           {/* Search Input Field */}
           <Form inline>
-            <FormControl
-              type="text"
-              placeholder={inputPlaceholder}
-              value={inputValue}
-              onChange={handleOnChange_search}
-              className="d-none d-md-block mr-sm-2"
-            />
+            <InputGroup className="">
+              <FormControl
+                type="text"
+                placeholder={inputPlaceholder}
+                value={inputValue}
+                onChange={handleOnChange_search}
+                className="d-none d-md-block mr-sm-2"
+              />
+            </InputGroup>
           </Form>
           <Dropdown>
             <Dropdown.Toggle

@@ -177,20 +177,20 @@ const ToySearchCard = (props) => {
       // Adjust min loading height for InfiniteScroll
       if (window.screen.availHeight != window.screen.height) {
         window.screen.availHeight < window.screen.height
-          ? setMin_windowHeight(Math.floor(window.screen.availHeight - 185))
-          : setMin_windowHeight(Math.floor(window.screen.height - 185));
+          ? setMin_windowHeight(Math.floor(window.screen.availHeight * 0.64))
+          : setMin_windowHeight(Math.floor(window.screen.height * 0.64));
       } else {
-        setMin_windowHeight(Math.floor(window.screen.availHeight - 185));
+        setMin_windowHeight(Math.floor(window.screen.availHeight * 0.64));
       }
 
       // Adjust min loading height for InfiniteScroll - MOBILE
       if ((window.screen.availWidth <= 540) | (window.screen.width <= 540)) {
         if (window.screen.availHeight != window.screen.height) {
           window.screen.availHeight < window.screen.height
-            ? setMin_windowHeight(Math.floor(window.screen.availHeight - 175))
-            : setMin_windowHeight(Math.floor(window.screen.height - 175));
+            ? setMin_windowHeight(Math.floor(window.screen.availHeight * 0.65))
+            : setMin_windowHeight(Math.floor(window.screen.height * 0.65));
         } else {
-          setMin_windowHeight(Math.floor(window.screen.availHeight - 175));
+          setMin_windowHeight(Math.floor(window.screen.availHeight * 0.65));
         }
       }
 
@@ -198,10 +198,10 @@ const ToySearchCard = (props) => {
       if ((window.screen.availWidth >= 1024) | (window.screen.width >= 1024)) {
         if (window.screen.availHeight != window.screen.height) {
           window.screen.availHeight < window.screen.height
-            ? setMin_windowHeight(Math.floor(window.screen.availHeight - 178))
-            : setMin_windowHeight(Math.floor(window.screen.height - 178));
+            ? setMin_windowHeight(Math.floor(window.screen.availHeight * 0.58))
+            : setMin_windowHeight(Math.floor(window.screen.height * 0.58));
         } else {
-          setMin_windowHeight(Math.floor(window.screen.availHeight - 178));
+          setMin_windowHeight(Math.floor(window.screen.availHeight * 0.58));
         }
       }
       setIsInitialized(true);
