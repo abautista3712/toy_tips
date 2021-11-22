@@ -3,13 +3,13 @@ import { Carousel } from "react-bootstrap";
 import Axios from "axios";
 
 import Search from "./Search";
-// import ToySearchCard from "../components/ToySearchCard";
 const baseURL = "/api/get";
 
 const Landing = (props) => {
   const [toyData, setToyData] = useState("");
   const [highlight_toyName, setHighlight_toyName] = useState("");
   const [displayHL_toyName, setDisplayHL_toyName] = useState("");
+  const [RNG, setRNG] = useState(Math.floor(Math.random() * 2654));
 
   useEffect(() => {
     getToyData();
@@ -17,11 +17,11 @@ const Landing = (props) => {
 
   useEffect(() => {
     if (toyData) {
-      setDisplayHL_toyName(toyData[0].ToyName);
+      setDisplayHL_toyName(toyData[RNG].ToyName);
     }
   }, [toyData]);
 
-  useEffect(() => {}, [highlight_toyName]);
+  useEffect(() => {}, [RNG], [displayHL_toyName]);
 
   const getToyData = () => {
     Axios.get(baseURL)
@@ -39,9 +39,8 @@ const Landing = (props) => {
   };
   const handleClick_Search_HL = () => {
     if (toyData) {
-      setHighlight_toyName(toyData[0].ToyName);
+      setHighlight_toyName(toyData[RNG].ToyName);
     }
-    console.log("handleClick_Search_HL called");
   };
 
   return (
