@@ -101,7 +101,7 @@ const Landing = (props) => {
         {/* Carousel Image */}
         <img
           className="carouselImage_mobileSizing"
-          src="./assets/images/original/stock_toys3.png"
+          src="./assets/images/resized/stock_toys3_short_wide.png"
           alt="Third slide"
           onClick={handleClick_Search}
         />

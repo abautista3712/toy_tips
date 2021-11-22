@@ -67,25 +67,25 @@ const Navigation = (props) => {
   const filterOption_toyName = () => {
     console.log("filter by toy name selected");
     props.onClick("ToyName");
-    setInputPlaceholder("Search by Toy Name");
+    setInputPlaceholder("Search Toy Name");
     resetInputField();
   };
   const filterOption_companyName = () => {
     console.log("filter by company name selected");
     props.onClick("company_name");
-    setInputPlaceholder("Search by Company");
+    setInputPlaceholder("Search Company");
     resetInputField();
   };
   const filterOption_ageRange = () => {
     console.log("filter by age range selected");
     props.onClick("AgeRange1");
-    setInputPlaceholder("Search by Age Range");
+    setInputPlaceholder("Search Age Range");
     resetInputField();
   };
   const filterOption_category = () => {
     console.log("filter by category selected");
     props.onClick("categories");
-    setInputPlaceholder("Search by Category");
+    setInputPlaceholder("Search Category");
     resetInputField();
   };
 
