@@ -124,10 +124,14 @@ const Landing = (props) => {
               <h3 className="d-block d-md-none">{displayHL_toyName}</h3>
 
               {/* Sub line of caption */}
-              <h4 className="d-none d-lg-block">Highlighted Toy of the Day!</h4>
+              <h4 className="d-none d-lg-block">
+                Check out our Highlighted Toy!
+              </h4>
               <p className="d-none d-lg-block">Click here to read more</p>
               {/* MOBILE */}
-              <p className="d-block d-lg-none">Highlighted Toy of the Day!</p>
+              <p className="d-block d-lg-none">
+                Check out our Highlighted Toy!
+              </p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
