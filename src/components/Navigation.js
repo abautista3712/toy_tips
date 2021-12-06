@@ -45,7 +45,7 @@ const Navigation = (props) => {
   //   ],
   // };
 
-  // Prevent refresh of page if enter is pressed
+  // Prevent refresh if enter is pressed
   const handleEnter = (e) => {
     if (e.charCode === 13) {
       e.preventDefault();
