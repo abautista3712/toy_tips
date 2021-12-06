@@ -44,6 +44,14 @@ const Navigation = (props) => {
   //     "Travel",
   //   ],
   // };
+
+  // Prevent refresh of page if enter is pressed
+  const handleEnter = (e) => {
+    if (e.charCode === 13) {
+      e.preventDefault();
+    }
+  };
+
   const handleOnChange_search = (e) => {
     setInputValue(e.target.value);
 
@@ -54,7 +62,7 @@ const Navigation = (props) => {
     setTypingTimeout(
       setTimeout(() => {
         props.onChange(e.target.value);
-      }, 1000)
+      }, 400)
     );
   };
 
@@ -161,6 +169,7 @@ const Navigation = (props) => {
                 type="text"
                 placeholder={inputPlaceholder}
                 value={inputValue}
+                onKeyPress={handleEnter}
                 onChange={handleOnChange_search}
                 className="d-none d-md-block mr-sm-2"
               />
