@@ -12,7 +12,6 @@ const ToySearchCard = (props) => {
   // useState hooks for InfiniteScroll
   const [current, setCurrent] = useState([{}]);
   const [hasMore, setHasMore] = useState(true);
-  const [hasChildren, setHasChildren] = useState(false);
 
   // useState hooks for styling
   const [count, setCount] = useState({
@@ -230,10 +229,8 @@ const ToySearchCard = (props) => {
       <InfiniteScroll
         dataLength={current.length}
         hasMore={hasMore}
-        // hasMore={false}
         next={getMoreData}
         height={min_windowHeight}
-        // hasChildren={false}
         loader={
           <h4
             style={{
@@ -245,7 +242,13 @@ const ToySearchCard = (props) => {
             Loading more toys...
           </h4>
         }
-        style={{ margin: 0, padding: 0, width: "100%", overflowX: "hidden" }}
+        style={{
+          margin: 0,
+          padding: 0,
+          width: "100%",
+          overflowX: "hidden",
+          overflowY: "hidden",
+        }}
       >
         <div>
           {current &&
