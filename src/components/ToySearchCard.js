@@ -175,7 +175,7 @@ const ToySearchCard = (props) => {
 
       // Styling adjustments for window height
       // Adjust min loading height for InfiniteScroll
-      setMin_windowHeight(Math.floor(window.screen.height - 175));
+      setMin_windowHeight(Math.floor(window.screen.height * 0.55));
 
       setIsInitialized(true);
       console.log("---Data successfully initialized---");
@@ -247,7 +247,7 @@ const ToySearchCard = (props) => {
           padding: 0,
           width: "100%",
           overflowX: "hidden",
-          overflowY: "hidden",
+          overflowY: "inherit",
         }}
       >
         <div>
