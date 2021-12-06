@@ -48,6 +48,6 @@ Contact Marianne Szymanski (marianne@toytips.com) on how to get involved in the 
     
 If you have any questions about this repo, contact Abelard Bautista directly at abelardbautista@gmail.com.
 
-##
+## Credits
 
 Filter icon made by Bingge Liu from www.flaticon.com
