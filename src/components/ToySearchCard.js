@@ -12,6 +12,7 @@ const ToySearchCard = (props) => {
   // useState hooks for InfiniteScroll
   const [current, setCurrent] = useState([{}]);
   const [hasMore, setHasMore] = useState(true);
+  const [hasChildren, setHasChildren] = useState(false);
 
   // useState hooks for styling
   const [count, setCount] = useState({
@@ -180,7 +181,14 @@ const ToySearchCard = (props) => {
       setIsInitialized(true);
       console.log("---Data successfully initialized---");
 
+      // Set hasHasMore state for InfiniteScroll and return toyData_array
       if (toyData_array) {
+        console.log(toyData_array.length);
+        if (toyData_array.length === 1) {
+          setHasMore(false);
+        } else if (toyData_array > 1) {
+          setHasMore(true);
+        }
         return toyData_array;
       }
     } else {
@@ -222,8 +230,10 @@ const ToySearchCard = (props) => {
       <InfiniteScroll
         dataLength={current.length}
         hasMore={hasMore}
+        // hasMore={false}
         next={getMoreData}
         height={min_windowHeight}
+        // hasChildren={false}
         loader={
           <h4
             style={{
