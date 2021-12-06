@@ -4,7 +4,7 @@ Created by abautista3712 | https://api.github.com/users/abautista3712
 
 ![npm](https://img.shields.io/npm/v/axios)
 
-![toy_tipsScreenshot](./assets/images/toy_tipsScreenshot.PNG?raw=true "toy_tips landing")
+![toy_tipsScreenshot](./public/assets/images/toy_tipsScreenshot.PNG?raw=true "toy_tips landing")
 
 ## Description
 
@@ -48,6 +48,6 @@ Contact Marianne Szymanski (marianne@toytips.com) on how to get involved in the 
     
 If you have any questions about this repo, contact Abelard Bautista directly at abelardbautista@gmail.com.
 
-## Questions
+##
 
 Filter icon made by Bingge Liu from www.flaticon.com
