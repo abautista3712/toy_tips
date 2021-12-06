@@ -174,6 +174,12 @@ const ToySearchCard = (props) => {
       setCurrent(toyData_array.slice((count.prev = 0), (count.next = 15)));
 
       // Styling adjustments for window height
+
+      // Adjust min loading height for InfiniteScroll - MOBILE
+      if (window.screen.width <= 768) {
+        setMin_windowHeight(Math.floor(window.screen.height * 0.64));
+      }
+
       // Adjust min loading height for InfiniteScroll
       setMin_windowHeight(Math.floor(window.screen.height * 0.55));
 
