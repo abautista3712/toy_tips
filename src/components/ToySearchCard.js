@@ -177,7 +177,7 @@ const ToySearchCard = (props) => {
 
       // Adjust min loading height for InfiniteScroll - MOBILE
       if (window.screen.width <= 768) {
-        setMin_windowHeight(Math.floor(window.screen.height * 0.7));
+        setMin_windowHeight(Math.floor(window.screen.height * 0.75));
       }
 
       // Adjust min loading height for InfiniteScroll
