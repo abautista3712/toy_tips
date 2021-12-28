@@ -36,7 +36,7 @@ Database is hosted on Heroku and domain is handled through GoDaddy.
 
 ## License
 
-None
+MIT
 
 ## Contributing
 
